@@ -1,0 +1,40 @@
+<section #about id="about" class="text-gray-600 body-font overflow-hidden visibility-hidden">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -m-12">
+            <div class="p-12 md:w-1/2 flex flex-col items-start">
+                <span
+                    class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">SOBRE
+                    MI</span>
+                <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4 dark:text-slate-200">
+                    Software Developer</h2>
+                <p class="leading-relaxed mb-8 dark:text-slate-400">Apasionado por la tecnología, autodidacta,
+                    comprometido y responsable.
+                    Interes en obtener nuevos conocimientos para la mejora continua tanto profesional como personal
+                    Desarrollos bajo enfoque de metodologias ágiles usando buenas practicas de programación como Clean
+                    Code , Principios SOLID</p>
+
+            </div>
+            <div class="p-12 md:w-1/2 flex flex-col items-start">
+                <span
+                    class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest mb-2">Tecnologías
+                    y herramientas</span>
+                <div class="flex flex-wrap ml-2">
+                    <div class="group flex relative" *ngFor="let image of listTechnologies">
+                        <span style="margin-top: 0px;
+                        margin-bottom: 0px;
+                        border-bottom-width: 0px;
+                        bottom: 75px;
+                        left: 75px;
+                        z-index: 9999;
+                        " class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 
+                        -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">{{image.name}}</span>
+                        <img [width]="40" class="m-4" [height]="40" [alt]="image.name" [ngSrc]="image.src" [class]="image.isDark ? 'svg-dark-theme' : ''" />
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

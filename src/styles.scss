@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~tippy.js/dist/tippy.css";
+// @import "~tippy.js/themes/light.css";
+// @import "~tippy.js/animations/scale.css";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./../src/app/styles/partials/buttons";
+@import "./../src/app/styles/partials/icons";
+@import "./../src/app/styles/partials/dialog";
+@import "./../src/app/styles/partials/scrollbar";
+@import "./../src/app/styles/partials/forms";
+@import "./../src/app/styles/partials/animations";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  @apply text-gray-800;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+:root {
+  --header-height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .swal2-modal {
+    background-color: rgb(30 41 59) !important;
+  }
+}
+
+.box {
+  @apply mx-auto;
+  @media only screen and (min-width: 960px) {
+    max-width: 900px;
+  }
+  @media only screen and (min-width: 1440px) {
+    max-width: 1400px;
+    /* styles for browsers larger than 1440px; */
+  }
+  @media only screen and (min-width: 2000px) {
+    max-width: 1600px;
+    /* for sumo sized (mac) screens */
+  }
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.swal2-modal {
+  height: 100% !important;
+  width: 95% !important;
+  // background: grayscale($color: #f5bbbb) !important;
+}
+
+.swal2-html-container {
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+.svg-dark-theme {
+  filter: invert(57%) sepia(19%) saturate(323%) hue-rotate(180deg)
+    brightness(94%) contrast(90%);
+}

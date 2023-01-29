@@ -1,0 +1,91 @@
+<section #portfolioElement id="portfolio" class="text-gray-600 body-font visibility-hidden">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col">
+            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+                <h1 class="sm:text-4xl text-2xl font-medium title-font mb-2 text-gray-900 dark:text-slate-200">
+                    Portafolio
+                </h1>
+            </div>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+            <div class="dark:bg-slate-900 group relative  p-7 rounded-md border transition-all hover:shadow-xl duration-200 ease-in  bg-white shadow-lg hover:border-gray-400 relative cursor-pointer"
+                *ngFor="let portfolio of listPorfolio " (click)="openModal(portfolio)">
+                <div class="rounded-lg h-64 overflow-hidden">
+                    <img [alt]="portfolio.name" class="object-center h-full w-full" [src]="portfolio.logo">
+                </div>
+                <h2 class="text-xl font-medium title-font text-gray-900 mt-5 dark:text-slate-300">{{portfolio.name}}</h2>
+                <p class="text-base leading-relaxed mt-2 dark:text-slate-400"> {{portfolio.description}}</p>
+                <a class="text-indigo-500 inline-flex items-center mt-3 cursor-pointer">Ver más
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<swal #swalPortfolio [showCancelButton]="false" [showConfirmButton]="false">
+    <ng-container *swalPortal="swalPortalTargets.content">
+        <div class="w-full flex flex-col items-end p-2  m-2 ">
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="container w-full">
+            <div class="flex flex-wrap -m-6">
+                <div class="p-6 md:w-1/2 flex flex-col items-start">
+                    <span
+                        class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">
+                        {{portfolioSelected?.name}}
+                    </span>
+                    <iframe class="w-full youtube-video	" [src]="safeURL" loading="lazy"
+                        [title]="portfolioSelected?.name" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+
+                    <p class="leading-relaxed mb-8 dark:text-slate-400">{{portfolioSelected?.description}} </p>
+
+                </div>
+                <div class="p-6 md:w-1/2 flex flex-col items-start">
+                    <span
+                        class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest mb-2">Tecnologías
+                        y herramientas</span>
+
+                    <div class="flex flex-wrap ml-2 pt-6" *ngFor="let repository of portfolioSelected.repository ">
+                        <div class="group flex relative w-full">
+                            <span
+                                class="py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest mb-2">
+                                <a [href]="repository.link" target="_blank" rel="noopener noreferrer">
+                                    {{repository.type}}
+                                </a>
+                            </span>
+                        </div>
+                        <br>
+
+                        <div class="group flex relative" *ngFor="let image of repository.technologies">
+                            <span class="tooltip-container group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 
+                            -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">{{image.name}}</span>
+                            <img helipopper="Tooltip Content Here" [width]="40" class="m-4" [height]="40"
+                                [alt]="image.name" [ngSrc]="image.src" />
+
+                        </div>
+                        <br>
+                        <div class="group flex justify-center  w-full">
+                            <span
+                                class="py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest mb-2">
+                                <a [href]="repository.link" target="_blank" rel="noopener noreferrer">
+                                    Repositorio
+                                </a>
+                            </span>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</swal>

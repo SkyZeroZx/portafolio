@@ -1,0 +1,180 @@
+[
+  {
+    "name": "Javascript",
+    "src": "assets/technologies/javascript.svg"
+  },
+  {
+    "name": "Typescript",
+    "src": "assets/technologies/typescript.svg"
+  },
+  {
+    "name": "Angular",
+    "src": "assets/technologies/angular.svg"
+  },
+  {
+    "name": "PWA",
+    "src": "assets/technologies/pwa.png"
+  },
+  {
+    "name": "Cypress",
+    "src": "assets/technologies/cypress.png"
+  },
+  {
+    "name": "Jasmine",
+    "src": "assets/technologies/jasmine.svg"
+  },
+  {
+    "name": "Karma",
+    "src": "assets/technologies/karma.png"
+  },
+  {
+    "name": "Jest",
+    "src": "assets/technologies/jest.svg"
+  },
+  {
+    "name": "SonarQube",
+    "src": "assets/technologies/sonar.webp"
+  },
+  {
+    "name": "Express",
+    "isDark": true,
+    "src": "assets/technologies/express.svg"
+  },
+  {
+    "name": "NestJS",
+    "src": "assets/technologies/nestjs.svg"
+  },
+  {
+    "name": "NodeJS",
+    "src": "assets/technologies/nodejs.svg"
+  },
+  {
+    "name": "NPM",
+    "src": "assets/technologies/npm.svg"
+  },
+  {
+    "name": "HTML 5",
+    "src": "assets/technologies/html5.svg"
+  },
+  {
+    "name": "CSS",
+    "src": "assets/technologies/css3.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "src": "assets/technologies/bootstrap.svg"
+  },
+  {
+    "name": "Material UI",
+    "src": "assets/technologies/materialui.svg"
+  },
+  {
+    "name": "TailwindCSS",
+    "src": "assets/technologies/tailwindcss.svg"
+  },
+  {
+    "name": "GIT",
+    "src": "assets/technologies/git.svg"
+  },
+  {
+    "name": "GitHub",
+    "isDark": true,
+    "src": "assets/technologies/github.svg"
+  },
+  {
+    "name": "Swagger",
+    "src": "assets/technologies/swagger.svg"
+  },
+  {
+    "name": "Terminal",
+    "src": "assets/technologies/terminal.png"
+  },
+  {
+    "name": "Prometheus",
+    "src": "assets/technologies/prometheus.svg"
+  },
+  {
+    "name": "Grafana",
+    "src": "assets/technologies/grafana.svg"
+  },
+  {
+    "name": "Kibana",
+    "src": "assets/technologies/kibana.svg"
+  },
+  {
+    "name": "Elasticsearch",
+    "src": "assets/technologies/elasticsearch.svg"
+  },
+  {
+    "name": "Logstash",
+    "src": "assets/technologies/logstash.svg"
+  },
+  {
+    "name": "Docker",
+    "src": "assets/technologies/docker.svg"
+  },
+  {
+    "name": "Dialogflow",
+    "src": "assets/technologies/dialogflow.png"
+  },
+  {
+    "name": "Nginx",
+    "src": "assets/technologies/nginx.svg"
+  },
+  {
+    "name": "Google Cloud",
+    "src": "assets/technologies/google-cloud.svg"
+  },
+  {
+    "name": "Meta",
+    "src": "assets/technologies/facebook.svg"
+  },
+  {
+    "name": "Power BI",
+    "src": "assets/technologies/power-bi.svg"
+  },
+  {
+    "name": "WordPress",
+    "src": "assets/technologies/wordpress.png"
+  },
+  {
+    "name": "JIRA",
+    "src": "assets/technologies/jira.svg"
+  },
+  {
+    "name": "MySQL",
+    "src": "assets/technologies/mysql.svg"
+  },
+  {
+    "name": "MS SQL Server",
+    "src": "assets/technologies/ms-sql-server.png"
+  },
+  {
+    "name": "Oracle DB",
+    "src": "assets/technologies/oracle.svg"
+  },
+  {
+    "name": "PostgreSQL",
+    "src": "assets/technologies/postgresql.svg"
+  },
+  {
+    "name": "FireBase",
+    "src": "assets/technologies/firebase.png"
+  },
+  {
+    "name": "MongoDB",
+    "src": "assets/technologies/mongodb.svg"
+  },
+  {
+    "name": "Redis",
+    "src": "assets/technologies/redis.svg"
+  },
+  {
+    "name": "AWS",
+    "src": "assets/technologies/aws.svg"
+  },
+  {
+    "name": "Auth0",
+    "src": "assets/technologies/auth0.svg"
+  }
+]
