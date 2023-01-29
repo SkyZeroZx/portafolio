@@ -1,0 +1,352 @@
+[
+  {
+    "name": "Sky Scrapper",
+    "logo": "https://sky-scrapper.skyzerozx.com/assets/images/logo.svg",
+    "description": "Comparador de precios de Mangas de las principales tiendas en Perú haciendo uso de Scrapping web con Puppeteer , teniendo graficos de los precios historicos de cada producto ,asi como generar nuestra propia lista deseos con alertas de notificaciones push de descuentos",
+    "preview": "https://youtube.com/embed/AwKtoM7m2WE",
+    "repository": [
+      {
+        "type": "FrontEnd",
+        "link": "https://github.com/SkyZeroZx/Sky-Scrapper-App",
+        "technologies": [
+          {
+            "name": "PWA",
+            "src": "assets/technologies/pwa.png"
+          },
+          {
+            "name": "Angular",
+            "src": "assets/technologies/angular.svg"
+          },
+          {
+            "name": "TailwindCSS",
+            "src": "assets/technologies/tailwindcss.svg"
+          },
+          {
+            "name": "Docker",
+            "src": "assets/technologies/docker.svg"
+          },
+          {
+            "name": "SonarQube",
+            "src": "assets/technologies/sonar.webp"
+          }
+        ]
+      },
+      {
+        "type": "BackEnd",
+        "link": "https://github.com/SkyZeroZx/Sky-Scrapper-API",
+        "technologies": [
+          {
+            "name": "Typescript",
+            "src": "assets/technologies/typescript.svg"
+          },
+          {
+            "name": "NestJS",
+            "src": "assets/technologies/nestjs.svg"
+          },
+          {
+            "name": "Docker",
+            "src": "assets/technologies/docker.svg"
+          },
+          {
+            "name": "MongoDB",
+            "src": "assets/technologies/mongodb.svg"
+          },
+          {
+            "name": "SonarQube",
+            "src": "assets/technologies/sonar.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sky Bot",
+    "logo": "assets/portfolio/sky-bot.svg",
+    "description": "Chatbot interactivo para gestión y registro de tramites interactivo con Facebook Messenger con portal web (PWA) integrado con Auth0",
+    "preview": "https://www.youtube.com/embed/xNVMLri7-mc",
+    "repository": [
+      {
+        "type": "Webhook",
+        "link": "https://github.com/SkyZeroZx/Sky-Bot-Webhook",
+        "technologies": [
+          {
+            "name": "NestJS",
+            "src": "assets/technologies/nestjs.svg"
+          },
+          {
+            "name": "Typescript",
+            "src": "assets/technologies/typescript.svg"
+          },
+          {
+            "name": "Grafana",
+            "src": "assets/technologies/grafana.svg"
+          },
+          {
+            "name": "Prometheus",
+            "src": "assets/technologies/prometheus.svg"
+          },
+          {
+            "name": "Kibana",
+            "src": "assets/technologies/kibana.svg"
+          },
+          {
+            "name": "Elasticsearch",
+            "src": "assets/technologies/elasticsearch.svg"
+          },
+          {
+            "name": "Logstash",
+            "src": "assets/technologies/logstash.svg"
+          },
+          {
+            "name": "Dialogflow",
+            "src": "assets/technologies/dialogflow.png"
+          },
+          {
+            "name": "Meta",
+            "src": "assets/technologies/facebook.svg"
+          },
+          {
+            "name": "Docker",
+            "src": "assets/technologies/docker.svg"
+          },
+          {
+            "name": "Redis",
+            "src": "assets/technologies/redis.svg"
+          },
+          {
+            "name": "Auth0",
+            "src": "assets/technologies/auth0.svg"
+          },
+          {
+            "name": "Jest",
+            "src": "assets/technologies/jest.svg"
+          },
+          {
+            "name": "SonarQube",
+            "src": "assets/technologies/sonar.webp"
+          }
+        ]
+      },
+      {
+        "type": "API REST",
+        "link": "https://github.com/SkyZeroZx/Sky-Bot-API",
+        "technologies": [
+          {
+            "name": "NestJS",
+            "src": "assets/technologies/nestjs.svg"
+          },
+          {
+            "name": "Typescript",
+            "src": "assets/technologies/typescript.svg"
+          },
+          {
+            "name": "Grafana",
+            "src": "assets/technologies/grafana.svg"
+          },
+          {
+            "name": "Prometheus",
+            "src": "assets/technologies/prometheus.svg"
+          },
+          {
+            "name": "Kibana",
+            "src": "assets/technologies/kibana.svg"
+          },
+          {
+            "name": "Elasticsearch",
+            "src": "assets/technologies/elasticsearch.svg"
+          },
+          {
+            "name": "Logstash",
+            "src": "assets/technologies/logstash.svg"
+          },
+          {
+            "name": "Docker",
+            "src": "assets/technologies/docker.svg"
+          },
+          {
+            "name": "Mysql",
+            "src": "assets/technologies/mysql.svg"
+          },
+          {
+            "name": "Auth0",
+            "src": "assets/technologies/auth0.svg"
+          },
+          {
+            "name": "AWS",
+            "src": "assets/technologies/aws.svg"
+          },
+          {
+            "name": "Jest",
+            "src": "assets/technologies/jest.svg"
+          },
+          {
+            "name": "SonarQube",
+            "src": "assets/technologies/sonar.webp"
+          }
+        ]
+      },
+      {
+        "type": "FrontEnd",
+        "link": "https://github.com/SkyZeroZx/Sky-Bot-App",
+        "technologies": [
+          {
+            "name": "Angular",
+            "src": "assets/technologies/angular.svg"
+          },
+          {
+            "name": "PWA",
+            "src": "assets/technologies/pwa.png"
+          },
+          {
+            "name": "Bootstrap",
+            "src": "assets/technologies/bootstrap.svg"
+          },
+          {
+            "name": "Material UI",
+            "src": "assets/technologies/materialui.svg"
+          },
+          {
+            "name": "Cypress",
+            "src": "assets/technologies/cypress.png"
+          },
+          {
+            "name": "Jasmine",
+            "src": "assets/technologies/jasmine.svg"
+          },
+          {
+            "name": "Karma",
+            "src": "assets/technologies/karma.png"
+          },
+          {
+            "name": "SonarQube",
+            "src": "assets/technologies/sonar.webp"
+          },
+          {
+            "name": "Docker",
+            "src": "assets/technologies/docker.svg"
+          },
+          {
+            "name": "Nginx",
+            "src": "assets/technologies/nginx.svg"
+          },
+          {
+            "name": "Auth0",
+            "src": "assets/technologies/auth0.svg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sky Krono",
+    "logo": "assets/portfolio/sky-krono.svg",
+    "description": "Aplicación para la gestión de control de asistencias interactivo con uso de calendario de tareas y notificaciones push en una PWA con reportes gráficos de asistencias, implementando un login con el estándar WebAuthentication para uso de huella dactilar o mediante dispositivos integrados para validación. ",
+    "preview": "https://www.youtube.com/embed/t-fWmR_u8UQ",
+    "repository": [
+      {
+        "type": "BackEnd",
+        "link": "https://github.com/SkyZeroZx/API-Sky-Krono",
+        "technologies": [
+          {
+            "name": "NestJS",
+            "src": "assets/technologies/nestjs.svg"
+          },
+          {
+            "name": "Typescript",
+            "src": "assets/technologies/typescript.svg"
+          },
+          {
+            "name": "Grafana",
+            "src": "assets/technologies/grafana.svg"
+          },
+          {
+            "name": "Prometheus",
+            "src": "assets/technologies/prometheus.svg"
+          },
+          {
+            "name": "Kibana",
+            "src": "assets/technologies/kibana.svg"
+          },
+          {
+            "name": "Elasticsearch",
+            "src": "assets/technologies/elasticsearch.svg"
+          },
+          {
+            "name": "Logstash",
+            "src": "assets/technologies/logstash.svg"
+          },
+          {
+            "name": "Docker",
+            "src": "assets/technologies/docker.svg"
+          },
+          {
+            "name": "Swagger",
+            "src": "assets/technologies/swagger.svg"
+          },
+          {
+            "name": "Jest",
+            "src": "assets/technologies/jest.svg"
+          },
+          {
+            "name": "SonarQube",
+            "src": "assets/technologies/sonar.webp"
+          },
+          {
+            "name": "AWS",
+            "src": "assets/technologies/aws.svg"
+          },
+          {
+            "name": "Nginx",
+            "src": "assets/technologies/nginx.svg"
+          }
+        ]
+      },
+      {
+        "type": "FrontEnd",
+        "link": "https://github.com/SkyZeroZx/Sky-Krono-App",
+        "technologies": [
+          {
+            "name": "Angular",
+            "src": "assets/technologies/angular.svg"
+          },
+          {
+            "name": "PWA",
+            "src": "assets/technologies/pwa.png"
+          },
+          {
+            "name": "Bootstrap",
+            "src": "assets/technologies/bootstrap.svg"
+          },
+          {
+            "name": "Material UI",
+            "src": "assets/technologies/materialui.svg"
+          },
+          {
+            "name": "Cypress",
+            "src": "assets/technologies/cypress.png"
+          },
+          {
+            "name": "Jasmine",
+            "src": "assets/technologies/jasmine.svg"
+          },
+          {
+            "name": "Karma",
+            "src": "assets/technologies/karma.png"
+          },
+          {
+            "name": "SonarQube",
+            "src": "assets/technologies/sonar.webp"
+          },
+          {
+            "name": "Docker",
+            "src": "assets/technologies/docker.svg"
+          },
+          {
+            "name": "Nginx",
+            "src": "assets/technologies/nginx.svg"
+          }
+        ]
+      }
+    ]
+  }
+]
