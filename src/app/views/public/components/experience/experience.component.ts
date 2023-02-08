@@ -16,14 +16,14 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'Octubre 2021 - Actualidad',
       jobTitle: 'Ingeniero de Software I',
       activities: [
-        '▪ Creación de Pruebas Unitarias para productos Java',
-        '▪ Cumplimiento de métricas de pruebas unitarias en SonarQube con Java',
-        '▪ Automatización de dispositivo externos mediante Cypress para FrontEnd Angular',
-        '▪ Creación Prototipo PWA en Angular para aplicación OnBoarding',
-        '▪ Afiliación exitosa Meta Developers para consumo de API Facebook/WhatsApp',
-        '▪ Piloto ChatBot WhatsApp con integración API Meta Developers',
-        '▪ Elaboración WebHook para interactuar con eventos de WhatsApp Bussiness',
-        '▪ Creación API Rest NestJS para simulación de transacciones y registro mediante WhatsApp',
+        'Creación de Pruebas Unitarias para productos Java',
+        'Cumplimiento de métricas de pruebas unitarias en SonarQube con Java',
+        'Automatización de dispositivo externos mediante Cypress para FrontEnd Angular',
+        'Creación Prototipo PWA en Angular para aplicación OnBoarding',
+        'Afiliación exitosa Meta Developers para consumo de API Facebook/WhatsApp',
+        'Piloto ChatBot WhatsApp con integración API Meta Developers',
+        'Elaboración WebHook para interactuar con eventos de WhatsApp Bussiness',
+        'Creación API Rest NestJS para simulación de transacciones y registro mediante WhatsApp',
       ],
     },
     {
@@ -32,9 +32,9 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'Julio 2022 - Actualidad',
       jobTitle: 'Developer FrontEnd Angular',
       activities: [
-        '▪ Creación de portal de seguimiento y registro de boletas/facturas de empresa de transportes',
-        '▪ Finalización y mantenimiento Portal Gestión de Notas Escolares , corrección de bugs menores',
-        '▪ Corrección de bugs en portal de gestión de muestra medicas integrado con Auth0',
+        'Creación de portal de seguimiento y registro de boletas/facturas de empresa de transportes',
+        'Finalización y mantenimiento Portal Gestión de Notas Escolares , corrección de bugs menores',
+        'Corrección de bugs en portal de gestión de muestra medicas integrado con Auth0',
       ],
     },
     {
@@ -43,9 +43,9 @@ export class ExperienceComponent implements AfterViewInit {
       period: 'Enero 2021 - Octubre 2021',
       jobTitle: 'Practicante Ingeniero de Software',
       activities: [
-        '▪ Refactorización y Actualización FrontEnd Angular 8 a 12',
-        '▪ Creación de Pruebas Unitarias con Jasmine/Karma para cobertura de código en SonarQube',
-        '▪ Piloto Automatización Pruebas E2E en FrontEnd Angular con Cypress',
+        'Refactorización y Actualización FrontEnd Angular 8 a 12',
+        'Creación de Pruebas Unitarias con Jasmine/Karma para cobertura de código en SonarQube',
+        'Piloto Automatización Pruebas E2E en FrontEnd Angular con Cypress',
       ],
     },
   ];
@@ -56,6 +56,12 @@ export class ExperienceComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.4,
+    };
+
     for (const experience of this.listExperience) {
       const element = this.document.querySelector(`#${experience.id}`);
       const callback = (entries: IntersectionObserverEntry[]) => {
@@ -65,7 +71,7 @@ export class ExperienceComponent implements AfterViewInit {
               element.classList.remove('visibility-hidden');
               element.classList.add('slideInUp');
               element.classList.add('animated');
-            }, 200);
+            }, 100);
           }
         });
       };
@@ -73,6 +79,7 @@ export class ExperienceComponent implements AfterViewInit {
       this.intersectionObserverService.create({
         callback,
         element,
+        options,
       });
     }
   }

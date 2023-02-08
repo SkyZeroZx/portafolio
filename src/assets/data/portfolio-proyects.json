@@ -62,7 +62,7 @@
   {
     "name": "Sky Bot",
     "logo": "assets/portfolio/sky-bot.svg",
-    "description": "Chatbot interactivo para gestión y registro de tramites interactivo con Facebook Messenger con portal web (PWA) integrado con Auth0",
+    "description": "Chatbot interactivo para gestión y registro de tramites interactivo con Facebook Messenger integrado Dialogflow para compresión del lenguaje natural humano, con portal web (PWA) integrado con Auth0",
     "preview": "https://www.youtube.com/embed/xNVMLri7-mc",
     "repository": [
       {

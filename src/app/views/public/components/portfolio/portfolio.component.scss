@@ -9,7 +9,28 @@
   margin-bottom: 0px;
   border-bottom-width: 0px;
   bottom: 68px;
-  right:  25px;
+  right: 25px;
   width: 120px !important;
   z-index: 9999;
+}
+
+.zoom-custom {
+  img {
+    transition: 0.5s all ease-in-out;
+  }
+  :hover {
+    img {
+      transform: scale(1.3);
+    }
+    .view-more {
+      opacity: 1;
+      transform: translateX(4%);
+    }
+  }
+
+  .view-more {
+    opacity: 0;
+    transition: 0.6s cubic-bezier(0.6, 0.01, 0, 1);
+    transform: translateX(-10%);
+  }
 }

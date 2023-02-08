@@ -63,6 +63,12 @@ export class StudiesComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.06,
+    };
+
     for (const study of this.listStudies) {
       const element = this.document.querySelector(`#${study.id}`);
       const callback = (entries: IntersectionObserverEntry[]) => {
@@ -72,7 +78,7 @@ export class StudiesComponent implements AfterViewInit {
               element.classList.remove('visibility-hidden');
               element.classList.add('slideInUp');
               element.classList.add('animated');
-            }, 200);
+            }, 100);
           }
         });
       };
@@ -80,6 +86,7 @@ export class StudiesComponent implements AfterViewInit {
       this.intersectionObserverService.create({
         callback,
         element,
+        options,
       });
     }
   }

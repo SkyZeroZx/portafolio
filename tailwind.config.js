@@ -11,23 +11,23 @@ module.exports = {
       },
       keyframes: {
         wheel: {
-          '0%, 100%': {
-            transform: 'translateY(-5%)',
-            'animation-timing-function': 'cubic-bezier(0.8,0,1,1)'
+          "0%, 100%": {
+            transform: "translateY(-5%)",
+            "animation-timing-function": "cubic-bezier(0.8,0,1,1)",
           },
-          '50%': {
-            transform: 'translateY(10%)',
-            'animation-timing-function': 'cubic-bezier(0,0,0.2,1)'
-          }
+          "50%": {
+            transform: "translateY(10%)",
+            "animation-timing-function": "cubic-bezier(0,0,0.2,1)",
+          },
         },
         borders: {
-          '0%, 100%': {
-            'border-radius': '60% 40% 30% 70% / 60% 30% 70% 40%',
+          "0%, 100%": {
+            "border-radius": "60% 40% 30% 70% / 60% 30% 70% 40%",
           },
-          '50%': {
-            'border-radius': '30% 60% 70% 40% / 50% 60% 30% 60%'
-          }
-        }
+          "50%": {
+            "border-radius": "30% 60% 70% 40% / 50% 60% 30% 60%",
+          },
+        },
       },
       colors: {
         primary: "var(--primary)",
@@ -48,6 +48,6 @@ module.exports = {
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/aspect-ratio")
   ],
 };
