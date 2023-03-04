@@ -17,21 +17,23 @@ import {
 export class PublicComponent {
   @ViewChild('component', { read: ViewContainerRef })
   component: ViewContainerRef;
-
   isScrolling: boolean = false;
 
   handleScroll() {
     if (!this.isScrolling) {
-      this.loadCanDo();
-      this.loadAbout();
-      this.loadExperience();
-      this.loadStudies();
-      this.loadPortfolio();
-      this.loadContact();
-      this.loadFooter();
+      this.loadAllComponents();
     }
-
     this.isScrolling = true;
+  }
+
+  private loadAllComponents() {
+    this.loadCanDo();
+    this.loadAbout();
+    this.loadExperience();
+    this.loadStudies();
+    this.loadPortfolio();
+    this.loadContact();
+    this.loadFooter();
   }
 
   private loadCanDo() {

@@ -1,6 +1,7 @@
 import { Technology } from "./technology.interface";
 
 export interface PortfolioProject {
+  id: string;
   name: string;
   logo : string;
   description: string;

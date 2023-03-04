@@ -1,5 +1,6 @@
 [
   {
+    "id": "sky-scrapper",
     "name": "Sky Scrapper",
     "logo": "https://sky-scrapper.skyzerozx.com/assets/images/logo.svg",
     "description": "Comparador de precios de Mangas de las principales tiendas en Perú haciendo uso de Scrapping web con Puppeteer , teniendo graficos de los precios historicos de cada producto ,asi como generar nuestra propia lista deseos con alertas de notificaciones push de descuentos",
@@ -60,6 +61,7 @@
     ]
   },
   {
+    "id": "sky-bot",
     "name": "Sky Bot",
     "logo": "assets/portfolio/sky-bot.svg",
     "description": "Chatbot interactivo para gestión y registro de tramites interactivo con Facebook Messenger integrado Dialogflow para compresión del lenguaje natural humano, con portal web (PWA) integrado con Auth0",
@@ -238,6 +240,7 @@
     ]
   },
   {
+    "id": "sky-krono",
     "name": "Sky Krono",
     "logo": "assets/portfolio/sky-krono.svg",
     "description": "Aplicación para la gestión de control de asistencias interactivo con uso de calendario de tareas y notificaciones push en una PWA con reportes gráficos de asistencias, implementando un login con el estándar WebAuthentication para uso de huella dactilar o mediante dispositivos integrados para validación. ",

@@ -8,8 +8,8 @@
             </div>
         </div>
         <div class="zoom-custom mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 ">
-            <div class="dark:bg-slate-900 group relative  p-7 rounded-md border transition-all hover:shadow-xl  duration-200 ease-in  bg-white shadow-lg hover:border-blue-500 relative cursor-pointer"
-                *ngFor="let portfolio of listPorfolio " (click)="openModal(portfolio)">
+            <div class="dark:bg-slate-900 group p-7 rounded-md border transition-all hover:shadow-xl  duration-200 ease-in  bg-white shadow-lg hover:border-blue-500 relative cursor-pointer"
+                *ngFor="let portfolio of listPorfolio " [id]="portfolio.id" (click)="openModal(portfolio)">
                 <div class="rounded-lg h-64 overflow-hidden">
                     <img [alt]="portfolio.name" class="object-center h-full w-full" [src]="portfolio.logo">
                 </div>
