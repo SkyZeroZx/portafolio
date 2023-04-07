@@ -1,11 +1,11 @@
 <h1 align="center">Portafolio</h1>
   <p align="center">
- Portafolio Web de presentación creado como una PWA presentar los conocimientos y experiencia adquiridos
+ Portafolio Web de presentación creado como una PWA con SSR para presentar los conocimientos y experiencia adquiridos
   </p>
 
 _Puede visualizar el proyecto desplegado en la web https://skyzerozx.com_
 
- ## :ledger: Index
+## :ledger: Index
 
 - [Pre-Requisitos](#pre-requisitos-)
 - [Instalación](#instalación-)
@@ -13,7 +13,6 @@ _Puede visualizar el proyecto desplegado en la web https://skyzerozx.com_
 - [Analisis de Codigo](#analisis-de-codigo-)
 - [PageSpeed](#page-speed)
 - [Construido](#construido-con-)
-
 
 ## Comenzando 🚀
 
@@ -35,8 +34,13 @@ _Para ejecutar un servidor de pruebas local usar el comando donde **"PUERTO"** s
 ng serve --port [PUERTO]
 ```
 
-_Dirigirse a la ruta http://localhost:4200_
+_Para ejecutar el servidor de pruebas local con SSR ejecutar el siguiente comando:_
 
+```
+npm run dev:ssr
+```
+
+_Dirigirse a la ruta http://localhost:4200_
 
 ## Ejecutando como PWA 👨🏻‍💻
 
@@ -54,7 +58,6 @@ npm run start-pwa
 
 _Este comando se encuentra configurado en el archivo *package.json de la raiz del proyecto por default ejecuta el puerto 8080*_
 
-
 ## PageSpeed
 
 _Haciendo uso de la herramienta *https://pagespeed.web.dev/* , se evaluo el tiempo de carga y renderizado por primera vez de la web_
@@ -64,7 +67,6 @@ _Obtuviendo un puntaje de **97** en rendimiento en mobile y **100** en desktop_
 ![Performance PageSpeed 1](/docs/performance/performance-mobile.png)
 
 ![Performance PageSpeed 2](/docs/performance/performance-desktop.png)
-
 
 # Analisis de Codigo 🔩
 
@@ -90,12 +92,12 @@ _Reporte de Cobertura en SonarQube_
 
 ![SonarQube 1](/docs/sonar/sonarqube-1.png)
 
-
 ## Construido con 🛠️
 
 _Las herramientas utilizadas son:_
 
 - [Angular](https://angular.io/docs) - El Framework para Desarrollo Web
+- [Angular Universal](https://angular.io/guide/universal) - Para Server Side Rending
 - [NPM](https://www.npmjs.com/) - Manejador de dependencias
 - [TailwindCSS](https://tailwindui.com/) -Framework de CSS de código abierto​ para el diseño de páginas web
 - [Visual Studio Code](https://code.visualstudio.com/) - Editor de Codigo

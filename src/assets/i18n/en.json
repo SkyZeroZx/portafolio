@@ -1,0 +1,133 @@
+{
+  "language-selector": "Language",
+  "general": {
+    "technologies-tools": "Technologies and Tools",
+    "testing-automation": "Testing & Automation",
+    "repository" : "Repository",
+    "description" : "Description"
+  },
+  "home": {
+    "content": "I am a developer of Web, PWA, mobile applications, applying Unit Test and E2E Testing to applications under agile methodologies",
+    "contact": "Contact Me"
+  },
+  "can-do": {
+    "title": "What I can do?",
+    "web-apps": "Creation of friendly and scalable web applications",
+    "pwa": "Creation of web applications installable on mobile devices",
+    "automation": "Automation of execution of Unit tests and E2E in FrontEnd as in BackEnd",
+    "ci-cd": "Continuous Integration and Continuous Deployment of applications delivering better quality and improvement in development times"
+  },
+  "about": {
+    "title": "About me",
+    "content": "Passionate about technology, self-taught, committed and responsible. Interest in obtaining new knowledge for continuous improvement both professionally and personally Developments under an agile methodologies approach using good programming practices such as Clean Code, SOLID Principles",
+    "technology-subtitle": "Technologies and tools"
+  },
+  "experience": {
+    "title": "Experience",
+    "list": [
+      {
+        "company": "Novatronic",
+        "period": "October 2021 - Present",
+        "jobTitle": "Software Engineer I",
+        "activities": [
+          "Creating Unit Tests for Java software",
+          "Compliance with unit test metrics in SonarQube with Java",
+          "External device automation using Cypress for Angular FrontEnd",
+          "PWA Prototype creation in Angular for OnBoarding application",
+          "Successful affiliation Meta Developers for Facebook/WhatsApp API consumption",
+          "WhatsApp ChatBot pilot with Meta Developers API integration",
+          "WebHook creation to interact with WhatsApp Business events",
+          "Rest NestJS API creation for simulation of transactions and registration through WhatsApp"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "period": "July 2022 - Present",
+        "jobTitle": "Developer FrontEnd Angular",
+        "activities": [
+          "Creation of a tracking portal and registration of transport company receipts/invoices",
+          "Completion and maintenance Portal Management of School Notes, correction of minor bugs",
+          "Bug fixes in the medical sample management portal integrated with Auth0"
+        ]
+      },
+      {
+        "company": "Novatronic",
+        "period": "January 2021 - October 2021",
+        "jobTitle": "Intern Software Engineer",
+        "activities": [
+          "Refactoring and Update FrontEnd Angular 8 to 12",
+          "Creating Unit Tests with Jasmine/Karma for code coverage in SonarQube",
+          "E2E Test Automation Pilot in Angular FrontEnd with Cypress"
+        ]
+      }
+    ]
+  },
+  "studies": {
+    "title": "Studies",
+    "list": [
+      {
+        "grade": "Bachiller",
+        "institution": "Universidad Nacional del Callao",
+        "name": "Systems Engineer",
+        "duration": "July 2016 - August 2021",
+        "description": "Graduated in first places in the honor roll of the university"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Administration in Oracle DB",
+        "duration": "January 2019 - March 2019"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Excel Basic - Advanced",
+        "duration": "October 2019 - December 2019"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Angular Developer",
+        "duration": "September 2020 - October 2020"
+      },
+      {
+        "institution": "PUCP",
+        "name": "MS Project Based on PMBOK",
+        "duration": "September 2020 - October 2020"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Business Intelligence MS SQL Server 2016",
+        "duration": "June 2021 - November 2021"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Project management",
+        "duration": "May 2022 - August 2022"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "content": {
+      "whatsapp": "Do you have any idea? Tell me by WhatsApp",
+      "email": "Do you have any idea?, Tell me by email",
+      "linkedin": "You can also find my Linkedin profile"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "view-more": "View more",
+    "proyects": [
+      {
+        "name": "Sky Scrapper",
+        "description": "Price comparison of manga products from major stores in Peru using web scraping with Puppeteer, with historical price charts for each product, as well as the ability to generate our own wishlist with push notification alerts for discounts"
+      },
+      {
+        "name": "Sky Bot",
+        "description": "Interactive chatbot for management and registration of procedures through Facebook Messenger, integrated with Dialogflow for natural language understanding, with a web portal (PWA) integrated with Auth0"
+      },
+      {
+        "name": "Sky Krono",
+        "description": "Application for interactive attendance control management using a task calendar and push notifications in a PWA, with graphical attendance reports. It implements a WebAuthentication login standard for fingerprint or integrated device validation "
+      }
+    ]
+  }
+}

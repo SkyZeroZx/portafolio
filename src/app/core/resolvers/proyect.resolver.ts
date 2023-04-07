@@ -1,12 +1,12 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { ActivatedRoute, Resolve } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProyectResolver implements Resolve<void> {
+export class ProyectResolver {
   constructor(
     private route: ActivatedRoute,
     @Inject(DOCUMENT) private document: Document
@@ -25,13 +25,13 @@ export class ProyectResolver implements Resolve<void> {
     });
   }
 
-  showProyect(proyect: string) {
+  showProyect(proyectId: string) {
     setTimeout(() => {
       this.document.getElementById('scroll-down').click();
     });
 
     setTimeout(() => {
-      this.document.getElementById(proyect).click();
+      this.document.getElementById(proyectId).click();
     }, 100);
   }
 }

@@ -1,33 +1,30 @@
-<section #studies id="studies" class="text-gray-600 body-font overflow-hidden">
-    <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-            <h1 class="sm:text-4xl text-2xl font-medium title-font mb-2 text-gray-900 dark:text-slate-200">Estudios
-            </h1>
+<section #studies id="studies" class="overflow-hidden">
+    <div class="container px-5 py-14 mx-auto">
+        <div class="flex flex-wrap w-full mb-12 flex-col items-center text-center">
+            <h1 class="outline-text-h1 sm:text-5xl text-4xl font-semibold title-font mb-2 text-slate-200"> {{
+                'studies.title' | translate }} </h1>
         </div>
-        <ol class="ml-6 relative border-l border-gray-200 dark:border-gray-700">
+        <ol class="ml-6 relative border-l-4 color-border2">
             <li class="mb-10  visibility-hidden" [id]="study.id" *ngFor="let study of listStudies">
-                <span
-                    class="absolute flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full -left-4 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                    <svg aria-hidden="true" class="w-4 h-4 text-blue-800 dark:text-blue-300" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 color-ring-blue">
+                    <svg aria-hidden="true" class="w-4 h-4 color-icon-calendar" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
                             clip-rule="evenodd"></path>
                     </svg>
                 </span>
-                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white fixed-container">
-                    {{study.name}}
-                    <span
-                        class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
-                        {{study.institution}}
+                <h3 class="flex items-center mb-1 text-lg font-semibold text-white fixed-container">
+                    {{ study.name | translate }}
+                    <span class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3 color-square">
+                        {{study.institution | translate}}
                     </span>
                 </h3>
-                <time
-                    class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500 fixed-container">
-                    {{study.duration}}</time>
+                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 fixed-container">
+                    {{ study.duration | translate }}</time>
                 <div *ngIf="study?.description">
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 fixed-container">
-                        {{study?.description}}
+                    <p class="mb-4 text-base font-normal text-gray-200 fixed-container">
+                        {{ study?.description | translate }}
                     </p>
                 </div>
             </li>

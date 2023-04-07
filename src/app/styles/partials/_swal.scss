@@ -1,0 +1,11 @@
+.swal2-modal {
+  height: 100% !important;
+  width: 100% !important;
+  @apply background-body #{!important};
+}
+
+.swal2-html-container {
+  //height: 100vh !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}

@@ -1,57 +1,61 @@
-<div class="home align-text-bottom">
-    <div class="isolate">
-        <main class="landing">
-            <div class="relative home-landing  px-6 lg:px-8">
-                <div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40 text-center">
-                    <div>
-                        <div>
-                            <h1 #asTitle
-                                class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl text-gray-300 animate__animated animate__fadeInUp animation-2">
-                            </h1>
-                            <p class="mt-6 md:max-lg:text-lg  leading-8  sm:text-center text-slate-100">
-                                Soy un
-                                desarrollador de
-                                aplicaciones Web, PWA , móviles , aplicando Unit Test y E2E Testing a las aplicaciones
-                                bajo metodologias ágiles
-                            </p>
-                            <br>
-                            <a href="https://wa.me/51961008127?text=Hola%20quiero%20contactarme%20" target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-block  rounded-lg bg-transparent px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-2 ring-blue-700 hover:bg-blue-700 hover:ring-blue-700">
-                                <fa-icon class="fa-lg" [icon]="faWhatsApp"></fa-icon>&nbsp; Contactame
-                            </a>
+<div class="home">
+    <app-language-selector class="home-content"></app-language-selector>
 
-                            <div id="scroll-down"  class="scrolling-down" (click)="goToSection('can-do')">
-                                <div aria-label="go to about section" class=" cursor-pointer">
-                                    <div class="text-slate-100 gap-2 inline-flex">
-                                        <svg width="1em" height="1em" viewBox="0 0 15 22" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="w-6 h-auto">
+    <div class="home-video">
+        <video (canplaythrough)="canPlayVideo()" [muted]="'muted'" poster="assets/images/quanta11.webp" loop
+            plays-inline #videoPlayer>
+            <source src="assets/images/quanta-bg.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="home-content">
+        <div class="mx-auto max-w-3xl pt-20 pb-16 sm:pt-48 sm:pb-40 text-center">
+            <div>
+                <div>
+                    <h1 #asTitle id="asTitle"
+                        class="outline-text-h1 text-4xl font-bold tracking-tight sm:text-center sm:text-7xl color-title animate__animated animate__fadeInUp animation-2">
+                    </h1>
+                    <p
+                        class="outline-text-p font-bold text-base mt-6 leading-6 sm:text-center sm:text-xl sm:leading-8 color-content">
+                        {{ "home.content" | translate }}
+                    </p>
+                    <br />
+                    <br />
+                    <a href="https://wa.me/51951898996?text=Hola%20quiero%20contactarme%20" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block rounded-lg bg-transparent px-4 py-1.5 text-base font-semibold sm:text-2xl leading-7 color-content shadow-sm ring-2 ring-white hover:bg-gradient-to-r from-sky-500 to-purple-500 hover:ring-[#B9FBFC]">
+                        <fa-icon class="fa-lg" [icon]="faWhatsApp"></fa-icon>&nbsp;
+                        {{ "home.contact" | translate }}
+                    </a>
+
+                    <div class="scrolling-down" id="scroll-down" (click)="goToSection('can-do')">
+                        <div aria-label="go to about section" class="cursor-pointer">
+                            <div class="outline-text-h1 text-slate-200 hover:text-violet-500 gap-2 inline-flex">
+                                <svg width="1em" height="1em" viewBox="0 0 15 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="w-6 h-auto">
+                                    <path
+                                        d="M7.5 22c-1.99 0-3.897-.724-5.303-2.014C.79 18.697 0 16.948 0 15.125v-8.25c0-1.823.79-3.572 2.197-4.861C3.603.724 5.51 0 7.5 0c1.99 0 3.897.724 5.303 2.014C14.21 3.303 15 5.052 15 6.875v8.25c0 .903-.194 1.797-.57 2.63a6.868 6.868 0 0 1-1.627 2.231 7.578 7.578 0 0 1-2.433 1.49A8.095 8.095 0 0 1 7.5 22Zm0-20.625c-1.591 0-3.117.58-4.243 1.61C2.132 4.018 1.5 5.417 1.5 6.876v8.25c0 1.459.632 2.858 1.757 3.89 1.126 1.03 2.652 1.61 4.243 1.61 1.591 0 3.117-.58 4.243-1.61 1.125-1.032 1.757-2.431 1.757-3.89v-8.25c0-1.459-.632-2.858-1.757-3.89-1.126-1.03-2.652-1.61-4.243-1.61Z"
+                                        fill="currentColor"></path>
+                                    <path class="animate-wheel"
+                                        d="M7.5 8.938a.786.786 0 0 1-.53-.202.66.66 0 0 1-.22-.486V5.5a.66.66 0 0 1 .22-.486.786.786 0 0 1 .53-.202c.199 0 .39.073.53.202a.66.66 0 0 1 .22.486v2.75a.66.66 0 0 1-.22.486.786.786 0 0 1-.53.201Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                                <div class="flex gap-1 items-center">
+                                    <p class="text-xl font-bold sm:text-2xl">Scroll down</p>
+                                    <span>
+                                        <svg width="1em" height="1em" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="h-3 w-auto animate-bounce">
                                             <path
-                                                d="M7.5 22c-1.99 0-3.897-.724-5.303-2.014C.79 18.697 0 16.948 0 15.125v-8.25c0-1.823.79-3.572 2.197-4.861C3.603.724 5.51 0 7.5 0c1.99 0 3.897.724 5.303 2.014C14.21 3.303 15 5.052 15 6.875v8.25c0 .903-.194 1.797-.57 2.63a6.868 6.868 0 0 1-1.627 2.231 7.578 7.578 0 0 1-2.433 1.49A8.095 8.095 0 0 1 7.5 22Zm0-20.625c-1.591 0-3.117.58-4.243 1.61C2.132 4.018 1.5 5.417 1.5 6.876v8.25c0 1.459.632 2.858 1.757 3.89 1.126 1.03 2.652 1.61 4.243 1.61 1.591 0 3.117-.58 4.243-1.61 1.125-1.032 1.757-2.431 1.757-3.89v-8.25c0-1.459-.632-2.858-1.757-3.89-1.126-1.03-2.652-1.61-4.243-1.61Z"
-                                                fill="currentColor"></path>
-                                            <path class="animate-wheel"
-                                                d="M7.5 8.938a.786.786 0 0 1-.53-.202.66.66 0 0 1-.22-.486V5.5a.66.66 0 0 1 .22-.486.786.786 0 0 1 .53-.202c.199 0 .39.073.53.202a.66.66 0 0 1 .22.486v2.75a.66.66 0 0 1-.22.486.786.786 0 0 1-.53.201Z"
+                                                d="M5 10a.739.739 0 0 1-.247-.04.575.575 0 0 1-.214-.137L.197 5.586A.618.618 0 0 1 0 5.128c0-.176.066-.329.197-.457a.639.639 0 0 1 .46-.193c.176 0 .33.065.461.193l3.224 3.146V.626c0-.182.063-.332.19-.45A.66.66 0 0 1 5 0c.186 0 .343.061.47.184a.615.615 0 0 1 .188.458v7.175l3.224-3.146a.639.639 0 0 1 .46-.193c.176 0 .329.065.46.193.132.128.198.28.198.457s-.066.33-.197.458L5.46 9.823a.575.575 0 0 1-.214.137A.739.739 0 0 1 5 10Z"
                                                 fill="currentColor"></path>
                                         </svg>
-                                        <div class="flex gap-1 items-center text-slate-100">
-                                            <p>Scroll down</p>
-                                            <span>
-                                                <svg width="1em" height="1em" viewBox="0 0 10 10" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-3 w-auto animate-bounce">
-                                                    <path
-                                                        d="M5 10a.739.739 0 0 1-.247-.04.575.575 0 0 1-.214-.137L.197 5.586A.618.618 0 0 1 0 5.128c0-.176.066-.329.197-.457a.639.639 0 0 1 .46-.193c.176 0 .33.065.461.193l3.224 3.146V.626c0-.182.063-.332.19-.45A.66.66 0 0 1 5 0c.186 0 .343.061.47.184a.615.615 0 0 1 .188.458v7.175l3.224-3.146a.639.639 0 0 1 .46-.193c.176 0 .329.065.46.193.132.128.198.28.198.457s-.066.33-.197.458L5.46 9.823a.575.575 0 0 1-.214.137A.739.739 0 0 1 5 10Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 export interface Study {
-    id : string;
+  id: string;
   grade?: string;
   institution: string;
   name: string;

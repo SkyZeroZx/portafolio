@@ -1,0 +1,133 @@
+{
+  "language-selector": "Idioma",
+  "general" : {
+    "technologies-tools" : "Tecnologías y herramientas",
+    "testing-automation" : "Testing & Automatización",
+    "repository" : "Repositorio",
+    "description" : "Descripción"
+  },
+  "home": {
+    "content": "Soy un desarrollador de aplicaciones Web, PWA , móviles , aplicando Unit Test y E2E Testing a las aplicaciones bajo metodologias ágiles",
+    "contact": "Contactame"
+  },
+  "can-do": {
+    "title": "¿Qué puedo hacer?",
+    "web-apps": "Creación de aplicaciones web amigables y escalables",
+    "pwa": "Creación de aplicaciones web instalables en dispositivos moviles",
+    "automation": "Automatización de ejecución de pruebas Unitarias y E2E en FrontEnd como en BackEnd",
+    "ci-cd": "Integración Continua con Despliegue Continuo de las aplicaciones entregando una mejor calidad y mejora de los tiempos de desarrollo"
+  },
+  "about": {
+    "title": "Acerca De Mí",
+    "content": "Apasionado por la tecnología, autodidacta, comprometido y responsable. Interes en obtener nuevos conocimientos para la mejora continua tanto profesional como personal Desarrollos bajo enfoque de metodologias ágiles usando buenas practicas de programación como Clean Code , Principios SOLID",
+    "technology-subtitle": "Tecnologías y herramientas"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "list": [
+      {
+        "company": "Novatronic",
+        "period": "Octubre 2021 - Actualidad",
+        "jobTitle": "Ingeniero de Software I",
+        "activities": [
+          "Creación de Pruebas Unitarias para productos Java",
+          "Cumplimiento de métricas de pruebas unitarias en SonarQube con Java",
+          "Automatización de dispositivo externos mediante Cypress para FrontEnd Angular",
+          "Creación Prototipo PWA en Angular para aplicación OnBoarding",
+          "Afiliación exitosa Meta Developers para consumo de API Facebook/WhatsApp",
+          "Piloto ChatBot WhatsApp con integración API Meta Developers",
+          "Elaboración WebHook para interactuar con eventos de WhatsApp Business",
+          "Creación API Rest NestJS para simulación de transacciones y registro mediante WhatsApp"
+        ]
+      },
+      {
+        "company": "Independiente",
+        "period": "Julio 2022 - Actualidad",
+        "jobTitle": "Developer FrontEnd Angular",
+        "activities": [
+          "Creación de portal de seguimiento y registro de boletas/facturas de empresa de transportes",
+          "Finalización y mantenimiento Portal Gestión de Notas Escolares , corrección de bugs menores",
+          "Corrección de bugs en portal de gestión de muestra medicas integrado con Auth0"
+        ]
+      },
+      {
+        "company": "Novatronic",
+        "period": "Enero 2021 - Octubre 2021",
+        "jobTitle": "Practicante Ingeniero de Software",
+        "activities": [
+          "Refactorización y Actualización FrontEnd Angular 8 a 12",
+          "Creación de Pruebas Unitarias con Jasmine/Karma para cobertura de código en SonarQube",
+          "Piloto Automatización Pruebas E2E en FrontEnd Angular con Cypress"
+        ]
+      }
+    ]
+  },
+  "studies": {
+    "title": "Estudios",
+    "list": [
+      {
+        "grade": "Bachiller",
+        "institution": "Universidad Nacional del Callao",
+        "name": "Ingenieria de Sistemas",
+        "duration": "Julio 2016 - Agosto 2021",
+        "description": "Egresado en primeros primeros puestos en cuadro de honor de la universidad"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Administración en Oracle DB",
+        "duration": "Enero 2019 - Marzo 2019"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Excel Basico - Avanzado",
+        "duration": "Octubre 2019 - Diciembre 2019"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Angular Developer",
+        "duration": "Septiembre 2020 - Octubre 2020"
+      },
+      {
+        "institution": "PUCP",
+        "name": "MS Project Basado en el PMBOK",
+        "duration": "Septiembre 2020 - Octubre 2020"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Business Intelligence MS SQL Server 2016",
+        "duration": "Junio 2021 - Noviembre 2021"
+      },
+      {
+        "institution": "Sistemas UNI",
+        "name": "Gestion de Proyectos",
+        "duration": "Mayo 2022 - Agosto 2022"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactame",
+    "content": {
+      "whatsapp": "¿ Tienes alguna idea ?, cuentamela por WhatsApp",
+      "email": "¿ Tienes alguna idea ?, cuentamela por correo",
+      "linkedin": "Tambien puedes encontrar mi perfil de Linkedin"
+    }
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "view-more" : "Ver más",
+    "proyects": [
+      {
+        "name": "Sky Scrapper",
+        "description": "Comparador de precios de Mangas de las principales tiendas en Perú haciendo uso de Scrapping web con Puppeteer , teniendo graficos de los precios historicos de cada producto ,asi como generar nuestra propia lista deseos con alertas de notificaciones push de descuentos"
+      },
+      {
+        "name": "Sky Bot",
+        "description": "Chatbot interactivo para gestión y registro de tramites interactivo con Facebook Messenger integrado Dialogflow para compresión del lenguaje natural humano, con portal web (PWA) integrado con Auth0"
+      },
+      {
+        "name": "Sky Krono",
+        "description": "Aplicación para la gestión de control de asistencias interactivo con uso de calendario de tareas y notificaciones push en una PWA con reportes gráficos de asistencias, implementando un login con el estándar WebAuthentication para uso de huella dactilar o mediante dispositivos integrados para validación. "
+      }
+    ]
+  }
+}

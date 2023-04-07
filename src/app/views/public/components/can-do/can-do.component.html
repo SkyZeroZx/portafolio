@@ -1,58 +1,51 @@
-<section #canDo id="can-do" class="text-gray-600 body-font visibility-hidden">
+<section #canDo id="can-do" class="  body-font visibility-hidden">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center ">
-            <h1 class="sm:text-4xl text-2xl font-medium title-font mb-2 text-gray-900 dark:text-slate-200">¿Qué puedo
-                hacer?
+            <h1 class="sm:text-4xl text-2xl font-medium title-font mb-2   ">
+                {{ 'can-do.title' | translate }}
             </h1>
         </div>
         <div class="flex flex-wrap -m-4">
-            <div class="xl:w-1/2 md:w-1/2 p-4">
-                <div class="border border-gray-200 p-6 rounded-lg">
+            <div class="xl:w-1/2 md:w-1/2 p-4  w-full">
+                <div class="border-double border-4 p-6 rounded-lg color-border-azure h-full w-full">
                     <div
                         class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4 icon-selected">
                         <fa-icon class="fa-xl" [icon]="faLaptop"></fa-icon>
 
                     </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-slate-300">Web Apps</h2>
-                    <p class="leading-relaxed text-base dark:text-slate-400">Creación de aplicaciones web amigables y
-                        escalables</p>
+                    <h2 class="text-lg font-medium title-font mb-2">Web Apps</h2>
+                    <p class="leading-relaxed text-base color-content">{{ 'can-do.web-apps' | translate }}</p>
                 </div>
             </div>
-            <div class="xl:w-1/2 md:w-1/2 p-4">
-                <div class="border border-gray-200 p-6 rounded-lg">
+            <div class="xl:w-1/2 md:w-1/2 p-4  w-full">
+                <div class="border-double border-4 p-6 rounded-lg color-border-azure h-full w-full">
                     <div
                         class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4 icon-selected">
                         <fa-icon class="fa-xl" [icon]="faMobile"></fa-icon>
                     </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-slate-300">PWA</h2>
-                    <p class="leading-relaxed text-base dark:text-slate-400">Creación de aplicaciones web instalables en
-                        dispositivos
-                        moviles</p>
+                    <h2 class="text-lgfont-medium title-font mb-2">PWA</h2>
+                    <p class="leading-relaxed text-base  ">{{ 'can-do.pwa' | translate }}</p>
                 </div>
             </div>
-            <div class="xl:w-1/2 md:w-1/2 p-4">
-                <div class="border border-gray-200 p-6 rounded-lg">
+            <div class="xl:w-1/2 md:w-1/2 p-4 w-full">
+                <div class="border-double border-4 p-6 rounded-lg color-border-azure h-full w-full">
                     <div
                         class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4 icon-selected">
                         <fa-icon class="fa-xl" [icon]="faVialCircleCheck"></fa-icon>
                     </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-slate-300">Testing &
-                        Automatización</h2>
-                    <p class="leading-relaxed text-base dark:text-slate-400">Automatización de ejecución de pruebas
-                        Unitarias y E2E en FrontEnd como en BackEnd</p>
+                    <h2 class="text-lg font-medium title-font mb-2 "> {{ 'general.testing-automation' | translate }}</h2>
+                    <p class="leading-relaxed text-base  ">{{ 'can-do.automation' | translate }}</p>
                 </div>
             </div>
 
-            <div class="xl:w-1/2 md:w-1/2 p-4">
-                <div class="border border-gray-200 p-6 rounded-lg">
+            <div class="xl:w-1/2 md:w-1/2 p-4 w-full">
+                <div class="border-double border-4 p-6 rounded-lg color-border-azure h-full w-full">
                     <div
                         class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4 icon-selected">
                         <fa-icon class="fa-xl" [icon]="faInfinity"></fa-icon>
                     </div>
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-slate-300">CI/CD</h2>
-                    <p class="leading-relaxed text-base dark:text-slate-400">Integración Continua con Despliegue
-                        Continuo de las
-                        aplicaciones entregando una mejor calidad y mejora de los tiempos de desarrollo</p>
+                    <h2 class="text-lg font-medium title-font mb-2">CI/CD</h2>
+                    <p class="leading-relaxed text-base ">{{ 'can-do.ci-cd' | translate}}</p>
                 </div>
             </div>
 

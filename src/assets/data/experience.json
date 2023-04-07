@@ -1,40 +1,40 @@
 [
   {
     "id": "experience-1",
-    "company": "Novatronic",
-    "period": "Octubre 2021 - Actualidad",
-    "jobTitle": "Ingeniero de Software I",
+    "company": "experience.list.0.company",
+    "period": "experience.list.0.period",
+    "jobTitle": "experience.list.0.jobTitle",
     "activities": [
-      "Creación de Pruebas Unitarias para productos Java",
-      "Cumplimiento de métricas de pruebas unitarias en SonarQube con Java",
-      "Automatización de dispositivo externos mediante Cypress para FrontEnd Angular",
-      "Creación Prototipo PWA en Angular para aplicación OnBoarding",
-      "Afiliación exitosa Meta Developers para consumo de API Facebook/WhatsApp",
-      "Piloto ChatBot WhatsApp con integración API Meta Developers",
-      "Elaboración WebHook para interactuar con eventos de WhatsApp Bussiness",
-      "Creación API Rest NestJS para simulación de transacciones y registro mediante WhatsApp"
+      "experience.list.0.activities.0",
+      "experience.list.0.activities.1",
+      "experience.list.0.activities.2",
+      "experience.list.0.activities.3",
+      "experience.list.0.activities.4",
+      "experience.list.0.activities.5",
+      "experience.list.0.activities.6",
+      "experience.list.0.activities.7"
     ]
   },
   {
     "id": "experience-2",
-    "company": "Independiente",
-    "period": "Julio 2022 - Actualidad",
-    "jobTitle": "Developer FrontEnd Angular",
+    "company": "experience.list.1.company",
+    "period": "experience.list.1.period",
+    "jobTitle": "experience.list.1.jobTitle",
     "activities": [
-      "Creación de portal de seguimiento y registro de boletas/facturas de empresa de transportes",
-      "Finalización y mantenimiento Portal Gestión de Notas Escolares , corrección de bugs menores",
-      "Corrección de bugs en portal de gestión de muestra medicas integrado con Auth0"
+      "experience.list.1.activities.0",
+      "experience.list.1.activities.1",
+      "experience.list.1.activities.2"
     ]
   },
   {
     "id": "experience-3",
-    "company": "Novatronic",
-    "period": "Enero 2021 - Octubre 2021",
-    "jobTitle": "Practicante Ingeniero de Software",
+    "company": "experience.list.2.company",
+    "period": "experience.list.2.period",
+    "jobTitle": "experience.list.2.jobTitle",
     "activities": [
-      "Refactorización y Actualización FrontEnd Angular 8 a 12",
-      "Creación de Pruebas Unitarias con Jasmine/Karma para cobertura de código en SonarQube",
-      "Piloto Automatización Pruebas E2E en FrontEnd Angular con Cypress"
+      "experience.list.2.activities.0",
+      "experience.list.2.activities.1",
+      "experience.list.2.activities.2"
     ]
   }
 ]

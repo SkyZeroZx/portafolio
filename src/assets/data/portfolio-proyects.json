@@ -1,9 +1,9 @@
 [
   {
     "id": "sky-scrapper",
-    "name": "Sky Scrapper",
+    "name": "portfolio.proyects.0.name",
     "logo": "https://sky-scrapper.skyzerozx.com/assets/images/logo.svg",
-    "description": "Comparador de precios de Mangas de las principales tiendas en Perú haciendo uso de Scrapping web con Puppeteer , teniendo graficos de los precios historicos de cada producto ,asi como generar nuestra propia lista deseos con alertas de notificaciones push de descuentos",
+    "description": "portfolio.proyects.0.description",
     "preview": "https://youtube.com/embed/AwKtoM7m2WE",
     "repository": [
       {
@@ -62,9 +62,9 @@
   },
   {
     "id": "sky-bot",
-    "name": "Sky Bot",
+    "name": "portfolio.proyects.1.name",
     "logo": "assets/portfolio/sky-bot.svg",
-    "description": "Chatbot interactivo para gestión y registro de tramites interactivo con Facebook Messenger integrado Dialogflow para compresión del lenguaje natural humano, con portal web (PWA) integrado con Auth0",
+    "description": "portfolio.proyects.1.description",
     "preview": "https://www.youtube.com/embed/xNVMLri7-mc",
     "repository": [
       {
@@ -241,9 +241,9 @@
   },
   {
     "id": "sky-krono",
-    "name": "Sky Krono",
+    "name": "portfolio.proyects.2.name",
     "logo": "assets/portfolio/sky-krono.svg",
-    "description": "Aplicación para la gestión de control de asistencias interactivo con uso de calendario de tareas y notificaciones push en una PWA con reportes gráficos de asistencias, implementando un login con el estándar WebAuthentication para uso de huella dactilar o mediante dispositivos integrados para validación. ",
+    "description": "portfolio.proyects.2.description",
     "preview": "https://www.youtube.com/embed/t-fWmR_u8UQ",
     "repository": [
       {

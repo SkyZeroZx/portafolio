@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-// @import "~tippy.js/dist/tippy.css";
-// @import "~tippy.js/themes/light.css";
-// @import "~tippy.js/animations/scale.css";
 
 @import "tailwindcss/base";
 @import "tailwindcss/components";
@@ -9,10 +6,10 @@
 
 @import "./../src/app/styles/partials/buttons";
 @import "./../src/app/styles/partials/icons";
+@import "./../src/app/styles/partials/colors";
+@import "./../src/app/styles/partials/swal";
 @import "./../src/app/styles/partials/scrollbar";
-@import "./../src/app/styles/partials/forms";
 @import "./../src/app/styles/partials/animations";
-
 
 * {
   margin: 0;
@@ -23,19 +20,28 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  @apply text-gray-800;
+  @apply text-gray-100;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-:root {
-  --header-height: 64px;
+.background-body {
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: linear-gradient(135deg, var(--prim), var(--sec)),
+    url("/assets/images/home1-bg.jpg");
 }
 
-@media (prefers-color-scheme: dark) {
-  .swal2-modal {
-    background-color: rgb(30 41 59) !important;
-  }
+.background-preview{
+  @apply bg-slate-900;
+}
+
+:root {
+  --header-height: 64px;
+  --prim: hsla(230, 90%, 10%, 0.7);
+  --sec: hsla(260, 95%, 10%, 0.7);
 }
 
 .box {
@@ -55,17 +61,6 @@ body {
 
 .visibility-hidden {
   visibility: hidden;
-}
-
-.swal2-modal {
-  height: 100% !important;
-  width: 95% !important;
-  // background: grayscale($color: #f5bbbb) !important;
-}
-
-.swal2-html-container {
-  overflow-y: hidden !important;
-  overflow-x: hidden !important;
 }
 
 .svg-dark-theme {

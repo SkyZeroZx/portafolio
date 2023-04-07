@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-
 import { Technology } from '@core/interface';
 import { IntersectionObserverService } from '@core/services';
 import technologies from '../../../../../assets/data/technologies.json';

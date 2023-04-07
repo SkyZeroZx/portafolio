@@ -5,7 +5,7 @@
 .fixed-span {
   margin-left: 36px !important;
   margin-right: 5px !important;
-  color: #3d6bf3 !important;
+  color: #3dcafd !important;
 }
 
 @media (max-width: 900px) {
@@ -17,6 +17,10 @@
     display: none;
     // margin-left: 0px !important;
     // margin-right: 0px !important;
-    color: #3d6bf3 !important;
+    color: #3dcafd !important;
   }
+}
+
+.outline-text-h1 {
+  -webkit-text-stroke: 1px #115498;
 }
