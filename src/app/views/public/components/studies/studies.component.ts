@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject } from '@angular/core';
 import { Study } from '@core/interface';
 import { IntersectionObserverService } from '@core/services';
-import studies from '../../../../../assets/data/studies.json';
+import studies from '@assets/data/studies.json';
 
 @Component({
   selector: 'app-studies',

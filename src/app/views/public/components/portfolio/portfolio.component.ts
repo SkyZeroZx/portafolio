@@ -1,16 +1,25 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { IntersectionObserverService } from '@core/services';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import {
+  IntersectionObserverService,
+  ShowProyectService,
+} from '@core/services';
 import { PortfolioProject } from '@core/interface';
 import { SwalComponent, SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import portFolioProjects from '../../../../../assets/data/portfolio-proyects.json';
+import portFolioProjects from '@assets/data/portfolio-proyects.json';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
-export class PortfolioComponent implements AfterViewInit {
+export class PortfolioComponent implements OnInit, AfterViewInit {
   @ViewChild('swalPortfolio')
   readonly swalPortfolio: SwalComponent;
   @ViewChild('portfolioElement')
@@ -22,8 +31,13 @@ export class PortfolioComponent implements AfterViewInit {
   constructor(
     public readonly swalPortalTargets: SwalPortalTargets,
     private intersectionObserverService: IntersectionObserverService,
+    private showProyectService: ShowProyectService,
     private domSanitizer: DomSanitizer
   ) {}
+
+  ngOnInit(): void {
+    this.showProyectService.resolve();
+  }
 
   openModal(portfolio: PortfolioProject) {
     this.portfolioSelected = portfolio;

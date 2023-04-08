@@ -6,15 +6,6 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import {
-  AboutComponent,
-  CanDoComponent,
-  ContactComponent,
-  ExperienceComponent,
-  FooterComponent,
-  PortfolioComponent,
-  StudiesComponent,
-} from './components';
 
 @Component({
   selector: 'app-public',
@@ -49,41 +40,62 @@ export class PublicComponent {
     };
   }
 
-  private loadAllComponents() {
-    this.loadCanDo();
-    this.loadAbout();
-    this.loadExperience();
-    this.loadStudies();
-    this.loadPortfolio();
-    this.loadContact();
-    this.loadFooter();
+  private async loadAllComponents() {
+    await this.loadCanDo();
+    await this.loadAbout();
+    await this.loadExperience();
+    await this.loadStudies();
+    await this.loadPortfolio();
+    await this.loadContact();
+    await this.loadFooter();
   }
 
-  private loadCanDo() {
+  private async loadCanDo() {
+    const { CanDoComponent } = await import(
+      './components/can-do/can-do.component'
+    );
     this.component.createComponent(CanDoComponent);
   }
 
-  private loadAbout(): void {
+  private async loadAbout() {
+    const { AboutComponent } = await import(
+      './components/about/about.component'
+    );
     this.component.createComponent(AboutComponent);
   }
 
-  private loadExperience(): void {
+  private async loadExperience() {
+    const { ExperienceComponent } = await import(
+      './components/experience/experience.component'
+    );
     this.component.createComponent(ExperienceComponent);
   }
 
-  private loadStudies(): void {
+  private async loadStudies() {
+    const { StudiesComponent } = await import(
+      './components/studies/studies.component'
+    );
     this.component.createComponent(StudiesComponent);
   }
 
-  private loadPortfolio(): void {
+  private async loadPortfolio() {
+    const { PortfolioComponent } = await import(
+      './components/portfolio/portfolio.component'
+    );
     this.component.createComponent(PortfolioComponent);
   }
 
-  private loadContact(): void {
+  private async loadContact() {
+    const { ContactComponent } = await import(
+      './components/contact/contact.component'
+    );
     this.component.createComponent(ContactComponent);
   }
 
-  private loadFooter(): void {
+  private async loadFooter() {
+    const { FooterComponent } = await import(
+      './components/footer/footer.component'
+    );
     this.component.createComponent(FooterComponent);
   }
 }

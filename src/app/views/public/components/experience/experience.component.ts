@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject } from '@angular/core';
 import { Experience } from '@core/interface';
 import { IntersectionObserverService } from '@core/services';
-import experience from '../../../../../assets/data/experience.json';
+import experience from '@assets/data/experience.json';
 
 @Component({
   selector: 'app-experience',

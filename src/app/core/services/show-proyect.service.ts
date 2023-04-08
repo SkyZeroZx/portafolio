@@ -1,13 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, ViewChild } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
-import { HomeComponent } from '../../views/public/components';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProyectResolver {
+export class ShowProyectService {
   constructor(
     private route: ActivatedRoute,
     @Inject(DOCUMENT) private document: Document
@@ -21,14 +20,14 @@ export class ProyectResolver {
     this.route.queryParams.pipe(take(2)).subscribe((res) => {
       const proyect = res['proyect'];
       if (proyect) {
-        this.clickOnScroll();
+        this.showProyect(proyect);
       }
     });
   }
 
-  clickOnScroll() {
+  showProyect(proyectId: string) {
     setTimeout(() => {
-      this.document.getElementById('scroll-down').click();
-    });
+      this.document.getElementById(proyectId).click();
+    }, 100);
   }
 }
