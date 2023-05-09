@@ -1,7 +1,7 @@
 export interface Experience {
-  id : string;
-  company: string;
-  period: string;
-  jobTitle: string;
-  activities: string[];
+	id: string;
+	company: string;
+	period: string;
+	jobTitle: string;
+	activities: string[];
 }

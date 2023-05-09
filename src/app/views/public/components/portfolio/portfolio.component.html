@@ -1,111 +1,131 @@
 <section #portfolioElement id="portfolio" class="body-font visibility-hidden">
-    <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-col">
-            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-                <h1 class="outline-text-h1 sm:text-5xl text-4xl font-semibold title-font mb-2">
-                    {{ 'portfolio.title' | translate }}
-                </h1>
-            </div>
-        </div>
-        <div class="zoom-custom mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 ">
-            <div class="border-double border-4  color-border-azure group p-7 rounded-md transition-all hover:shadow-xl  duration-200 ease-in   shadow-lg hover:border-blue-500 relative cursor-pointer"
-                *ngFor="let portfolio of listPorfolio " [id]="portfolio.id" (click)="openModal(portfolio)">
-                <div class="rounded-lg h-64 overflow-hidden">
-                    <img [alt]="portfolio.name | translate" class="object-center h-full w-full" [src]="portfolio.logo"
-                        [loading]="'lazy'">
-                </div>
+	<div class="container px-5 py-24 mx-auto">
+		<div class="flex flex-col">
+			<div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+				<h1 class="outline-text-h1 sm:text-5xl text-4xl font-semibold title-font mb-2">
+					{{ 'portfolio.title' | translate }}
+				</h1>
+			</div>
+		</div>
+		<div class="zoom-custom mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+			<div
+				class="border-double border-4 color-border-azure group p-7 rounded-md transition-all hover:shadow-xl duration-200 ease-in shadow-lg hover:border-blue-500 relative cursor-pointer"
+				*ngFor="let portfolio of listPorfolio"
+				[id]="portfolio.id"
+				(click)="openModal(portfolio)"
+				(keydown)="openModal(portfolio)"
+				role="button"
+				tabindex="0"
+			>
+				<div class="rounded-lg h-64 overflow-hidden">
+					<img [alt]="portfolio.name | translate" class="object-center h-full w-full" [src]="portfolio.logo" [loading]="'lazy'" />
+				</div>
 
-                <h2 class="text-xl font-medium title-font mt-5 ">{{portfolio.name | translate}}
-                </h2>
-                <p class="text-base leading-relaxed mt-2 "> {{portfolio.description | translate }}</p>
-                <a class="text-blue-500 inline-flex items-center mt-3 cursor-pointer view-more">
-                    <span>{{ 'portfolio.view-more' | translate}}</span>
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
+				<h2 class="text-xl font-medium title-font mt-5">{{ portfolio.name | translate }}</h2>
+				<p class="text-base leading-relaxed mt-2">{{ portfolio.description | translate }}</p>
+				<a class="text-blue-500 inline-flex items-center mt-3 cursor-pointer view-more">
+					<span>{{ 'portfolio.view-more' | translate }}</span>
+					<svg
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						class="w-4 h-4 ml-2"
+						viewBox="0 0 24 24"
+					>
+						<path d="M5 12h14M12 5l7 7-7 7"></path>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
 </section>
 
-
 <swal #swalPortfolio [showCancelButton]="false" [showConfirmButton]="false">
-    <ng-container *swalPortal="swalPortalTargets.content">
-        <div class="w-full flex flex-col items-end p-2  m-2 ">
-            <button type="button" class="btn-close close pull-right text-gray-100" aria-label="Close"
-                (click)="closeModal()">
-                <span aria-hidden="true" class="visually-hidden">&times;</span>
-            </button>
-        </div>
-        <div class="container w-full">
-            <div class="flex flex-wrap -m-6">
-                <div class="p-6 md:w-1/2 flex flex-col items-start ">
-                    <span
-                        class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
-                        {{portfolioSelected?.name | translate}}
-                    </span>
+	<ng-container *swalPortal="swalPortalTargets.content">
+		<div class="w-full flex flex-col items-end p-2 m-2">
+			<button type="button" class="btn-close close pull-right text-gray-100" aria-label="Close" (click)="closeModal()">
+				<span aria-hidden="true" class="visually-hidden">&times;</span>
+			</button>
+		</div>
+		<div class="container w-full">
+			<div class="flex flex-wrap -m-6">
+				<div class="p-6 md:w-1/2 flex flex-col items-start">
+					<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
+						{{ portfolioSelected?.name | translate }}
+					</span>
 
-                    <div class="border-double border-4 rounded-lg color-border-azure flex flex-wrap  pt-6  mb-4 w-full">
-                        <span
-                            class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2 ml-2">Demo</span>
-                        <br>
-                        <iframe class="w-full youtube-video	" [src]="safeURL" loading="lazy"
-                            [title]="portfolioSelected?.name" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="border-double border-4 p-6 rounded-lg color-border-azure flex flex-wrap  pt-6  w-full">
-                        <span
-                            class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-                            {{'general.description'| translate }}</span>
-                        <br>
-                        <p class="leading-relaxed mb-8  text-gray-100">{{ portfolioSelected?.description | translate }}
-                        </p>
-                    </div>
+					<div class="border-double border-4 rounded-lg color-border-azure flex flex-wrap pt-6 mb-4 w-full">
+						<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2 ml-2">Demo</span>
+						<br />
+						<iframe
+							class="w-full youtube-video"
+							[src]="safeURL"
+							loading="lazy"
+							[title]="portfolioSelected?.name"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+						></iframe>
+					</div>
+					<div class="border-double border-4 p-6 rounded-lg color-border-azure flex flex-wrap pt-6 w-full">
+						<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
+							{{ 'general.description' | translate }}</span
+						>
+						<br />
+						<p class="leading-relaxed mb-8 text-gray-100">{{ portfolioSelected?.description | translate }}</p>
+					</div>
+				</div>
+				<div class="p-6 md:w-1/2 flex flex-col items-start">
+					<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
+						{{ 'general.technologies-tools' | translate }}</span
+					>
+					<div
+						class="border-double border-4 p-6 rounded-lg color-border-azure flex flex-wrap ml-2 pt-6 mb-4"
+						*ngFor="let repository of portfolioSelected.repository"
+					>
+						<div class="group flex relative w-full">
+							<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
+								<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
+									{{ repository.type }}
+								</a>
+							</span>
+						</div>
+						<br />
 
-                </div>
-                <div class="p-6 md:w-1/2 flex flex-col items-start">
-                    <span
-                        class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
-                        {{ 'general.technologies-tools' | translate }}</span>
-                    <div class="border-double border-4 p-6 rounded-lg color-border-azure flex flex-wrap ml-2 pt-6 mb-4"
-                        *ngFor="let repository of portfolioSelected.repository ">
-                        <div class="group flex relative w-full">
-                            <span
-                                class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-                                <a [href]="repository.link" target="_blank" rel="noopener noreferrer">
-                                    {{repository.type}}
-                                </a>
-                            </span>
-                        </div>
-                        <br>
-
-                        <div class="group flex relative rounded-full  hover:bg-gradient-to-r from-slate-800 to-neutral-800"
-                            *ngFor="let image of repository.technologies">
-                            <span class="tooltip-container group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 
-                            -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">{{image.name}}</span>
-                            <img [width]="45" class="m-4" [height]="45" [alt]="image.name" [ngSrc]="image.src" />
-                        </div>
-                        <br>
-                        <div class="group flex justify-center w-full mt-2">
-                            <span
-                                class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-                                <a [href]="repository.link" target="_blank" rel="noopener noreferrer">
-                                    <div>
-                                        {{'general.repository' | translate}}
-                                        <img style="display: inline;" src="assets/technologies/github.svg" height="25px"
-                                            [loading]="'lazy'" width="25px">
-                                    </div>
-                                </a>
-                            </span>
-                        </div>
-                        <br>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </ng-container>
+						<div
+							class="group flex relative rounded-full hover:bg-gradient-to-r from-slate-800 to-neutral-800"
+							*ngFor="let image of repository.technologies"
+						>
+							<span
+								class="tooltip-container group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto"
+								>{{ image.name }}</span
+							>
+							<img [width]="45" class="m-4" [height]="45" [alt]="image.name" [ngSrc]="image.src" />
+						</div>
+						<br />
+						<div class="group flex justify-center w-full mt-2">
+							<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
+								<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
+									<div>
+										{{ 'general.repository' | translate }}
+										<img
+											style="display: inline"
+											src="assets/technologies/github.svg"
+											height="25px"
+											alt="GitHub"
+											[loading]="'lazy'"
+											width="25px"
+										/>
+									</div>
+								</a>
+							</span>
+						</div>
+						<br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</ng-container>
 </swal>

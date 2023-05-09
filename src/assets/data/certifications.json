@@ -1,0 +1,14 @@
+[
+	{
+		"id": "certification-1",
+		"name": "AWS Certified Cloud Practitioner",
+		"period": "Marzo 2023",
+		"company": "Amazon Web Services"
+	},
+	{
+		"id": "certification-2",
+		"name": "AWS Certified Solutions Architect - Associate",
+		"period": "Mayo 2023",
+		"company": "Amazon Web Services"
+	}
+]

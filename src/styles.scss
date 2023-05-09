@@ -1,69 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@import "./../src/app/styles/partials/buttons";
-@import "./../src/app/styles/partials/icons";
-@import "./../src/app/styles/partials/colors";
-@import "./../src/app/styles/partials/swal";
-@import "./../src/app/styles/partials/scrollbar";
-@import "./../src/app/styles/partials/animations";
+@import './../src/app/styles/partials/buttons';
+@import './../src/app/styles/partials/icons';
+@import './../src/app/styles/partials/colors';
+@import './../src/app/styles/partials/swal';
+@import './../src/app/styles/partials/scrollbar';
+@import './../src/app/styles/partials/animations';
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  @apply text-gray-100;
-  overflow-x: hidden;
-  overflow-y: hidden;
+	font-family: 'Poppins', sans-serif;
+	@apply text-gray-100;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .background-body {
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: 50%;
-  height: 100%;
-  background-image: linear-gradient(135deg, var(--prim), var(--sec)),
-    url("/assets/images/home1-bg.jpg");
+	background-size: cover;
+	background-repeat: repeat;
+	background-position: 50%;
+	height: 100%;
+	background-image: linear-gradient(135deg, var(--prim), var(--sec)), url('/assets/images/home1-bg.jpg');
 }
 
-.background-preview{
-  @apply bg-slate-900;
+.background-preview {
+	@apply bg-slate-900;
 }
 
 :root {
-  --header-height: 64px;
-  --prim: hsla(230, 90%, 10%, 0.7);
-  --sec: hsla(260, 95%, 10%, 0.7);
+	--header-height: 64px;
+	--prim: hsla(230, 90%, 10%, 0.7);
+	--sec: hsla(260, 95%, 10%, 0.7);
 }
 
 .box {
-  @apply mx-auto;
-  @media only screen and (min-width: 960px) {
-    max-width: 900px;
-  }
-  @media only screen and (min-width: 1440px) {
-    max-width: 1400px;
-    /* styles for browsers larger than 1440px; */
-  }
-  @media only screen and (min-width: 2000px) {
-    max-width: 1600px;
-    /* for sumo sized (mac) screens */
-  }
+	@apply mx-auto;
+	@media only screen and (min-width: 960px) {
+		max-width: 900px;
+	}
+	@media only screen and (min-width: 1440px) {
+		max-width: 1400px;
+		/* styles for browsers larger than 1440px; */
+	}
+	@media only screen and (min-width: 2000px) {
+		max-width: 1600px;
+		/* for sumo sized (mac) screens */
+	}
 }
 
 .visibility-hidden {
-  visibility: hidden;
+	visibility: hidden;
 }
 
 .svg-dark-theme {
-  filter: invert(57%) sepia(19%) saturate(323%) hue-rotate(180deg)
-    brightness(94%) contrast(90%);
+	filter: invert(57%) sepia(19%) saturate(323%) hue-rotate(180deg) brightness(94%) contrast(90%);
 }

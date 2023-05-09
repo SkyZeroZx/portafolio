@@ -1,24 +1,24 @@
 .color-border-azure {
-  @apply border-[#4e84f3];
-  @apply bg-black/50;
+	@apply border-[#4e84f3];
+	@apply bg-black/50;
 }
 
 .color-border-blue {
-  @apply border-blue-900;
+	@apply border-blue-900;
 }
 
 .color-ring-blue {
-  @apply ring-blue-900;
-  @apply bg-[#4e84f3];
+	@apply ring-blue-900;
+	@apply bg-[#4e84f3];
 }
 
 .color-icon-calendar {
-  @apply text-[#21213b];
+	@apply text-[#21213b];
 }
 
 .color-square {
-  @apply bg-[#5a7eeb];
-  @apply text-[#21213b];
-  @apply hover:text-[#eaad4b];
-  @apply hover:bg-[#21213b];
+	@apply bg-[#5a7eeb];
+	@apply text-[#21213b];
+	@apply hover:text-[#eaad4b];
+	@apply hover:bg-[#21213b];
 }

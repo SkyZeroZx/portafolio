@@ -1,5 +1,5 @@
 export interface Technology {
-  name: string;
-  src: string;
-  isDark?: boolean;
+	name: string;
+	src: string;
+	isDark?: boolean;
 }

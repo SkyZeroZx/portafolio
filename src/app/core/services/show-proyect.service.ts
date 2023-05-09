@@ -4,30 +4,27 @@ import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root'
 })
 export class ShowProyectService {
-  constructor(
-    private route: ActivatedRoute,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+	constructor(private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) {}
 
-  resolve() {
-    this.getProyect();
-  }
+	resolve() {
+		this.getProyect();
+	}
 
-  getProyect() {
-    this.route.queryParams.pipe(take(2)).subscribe((res) => {
-      const proyect = res['proyect'];
-      if (proyect) {
-        this.showProyect(proyect);
-      }
-    });
-  }
+	getProyect() {
+		this.route.queryParams.pipe(take(2)).subscribe((res) => {
+			const proyect = res['proyect'];
+			if (proyect) {
+				this.showProyect(proyect);
+			}
+		});
+	}
 
-  showProyect(proyectId: string) {
-    setTimeout(() => {
-      this.document.getElementById(proyectId).click();
-    }, 100);
-  }
+	showProyect(proyectId: string) {
+		setTimeout(() => {
+			this.document.getElementById(proyectId).click();
+		}, 100);
+	}
 }

@@ -1,40 +1,32 @@
 [
-  {
-    "id": "experience-1",
-    "company": "experience.list.0.company",
-    "period": "experience.list.0.period",
-    "jobTitle": "experience.list.0.jobTitle",
-    "activities": [
-      "experience.list.0.activities.0",
-      "experience.list.0.activities.1",
-      "experience.list.0.activities.2",
-      "experience.list.0.activities.3",
-      "experience.list.0.activities.4",
-      "experience.list.0.activities.5",
-      "experience.list.0.activities.6",
-      "experience.list.0.activities.7"
-    ]
-  },
-  {
-    "id": "experience-2",
-    "company": "experience.list.1.company",
-    "period": "experience.list.1.period",
-    "jobTitle": "experience.list.1.jobTitle",
-    "activities": [
-      "experience.list.1.activities.0",
-      "experience.list.1.activities.1",
-      "experience.list.1.activities.2"
-    ]
-  },
-  {
-    "id": "experience-3",
-    "company": "experience.list.2.company",
-    "period": "experience.list.2.period",
-    "jobTitle": "experience.list.2.jobTitle",
-    "activities": [
-      "experience.list.2.activities.0",
-      "experience.list.2.activities.1",
-      "experience.list.2.activities.2"
-    ]
-  }
+	{
+		"id": "experience-1",
+		"company": "experience.list.0.company",
+		"period": "experience.list.0.period",
+		"jobTitle": "experience.list.0.jobTitle",
+		"activities": [
+			"experience.list.0.activities.0",
+			"experience.list.0.activities.1",
+			"experience.list.0.activities.2",
+			"experience.list.0.activities.3",
+			"experience.list.0.activities.4",
+			"experience.list.0.activities.5",
+			"experience.list.0.activities.6",
+			"experience.list.0.activities.7"
+		]
+	},
+	{
+		"id": "experience-2",
+		"company": "experience.list.1.company",
+		"period": "experience.list.1.period",
+		"jobTitle": "experience.list.1.jobTitle",
+		"activities": ["experience.list.1.activities.0", "experience.list.1.activities.1", "experience.list.1.activities.2"]
+	},
+	{
+		"id": "experience-3",
+		"company": "experience.list.2.company",
+		"period": "experience.list.2.period",
+		"jobTitle": "experience.list.2.jobTitle",
+		"activities": ["experience.list.2.activities.0", "experience.list.2.activities.1", "experience.list.2.activities.2"]
+	}
 ]

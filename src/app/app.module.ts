@@ -1,38 +1,28 @@
-import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule, TransferState } from '@angular/platform-browser';
+import { NgModule, APP_ID } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { provideClientHydration } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
+import { swRegistrationOptions } from '@core/config/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentLayoutComponent } from './layout';
-import { TranslateBrowserLoaderFactory } from '@core/config/translate/translate-browser-loader.config';
-
+import { translateModuleConfigBrowser } from '@core/config/translate/browser';
 
 @NgModule({
-  declarations: [AppComponent, ContentLayoutComponent],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    TransferHttpCacheModule,
-    AppRoutingModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: TranslateBrowserLoaderFactory,
-        deps: [HttpClient, TransferState],
-      },
-    }),
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000',
-    }),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent, ContentLayoutComponent],
+	imports: [
+		BrowserModule,
+		TransferHttpCacheModule,
+		AppRoutingModule,
+		HttpClientModule,
+		TranslateModule.forRoot(translateModuleConfigBrowser),
+		ServiceWorkerModule.register('ngsw-worker.js', swRegistrationOptions)
+	],
+	providers: [provideClientHydration(), { provide: APP_ID, useValue: 'server-app' }],
+	bootstrap: [AppComponent]
 })
 export class AppModule {}
