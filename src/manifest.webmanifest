@@ -3,9 +3,12 @@
   "short_name": "Jaime Burgos",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
+  "lang": "en",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
+  "description": "Jaime Burgos Tejada PortFolio",
+  "categories": ["PortFolio", "Software Developer"],
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
