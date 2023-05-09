@@ -6,7 +6,7 @@ export interface PortfolioProject {
 	logo: string;
 	description: string;
 	preview: string;
-	repository: Repository[];
+	repositories: Repository[];
 }
 
 export interface Repository {

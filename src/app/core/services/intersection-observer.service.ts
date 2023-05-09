@@ -12,27 +12,13 @@ export class IntersectionObserverService {
 		this.renderer2 = rendererFactory.createRenderer(null, null);
 	}
 
-	private createIntersectionObserver(createIntersectionObserver: CreateIntersectionObserver) {
-		const { callback, options, element } = createIntersectionObserver;
-		const interceptionObserverOptions = options ?? DEFAULT_OPTIONS_OBSERVER;
-		const observer = new IntersectionObserver(callback, interceptionObserverOptions);
-
-		return observer.observe(element);
-	}
-
 	createAnimation(listElementAnimation: ElementAnimation[], options = DEFAULT_OPTIONS_OBSERVER) {
-		for (const elementAnimation of listElementAnimation) {
+		listElementAnimation.forEach((elementAnimation) => {
 			const element = this.document.querySelector<HTMLElement>(`#${elementAnimation.id}`);
 
 			const callback = (entries: IntersectionObserverEntry[]) => {
 				entries.forEach(({ isIntersecting }) => {
-					if (isIntersecting) {
-						setTimeout(() => {
-							this.renderer2.removeClass(element, 'visibility-hidden');
-							this.renderer2.addClass(element, 'slideInUp');
-							this.renderer2.addClass(element, 'animated');
-						}, 100);
-					}
+					this.addAnimation(isIntersecting, element);
 				});
 			};
 
@@ -41,6 +27,24 @@ export class IntersectionObserverService {
 				element,
 				options
 			});
+		});
+	}
+
+	private createIntersectionObserver(createIntersectionObserver: CreateIntersectionObserver) {
+		const { callback, options, element } = createIntersectionObserver;
+		const interceptionObserverOptions = options;
+		const observer = new IntersectionObserver(callback, interceptionObserverOptions);
+
+		observer.observe(element);
+	}
+
+	private addAnimation(isIntersecting: boolean, element: HTMLElement) {
+		if (isIntersecting) {
+			setTimeout(() => {
+				this.renderer2.removeClass(element, 'visibility-hidden');
+				this.renderer2.addClass(element, 'slideInUp');
+				this.renderer2.addClass(element, 'animated');
+			}, 100);
 		}
 	}
 }

@@ -5,7 +5,7 @@
 		"logo": "https://sky-scrapper.skyzerozx.com/assets/images/logo.svg",
 		"description": "portfolio.proyects.0.description",
 		"preview": "https://youtube.com/embed/AwKtoM7m2WE",
-		"repository": [
+		"repositories": [
 			{
 				"type": "FrontEnd",
 				"link": "https://github.com/SkyZeroZx/Sky-Scrapper-App",
@@ -66,7 +66,7 @@
 		"logo": "assets/portfolio/sky-bot.svg",
 		"description": "portfolio.proyects.1.description",
 		"preview": "https://www.youtube.com/embed/xNVMLri7-mc",
-		"repository": [
+		"repositories": [
 			{
 				"type": "Webhook",
 				"link": "https://github.com/SkyZeroZx/Sky-Bot-Webhook",
@@ -245,7 +245,7 @@
 		"logo": "assets/portfolio/sky-krono.svg",
 		"description": "portfolio.proyects.2.description",
 		"preview": "https://www.youtube.com/embed/t-fWmR_u8UQ",
-		"repository": [
+		"repositories": [
 			{
 				"type": "BackEnd",
 				"link": "https://github.com/SkyZeroZx/API-Sky-Krono",
