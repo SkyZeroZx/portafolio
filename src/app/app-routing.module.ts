@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ContentLayoutComponent } from './layout';
 
 const routes: Routes = [
@@ -18,7 +18,8 @@ const routes: Routes = [
 @NgModule({
 	imports: [
 		RouterModule.forRoot(routes, {
-			initialNavigation: 'enabledBlocking'
+			initialNavigation: 'enabledBlocking',
+			preloadingStrategy: PreloadAllModules
 		})
 	],
 	exports: [RouterModule]

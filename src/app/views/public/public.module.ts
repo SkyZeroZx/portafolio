@@ -17,6 +17,8 @@ import {
 import { PublicComponent } from './public.component';
 import { PublicRoutingModule } from './public.routing';
 import { LanguageSelectorComponent } from './components/home/components';
+import { AddAnimationDirective } from '@core/directives';
+import { SafeUrlPipe } from '@core/pipe';
 
 @NgModule({
 	declarations: [
@@ -31,7 +33,16 @@ import { LanguageSelectorComponent } from './components/home/components';
 		StudiesComponent,
 		CanDoComponent
 	],
-	imports: [CommonModule, SweetAlert2Module.forRoot(), TranslateModule, NgOptimizedImage, FontAwesomeModule, PublicRoutingModule],
+	imports: [
+		CommonModule,
+		AddAnimationDirective,
+		SafeUrlPipe,
+		SweetAlert2Module.forRoot(),
+		TranslateModule,
+		NgOptimizedImage,
+		FontAwesomeModule,
+		PublicRoutingModule
+	],
 	providers: [{ provide: DOCUMENT, useValue: document }]
 })
 export class PublicModule {}

@@ -1,4 +1,4 @@
-<section #portfolioElement id="portfolio" class="body-font visibility-hidden">
+<section appAddAnimation id="portfolio" class="body-font visibility-hidden" [animationOptions]="animationOptions">
 	<div class="container px-5 py-24 mx-auto">
 		<div class="flex flex-col">
 			<div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
@@ -61,7 +61,7 @@
 						<br />
 						<iframe
 							class="w-full youtube-video"
-							[src]="safeURL"
+							[src]="portfolioSelected.preview | safeUrl : 'resourceUrl'"
 							loading="lazy"
 							[title]="portfolioSelected?.name"
 							frameborder="0"

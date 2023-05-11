@@ -1,4 +1,4 @@
-<section #studies id="studies" class="overflow-hidden">
+<section id="studies" class="overflow-hidden">
 	<div class="container px-5 py-14 mx-auto">
 		<div class="flex flex-wrap w-full mb-12 flex-col items-center text-center">
 			<h1 class="outline-text-h1 sm:text-5xl text-4xl font-semibold title-font mb-2 text-slate-200">
@@ -6,7 +6,13 @@
 			</h1>
 		</div>
 		<ol class="ml-6 relative border-l-4 color-border2">
-			<li class="mb-10 visibility-hidden" [id]="study.id" *ngFor="let study of listStudies">
+			<li
+				appAddAnimation
+				[animationOptions]="animationOptions"
+				class="mb-10 visibility-hidden"
+				*ngFor="let study of listStudies"
+				[id]="study.id"
+			>
 				<span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 color-ring-blue">
 					<svg
 						aria-hidden="true"

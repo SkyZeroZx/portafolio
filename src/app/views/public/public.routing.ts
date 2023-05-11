@@ -7,7 +7,7 @@ export const publicRoutes: Routes = [
 	{
 		path: '',
 		component: PublicComponent,
-		resolve: { proyect: () => inject(ProyectResolver).resolve() }
+		resolve: { proyect: () => inject(ProyectResolver).getProyect() }
 	}
 ];
 

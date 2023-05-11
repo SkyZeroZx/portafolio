@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IntersectionObserverService, ShowProyectService } from '@core/services';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ShowProyectService } from '@core/services';
 import { PortfolioProject } from '@core/interface';
 import { SwalComponent, SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import portfolioProjects from '@assets/data/portfolio-proyects.json';
 
 @Component({
@@ -10,49 +9,30 @@ import portfolioProjects from '@assets/data/portfolio-proyects.json';
 	templateUrl: './portfolio.component.html',
 	styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent implements OnInit, AfterViewInit {
+export class PortfolioComponent implements OnInit {
 	@ViewChild('swalPortfolio')
 	readonly swalPortfolio: SwalComponent;
-	safeURL: SafeResourceUrl;
 	portfolioSelected: PortfolioProject;
 	listPorfolio: PortfolioProject[] = portfolioProjects;
+	animationOptions: IntersectionObserverInit = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.2
+	};
 
-	constructor(
-		public readonly swalPortalTargets: SwalPortalTargets,
-		private intersectionObserverService: IntersectionObserverService,
-		private showProyectService: ShowProyectService,
-		private domSanitizer: DomSanitizer
-	) {}
+	constructor(public readonly swalPortalTargets: SwalPortalTargets, private showProyectService: ShowProyectService) {}
 
 	ngOnInit(): void {
-		this.showProyectService.resolve();
+		this.showProyectService.getProyect();
 	}
 
 	openModal(portfolio: PortfolioProject) {
 		this.portfolioSelected = portfolio;
-		this.safeURL = this.domSanitizer.bypassSecurityTrustResourceUrl(portfolio.preview);
-
 		this.swalPortfolio.title = portfolio.name;
 		this.swalPortfolio.fire();
 	}
 
 	closeModal() {
 		this.swalPortfolio.close();
-	}
-
-	ngAfterViewInit(): void {
-		const options = {
-			root: null,
-			rootMargin: '0px',
-			threshold: 0.2
-		};
-
-		const listElementAnimation = [
-			{
-				id: 'portfolio'
-			}
-		];
-
-		this.intersectionObserverService.createAnimation(listElementAnimation, options);
 	}
 }

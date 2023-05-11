@@ -9,10 +9,6 @@ import { take } from 'rxjs';
 export class ShowProyectService {
 	constructor(private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) {}
 
-	resolve() {
-		this.getProyect();
-	}
-
 	getProyect() {
 		this.route.queryParams.pipe(take(2)).subscribe((res) => {
 			const proyect = res['proyect'];

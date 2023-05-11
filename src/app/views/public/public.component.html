@@ -1,5 +1,5 @@
-<div class="public-page" (scroll)="handleScroll()">
-	<app-home (isLoad)="handleScroll()" />
+<div id="public-paged" class="public-page" (scroll)="handleScroll()">
+	<app-home (isLoad)="scrollTo()" />
 	<br /><br />
 	<ng-component #component />
 </div>

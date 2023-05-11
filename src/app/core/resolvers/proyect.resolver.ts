@@ -9,13 +9,9 @@ import { take } from 'rxjs';
 export class ProyectResolver {
 	constructor(private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) {}
 
-	resolve() {
-		this.getProyect();
-	}
-
 	getProyect() {
-		this.route.queryParams.pipe(take(2)).subscribe((res) => {
-			const proyect = res['proyect'];
+		this.route.queryParams.pipe(take(2)).subscribe(async (res) => {
+			const proyect: string = res['proyect'];
 			if (proyect) {
 				this.clickOnScroll();
 			}
@@ -25,6 +21,6 @@ export class ProyectResolver {
 	clickOnScroll() {
 		setTimeout(() => {
 			this.document.getElementById('scroll-down').click();
-		});
+		}, 10);
 	}
 }

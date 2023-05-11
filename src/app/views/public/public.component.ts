@@ -13,12 +13,18 @@ export class PublicComponent {
 
 	constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2) {}
 
-	handleScroll() {
+	async handleScroll() {
 		if (!this.isScrolling) {
 			this.setBackground();
-			this.loadAllComponents();
+			await this.loadAllComponents();
 		}
 		this.isScrolling = true;
+	}
+
+	async scrollTo() {
+		await this.handleScroll();
+		const element = this.document.getElementById('can-do');
+		element.scrollIntoView({ behavior: 'smooth' });
 	}
 
 	private setBackground() {

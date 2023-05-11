@@ -19,7 +19,7 @@
 		"lint": "ng lint",
 		"prepare": "husky install",
 		"lint-format": "npm run format && ng lint --fix",
-		"pre-commit": "npm run lint-format && git add."
+		"pre-commit": "npm run lint-format && git add ."
 	},
 	"private": true,
 	"dependencies": {

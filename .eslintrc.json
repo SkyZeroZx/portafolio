@@ -11,6 +11,14 @@
 				"plugin:prettier/recommended"
 			],
 			"rules": {
+				"max-params": [
+					"error",
+					{
+						"max": 4
+					}
+				],
+				"no-nested-ternary": "error",
+				"no-duplicate-imports": ["error"],
 				"@angular-eslint/directive-selector": [
 					"error",
 					{

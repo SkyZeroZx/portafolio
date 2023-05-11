@@ -1,6 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Technology } from '@core/interface';
-import { IntersectionObserverService } from '@core/services';
 import technologies from '@assets/data/technologies.json';
 
 @Component({
@@ -8,13 +7,6 @@ import technologies from '@assets/data/technologies.json';
 	templateUrl: './about.component.html',
 	styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements AfterViewInit {
+export class AboutComponent {
 	listTechnologies: Technology[] = technologies;
-
-	constructor(private intersectionObserverService: IntersectionObserverService) {}
-
-	ngAfterViewInit(): void {
-		const listElementAnimation = [{ id: 'about' }];
-		this.intersectionObserverService.createAnimation(listElementAnimation);
-	}
 }
