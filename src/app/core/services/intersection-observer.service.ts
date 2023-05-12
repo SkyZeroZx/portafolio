@@ -27,8 +27,7 @@ export class IntersectionObserverService {
 		if (isIntersecting) {
 			setTimeout(() => {
 				this.renderer2.removeClass(element, 'visibility-hidden');
-				this.renderer2.addClass(element, 'slideInUp');
-				this.renderer2.addClass(element, 'animated');
+				this.renderer2.setAttribute(element, 'class', 'slideInUp animated');
 				intersectionObserver.unobserve(element);
 			}, this.ANIMATION_DELAY);
 		}

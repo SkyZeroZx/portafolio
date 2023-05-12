@@ -8,6 +8,18 @@
 					</span>
 					<h2 class="sm:text-3xl text-2xl title-font font-medium mt-4 mb-4">Software Developer</h2>
 					<p class="leading-relaxed mb-8">{{ 'about.content' | translate }}</p>
+					<h2 class="sm:text-3xl text-2xl title-font font-medium mt-4 mb-4">{{ 'about.certifications' | translate }}</h2>
+					<div class="flex justify-center items-center">
+						<a
+							rel="noopener noreferrer"
+							target="_blank"
+							*ngFor="let certification of listCertifications"
+							[id]="certification.id"
+							[href]="certification.linkValidation"
+						>
+							<img [width]="180" [height]="180" [alt]="certification.name" [ngSrc]="certification.image" />
+						</a>
+					</div>
 				</div>
 			</div>
 			<div class="p-4 md:w-1/2 flex flex-col items-start">

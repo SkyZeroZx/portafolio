@@ -4,43 +4,49 @@
 		"grade": "Bachiller",
 		"institution": "studies.list.0.institution",
 		"name": "studies.list.0.name",
-		"duration": "studies.list.0.duration",
-		"description": "studies.list.0.description"
+		"period": "studies.list.0.period",
+		"description": ["studies.list.0.description"]
 	},
 	{
 		"id": "study-2",
 		"institution": "studies.list.1.institution",
 		"name": "studies.list.1.name",
-		"duration": "studies.list.1.duration"
+		"period": "studies.list.1.period",
+		"description": []
 	},
 	{
 		"id": "study-3",
 		"institution": "studies.list.2.institution",
 		"name": "studies.list.2.name",
-		"duration": "studies.list.2.duration"
+		"period": "studies.list.2.period",
+		"description": []
 	},
 	{
 		"id": "study-4",
 		"institution": "studies.list.3.institution",
 		"name": "studies.list.3.name",
-		"duration": "studies.list.3.duration"
+		"period": "studies.list.3.period",
+		"description": []
 	},
 	{
 		"id": "study-5",
 		"institution": "studies.list.4.institution",
 		"name": "studies.list.4.name",
-		"duration": "studies.list.4.duration"
+		"period": "studies.list.4.period",
+		"description": []
 	},
 	{
 		"id": "study-6",
 		"institution": "studies.list.5.institution",
 		"name": "studies.list.5.name",
-		"duration": "studies.list.5.duration"
+		"period": "studies.list.5.period",
+		"description": []
 	},
 	{
 		"id": "study-7",
 		"institution": "studies.list.6.institution",
 		"name": "studies.list.6.name",
-		"duration": "studies.list.6.duration"
+		"period": "studies.list.6.period",
+		"description": []
 	}
 ]

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Experience } from '@core/interface';
+import { Experience, Timeline } from '@core/interface';
 import experience from '@assets/data/experience.json';
 
 @Component({
@@ -8,7 +8,16 @@ import experience from '@assets/data/experience.json';
 	styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-	listExperience: Experience[] = experience;
+	listExperience: Timeline[] = experience.map((experience: Experience) => {
+		return {
+			id: experience.id,
+			title: experience.jobTitle,
+			subTitle: experience.company,
+			period: experience.period,
+			descriptions: experience.activities
+		};
+	});
+
 	animationOptions: IntersectionObserverInit = {
 		root: null,
 		rootMargin: '0px',

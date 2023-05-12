@@ -16,6 +16,7 @@ export class PublicComponent {
 	async handleScroll() {
 		if (!this.isScrolling) {
 			this.setBackground();
+			this.isScrolling = true;
 			await this.loadAllComponents();
 		}
 		this.isScrolling = true;

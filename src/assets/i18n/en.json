@@ -20,7 +20,8 @@
 	"about": {
 		"title": "About me",
 		"content": "Passionate about technology, self-taught, committed and responsible. Interest in obtaining new knowledge for continuous improvement both professionally and personally Developments under an agile methodologies approach using good programming practices such as Clean Code, SOLID Principles",
-		"technology-subtitle": "Technologies and tools"
+		"technology-subtitle": "Technologies and tools",
+		"certifications": "Certifications"
 	},
 	"experience": {
 		"title": "Experience",
@@ -69,38 +70,38 @@
 				"grade": "Bachiller",
 				"institution": "Universidad Nacional del Callao",
 				"name": "Systems Engineer",
-				"duration": "July 2016 - August 2021",
+				"period": "July 2016 - August 2021",
 				"description": "Graduated in first places in the honor roll of the university"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Administration in Oracle DB",
-				"duration": "January 2019 - March 2019"
+				"period": "January 2019 - March 2019"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Excel Basic - Advanced",
-				"duration": "October 2019 - December 2019"
+				"period": "October 2019 - December 2019"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Angular Developer",
-				"duration": "September 2020 - October 2020"
+				"period": "September 2020 - October 2020"
 			},
 			{
 				"institution": "PUCP",
 				"name": "MS Project Based on PMBOK",
-				"duration": "September 2020 - October 2020"
+				"period": "September 2020 - October 2020"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Business Intelligence MS SQL Server 2016",
-				"duration": "June 2021 - November 2021"
+				"period": "June 2021 - November 2021"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Project management",
-				"duration": "May 2022 - August 2022"
+				"period": "May 2022 - August 2022"
 			}
 		]
 	},

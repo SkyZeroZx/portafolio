@@ -3,6 +3,6 @@ export interface Study {
 	grade?: string;
 	institution: string;
 	name: string;
-	duration: string;
-	description?: string;
+	period: string;
+	description?: string[];
 }

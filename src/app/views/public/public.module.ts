@@ -11,14 +11,16 @@ import {
 	ExperienceComponent,
 	FooterComponent,
 	HomeComponent,
+	LanguageSelectorComponent,
 	PortfolioComponent,
+	ProjectComponent,
 	StudiesComponent
 } from './components';
 import { PublicComponent } from './public.component';
 import { PublicRoutingModule } from './public.routing';
-import { LanguageSelectorComponent } from './components/home/components';
 import { AddAnimationDirective } from '@core/directives';
 import { SafeUrlPipe } from '@core/pipe';
+import { TimelineComponent } from '@shared/timeline';
 
 @NgModule({
 	declarations: [
@@ -31,10 +33,12 @@ import { SafeUrlPipe } from '@core/pipe';
 		PortfolioComponent,
 		FooterComponent,
 		StudiesComponent,
-		CanDoComponent
+		CanDoComponent,
+		ProjectComponent
 	],
 	imports: [
 		CommonModule,
+		TimelineComponent,
 		AddAnimationDirective,
 		SafeUrlPipe,
 		SweetAlert2Module.forRoot(),

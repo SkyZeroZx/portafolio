@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Technology } from '@core/interface';
+import { Certification, Technology } from '@core/interface';
 import technologies from '@assets/data/technologies.json';
+import certifications from '@assets/data/certifications.json';
 
 @Component({
 	selector: 'app-about',
@@ -9,4 +10,5 @@ import technologies from '@assets/data/technologies.json';
 })
 export class AboutComponent {
 	listTechnologies: Technology[] = technologies;
+	listCertifications: Certification[] = certifications;
 }

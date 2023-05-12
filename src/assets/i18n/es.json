@@ -20,7 +20,8 @@
 	"about": {
 		"title": "Acerca De Mí",
 		"content": "Apasionado por la tecnología, autodidacta, comprometido y responsable. Interes en obtener nuevos conocimientos para la mejora continua tanto profesional como personal Desarrollos bajo enfoque de metodologias ágiles usando buenas practicas de programación como Clean Code , Principios SOLID",
-		"technology-subtitle": "Tecnologías y herramientas"
+		"technology-subtitle": "Tecnologías y herramientas",
+		"certifications": "Certificaciones"
 	},
 	"experience": {
 		"title": "Experiencia",
@@ -69,38 +70,38 @@
 				"grade": "Bachiller",
 				"institution": "Universidad Nacional del Callao",
 				"name": "Ingenieria de Sistemas",
-				"duration": "Julio 2016 - Agosto 2021",
+				"period": "Julio 2016 - Agosto 2021",
 				"description": "Egresado en primeros primeros puestos en cuadro de honor de la universidad"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Administración en Oracle DB",
-				"duration": "Enero 2019 - Marzo 2019"
+				"period": "Enero 2019 - Marzo 2019"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Excel Basico - Avanzado",
-				"duration": "Octubre 2019 - Diciembre 2019"
+				"period": "Octubre 2019 - Diciembre 2019"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Angular Developer",
-				"duration": "Septiembre 2020 - Octubre 2020"
+				"period": "Septiembre 2020 - Octubre 2020"
 			},
 			{
 				"institution": "PUCP",
 				"name": "MS Project Basado en el PMBOK",
-				"duration": "Septiembre 2020 - Octubre 2020"
+				"period": "Septiembre 2020 - Octubre 2020"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Business Intelligence MS SQL Server 2016",
-				"duration": "Junio 2021 - Noviembre 2021"
+				"period": "Junio 2021 - Noviembre 2021"
 			},
 			{
 				"institution": "Sistemas UNI",
 				"name": "Gestion de Proyectos",
-				"duration": "Mayo 2022 - Agosto 2022"
+				"period": "Mayo 2022 - Agosto 2022"
 			}
 		]
 	},
