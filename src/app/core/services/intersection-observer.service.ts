@@ -1,12 +1,11 @@
 import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
-import { DEFAULT_OPTIONS_OBSERVER } from '@core/constants';
+import { ANIMATION_DELAY, DEFAULT_OPTIONS_OBSERVER } from '@core/constants';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class IntersectionObserverService {
 	private readonly renderer2: Renderer2;
-	private readonly ANIMATION_DELAY = 100;
 
 	constructor(rendererFactory: RendererFactory2) {
 		this.renderer2 = rendererFactory.createRenderer(null, null);
@@ -29,7 +28,7 @@ export class IntersectionObserverService {
 				this.renderer2.removeClass(element, 'visibility-hidden');
 				this.renderer2.setAttribute(element, 'class', 'slideInUp animated');
 				intersectionObserver.unobserve(element);
-			}, this.ANIMATION_DELAY);
+			}, ANIMATION_DELAY);
 		}
 	}
 }

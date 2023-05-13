@@ -22,7 +22,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--primary);
+	@apply bg-gray-500;
 }
 
 /* width */
@@ -46,5 +46,5 @@
 
 /* Handle on hover */
 ::scrollbar-thumb:hover {
-	background: var(--primary);
+	@apply bg-gray-500;
 }

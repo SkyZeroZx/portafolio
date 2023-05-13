@@ -1,5 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, Renderer2, ViewChild, ViewContainerRef } from '@angular/core';
+import { debounceTime } from 'rxjs';
+import { ANIMATION_DELAY, PAGE_SECTION } from '@core/constants';
 
 @Component({
 	selector: 'app-public',
@@ -10,6 +12,7 @@ export class PublicComponent {
 	@ViewChild('component', { read: ViewContainerRef })
 	component: ViewContainerRef;
 	isScrolling = false;
+	goToCanDo = false;
 
 	constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2) {}
 
@@ -23,15 +26,21 @@ export class PublicComponent {
 	}
 
 	async scrollTo() {
+		this.goToCanDo = true;
+		this.goTo(PAGE_SECTION.CAN_DO);
 		await this.handleScroll();
-		const element = this.document.getElementById('can-do');
-		element.scrollIntoView({ behavior: 'smooth' });
+	}
+
+	goTo(elementId: string) {
+		const element = this.document?.getElementById(elementId);
+		element?.scrollIntoView({ behavior: 'smooth' });
 	}
 
 	private setBackground() {
 		const bodyElement = this.document.getElementsByTagName('body')[0];
 		const backgroundImage = new Image();
 		backgroundImage.src = '/assets/images/home1-bg.jpg';
+
 		backgroundImage.onload = () => {
 			this.renderer2.removeClass(bodyElement, 'background-preview');
 			this.renderer2.addClass(bodyElement, 'background-body');
@@ -50,7 +59,15 @@ export class PublicComponent {
 
 	private async loadCanDo() {
 		const { CanDoComponent } = await import('./components/can-do/can-do.component');
-		this.component.createComponent(CanDoComponent);
+		const {
+			instance: { isLoadCanDo$ }
+		} = this.component.createComponent(CanDoComponent);
+
+		const loadCanDo = isLoadCanDo$.pipe(debounceTime(ANIMATION_DELAY));
+
+		loadCanDo.subscribe((isLoadCanDo) => {
+			isLoadCanDo && this.goToCanDo && this.goTo(PAGE_SECTION.CAN_DO);
+		});
 	}
 
 	private async loadAbout() {
