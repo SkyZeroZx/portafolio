@@ -2,7 +2,7 @@
 	{
 		"id": "sky-scrapper",
 		"name": "portfolio.proyects.0.name",
-		"logo": "https://sky-scrapper.skyzerozx.com/assets/images/logo.svg",
+		"logo": "assets/portfolio/sky-scrapper.svg",
 		"description": "portfolio.proyects.0.description",
 		"preview": "https://youtube.com/embed/AwKtoM7m2WE",
 		"repositories": [

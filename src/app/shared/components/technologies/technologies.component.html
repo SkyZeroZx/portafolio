@@ -1,0 +1,16 @@
+<div class="flex flex-wrap">
+	<div
+		class="group flex relative rounded-full hover:bg-gradient-to-r from-slate-800 to-neutral-800"
+		*ngFor="let technology of technologies"
+	>
+		<span [class]="class + ' ' + 'span-tooltip'">{{ technology.name }}</span>
+		<img
+			[width]="45"
+			class="m-4"
+			[height]="45"
+			[alt]="technology.name"
+			[ngSrc]="technology.src"
+			[class]="technology.isDark ? 'icon-dark-theme' : ''"
+		/>
+	</div>
+</div>

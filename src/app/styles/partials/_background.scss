@@ -1,0 +1,11 @@
+.background-body {
+	background-size: cover;
+	background-repeat: repeat;
+	background-position: 50%;
+	height: 100%;
+	background-image: linear-gradient(135deg, var(--prim), var(--sec)), url('/assets/images/home1-bg.jpg');
+}
+
+.background-preview {
+	@apply bg-slate-900;
+}

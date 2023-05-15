@@ -31,3 +31,7 @@
 .icon-selected {
 	@apply hover:bg-blue-600 hover:text-white  cursor-pointer;
 }
+
+.icon-dark-theme {
+	filter: invert(57%) sepia(19%) saturate(323%) hue-rotate(180deg) brightness(94%) contrast(90%);
+}

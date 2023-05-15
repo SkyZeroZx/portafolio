@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { delay } from 'rxjs';
+import { ANIMATION_DELAY } from '@core/constants';
 import { ShowProyectService } from '@core/services';
 import { PortfolioProject } from '@core/interface';
 import portfolioProjects from '@assets/data/portfolio-proyects.json';
@@ -27,7 +29,10 @@ export class PortfolioComponent implements OnInit {
 
 	async openModal(portfolio: PortfolioProject) {
 		const { ProjectComponent } = await import('./components/project/project.component');
-		const component = this.project.createComponent(ProjectComponent);
-		component.instance.openModal(portfolio);
+		const { instance } = this.project.createComponent(ProjectComponent);
+
+		instance.isLoadProject$.pipe(delay(ANIMATION_DELAY)).subscribe((isLoad) => {
+			isLoad && instance.openModal(portfolio);
+		});
 	}
 }

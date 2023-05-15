@@ -23,29 +23,12 @@
 				</div>
 			</div>
 			<div class="p-4 md:w-1/2 flex flex-col items-start">
-				<div class="border-double border-4 p-6 rounded-lg color-border-azure h-full">
+				<div class="border-double border-4 p-3 rounded-lg color-border-azure h-full">
 					<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
 						{{ 'general.technologies-tools' | translate }}
 					</span>
-					<div class="flex flex-wrap ml-2">
-						<div
-							class="group flex relative rounded-full hover:bg-gradient-to-r from-slate-800 to-neutral-800"
-							*ngFor="let image of listTechnologies"
-						>
-							<span
-								class="technology-image group-hover:opacity-100 transition-opacity px-1 text-sm text-gray-100 bg-gray-800 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto"
-								>{{ image.name }}</span
-							>
-							<img
-								[width]="45"
-								class="m-4"
-								[height]="45"
-								[alt]="image.name"
-								[ngSrc]="image.src"
-								[class]="image.isDark ? 'svg-dark-theme' : ''"
-							/>
-						</div>
-					</div>
+
+					<app-technologies [technologies]="listTechnologies" [class]="'tooltip-technology'" />
 				</div>
 			</div>
 		</div>

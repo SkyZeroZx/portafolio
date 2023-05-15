@@ -20,7 +20,7 @@ import { PublicComponent } from './public.component';
 import { PublicRoutingModule } from './public.routing';
 import { AddAnimationDirective } from '@core/directives';
 import { SafeUrlPipe } from '@core/pipe';
-import { TimelineComponent } from '@shared/timeline';
+import { TechnologiesComponent, TimelineComponent } from '@shared/components';
 
 @NgModule({
 	declarations: [
@@ -39,6 +39,7 @@ import { TimelineComponent } from '@shared/timeline';
 	imports: [
 		CommonModule,
 		TimelineComponent,
+		TechnologiesComponent,
 		AddAnimationDirective,
 		SafeUrlPipe,
 		SweetAlert2Module.forRoot(),

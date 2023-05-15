@@ -17,10 +17,4 @@ export class StudiesComponent {
 			descriptions: study.description
 		};
 	});
-
-	animationOptions: IntersectionObserverInit = {
-		root: null,
-		rootMargin: '0px',
-		threshold: 0.06
-	};
 }

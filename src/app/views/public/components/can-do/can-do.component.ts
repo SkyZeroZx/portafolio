@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faMobile, faLaptop, faVialCircleCheck, faInfinity } from '@fortawesome/free-solid-svg-icons';
-import { BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'app-can-do',
@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 	styleUrls: ['./can-do.component.scss']
 })
 export class CanDoComponent implements OnInit {
-	private readonly isLoadCanDo = new BehaviorSubject<boolean>(false);
+	private readonly isLoadCanDo = new Subject<boolean>();
 	faMobile = faMobile;
 	faLaptop = faLaptop;
 	faVialCircleCheck = faVialCircleCheck;
@@ -16,6 +16,7 @@ export class CanDoComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.isLoadCanDo.next(true);
+		this.isLoadCanDo.complete();
 	}
 
 	get isLoadCanDo$() {
