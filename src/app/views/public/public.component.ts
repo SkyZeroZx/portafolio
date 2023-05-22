@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, Renderer2, ViewChild, ViewContainerRef } from '@angular/core';
 import { delay } from 'rxjs';
 import { ANIMATION_DELAY, PAGE_SECTION } from '@core/constants';
+import { preLoadImages, scrollTo } from '@core/utils';
 
 @Component({
 	selector: 'app-public',
@@ -18,22 +19,17 @@ export class PublicComponent {
 
 	async handleScroll() {
 		if (!this.isScrolling) {
-			this.setBackground();
 			this.isScrolling = true;
-			await this.loadAllComponents();
+			await Promise.all([this.setBackground(), this.loadAllComponents()]);
 		}
 		this.isScrolling = true;
 	}
 
-	private setBackground() {
+	private async setBackground() {
 		const bodyElement = this.document.getElementsByTagName('body')[0];
-		const backgroundImage = new Image();
-		backgroundImage.src = '/assets/images/home1-bg.jpg';
-
-		backgroundImage.onload = () => {
-			this.renderer2.removeClass(bodyElement, 'background-preview');
-			this.renderer2.addClass(bodyElement, 'background-body');
-		};
+		await preLoadImages(['assets/images/home1-bg.jpg']);
+		this.renderer2.removeClass(bodyElement, 'background-preview');
+		this.renderer2.addClass(bodyElement, 'background-body');
 	}
 
 	private async loadAllComponents() {
@@ -48,13 +44,8 @@ export class PublicComponent {
 
 	async scrollTo() {
 		this.goToCanDo = true;
-		this.goTo(PAGE_SECTION.CAN_DO);
+		scrollTo(PAGE_SECTION.CAN_DO);
 		await this.handleScroll();
-	}
-
-	goTo(elementId: string) {
-		const element = this.document?.getElementById(elementId);
-		element?.scrollIntoView({ behavior: 'smooth' });
 	}
 
 	private async loadCanDo() {
@@ -66,7 +57,7 @@ export class PublicComponent {
 		const loadCanDo = isLoadCanDo$.pipe(delay(ANIMATION_DELAY));
 
 		loadCanDo.subscribe((isLoadCanDo) => {
-			isLoadCanDo && this.goToCanDo && this.goTo(PAGE_SECTION.CAN_DO);
+			isLoadCanDo && this.goToCanDo && scrollTo(PAGE_SECTION.CAN_DO);
 		});
 	}
 
