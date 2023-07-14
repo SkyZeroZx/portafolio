@@ -17,7 +17,7 @@
 		"build:ssr": "ng build --configuration production && ng run portafolio:server",
 		"prerender": "ng run portafolio:prerender",
 		"lint": "ng lint",
- 
+		"prepare": "husky install",
 		"lint-format": "npm run format && ng lint --fix",
 		"pre-commit": "npm run lint-format && git add .",
 		"vercel-build": "npm run build:ssr"
@@ -39,7 +39,6 @@
 		"@nguniversal/express-engine": "^16.1.1",
 		"@ngx-translate/core": "^15.0.0",
 		"@ngx-translate/http-loader": "^8.0.0",
-		"@sweetalert2/ngx-sweetalert2": "^12.1.0",
 		"express": "^4.18.2",
 		"rxjs": "~7.8.1",
 		"t-writer.js": "^1.0.4",

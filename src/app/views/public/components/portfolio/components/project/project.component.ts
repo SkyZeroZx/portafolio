@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SwalComponent, SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
 import { PortfolioProject } from '@core/interface';
 import { Subject } from 'rxjs';
+import { ModalComponent } from '@shared/components';
 
 @Component({
 	selector: 'app-project',
@@ -9,12 +9,10 @@ import { Subject } from 'rxjs';
 	styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-	@ViewChild('swalPortfolio')
-	readonly swalPortfolio: SwalComponent;
+	@ViewChild('modalComponent')
+	readonly modalComponent: ModalComponent;
 	portfolioSelected: PortfolioProject;
 	private readonly isLoadProject = new Subject<boolean>();
-
-	constructor(public readonly swalPortalTargets: SwalPortalTargets) {}
 
 	ngOnInit(): void {
 		this.isLoadProject.next(true);
@@ -27,10 +25,12 @@ export class ProjectComponent implements OnInit {
 
 	openModal(portfolio: PortfolioProject) {
 		this.portfolioSelected = portfolio;
-		this.swalPortfolio.fire();
+		setTimeout(() => {
+			this.modalComponent.open();
+		}, 100);
 	}
 
 	closeModal() {
-		this.swalPortfolio.close();
+		this.modalComponent.close();
 	}
 }

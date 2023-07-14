@@ -1,0 +1,10 @@
+.container-modal {
+	visibility: hidden;
+	opacity: 0;
+	&.open {
+		visibility: inherit;
+		opacity: 1;
+	}
+
+	transition: opacity 250ms ease-in;
+}

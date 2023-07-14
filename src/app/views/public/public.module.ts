@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, DOCUMENT, NgOptimizedImage } from '@angular/common';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { TranslateModule } from '@ngx-translate/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -20,7 +19,7 @@ import { PublicComponent } from './public.component';
 import { PublicRoutingModule } from './public.routing';
 import { AddAnimationDirective } from '@core/directives';
 import { SafeUrlPipe } from '@core/pipe';
-import { TechnologiesComponent, TimelineComponent } from '@shared/components';
+import { TechnologiesComponent, TimelineComponent, ModalComponent } from '@shared/components';
 
 @NgModule({
 	declarations: [
@@ -42,7 +41,7 @@ import { TechnologiesComponent, TimelineComponent } from '@shared/components';
 		TechnologiesComponent,
 		AddAnimationDirective,
 		SafeUrlPipe,
-		SweetAlert2Module.forRoot(),
+		ModalComponent,
 		TranslateModule,
 		NgOptimizedImage,
 		FontAwesomeModule,

@@ -1,18 +1,18 @@
-<swal #swalPortfolio [showCancelButton]="false" [showConfirmButton]="false">
-	<ng-container *swalPortal="swalPortalTargets.content">
-		<div class="w-full flex flex-col items-end p-2 m-2">
+<app-modal #modalComponent>
+	<ng-container>
+		<div class="w-full flex flex-col items-end p-4 m-4">
 			<button type="button" class="btn-close close pull-right text-gray-100" aria-label="Close" (click)="closeModal()">
-				<span aria-hidden="true" class="visually-hidden">&times;</span>
+				<span aria-hidden="true" class="visually-hidden" style="font-size: x-large">&times;</span>
 			</button>
 		</div>
-		<div class="container w-full">
-			<div class="flex flex-wrap -m-6">
+		<div class="w-full">
+			<div class="flex flex-wrap">
 				<ng-template [ngTemplateOutlet]="projectDescription"></ng-template>
 				<ng-template [ngTemplateOutlet]="projectRepository"></ng-template>
 			</div>
 		</div>
 	</ng-container>
-</swal>
+</app-modal>
 
 <ng-template #projectDescription>
 	<div class="p-6 md:w-1/2 flex flex-col items-start">
@@ -20,12 +20,12 @@
 			{{ portfolioSelected?.name | translate }}
 		</span>
 
-		<div class="border-double border-4 rounded-lg color-border-azure flex flex-wrap pt-6 mb-4 w-full">
+		<div class="border-double border-4 rounded-lg color-border-azure pt-6 mb-4 w-full">
 			<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2 ml-2">Demo</span>
 			<br />
 			<iframe
 				class="w-full youtube-video"
-				[src]="portfolioSelected.preview | safeUrl : 'resourceUrl'"
+				[src]="portfolioSelected?.preview | safeUrl : 'resourceUrl'"
 				loading="lazy"
 				[title]="portfolioSelected?.name"
 				frameborder="0"
@@ -33,7 +33,7 @@
 				allowfullscreen
 			></iframe>
 		</div>
-		<div class="border-double border-4 p-6 rounded-lg color-border-azure flex flex-wrap pt-6 w-full">
+		<div class="border-double border-4 p-6 rounded-lg color-border-azure pt-6 w-full">
 			<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
 				{{ 'general.description' | translate }}</span
 			>
@@ -49,20 +49,20 @@
 			{{ 'general.technologies-tools' | translate }}</span
 		>
 		<div
-			class="border-double border-4 p-6 rounded-lg color-border-azure flex flex-wrap ml-2 pt-6 mb-4"
-			*ngFor="let repository of portfolioSelected.repositories"
+			class="border-double border-4 p-6 rounded-lg color-border-azure ml-2 pt-6 mb-4"
+			*ngFor="let repository of portfolioSelected?.repositories"
 		>
 			<div class="group flex relative w-full">
 				<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-					<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
-						{{ repository.type }}
+					<a [href]="repository?.link" target="_blank" rel="noopener noreferrer">
+						{{ repository?.type }}
 					</a>
 				</span>
 			</div>
 
 			<br />
 
-			<app-technologies [technologies]="repository.technologies" [class]="'tooltip-proyect'" />
+			<app-technologies [technologies]="repository?.technologies" class="tooltip-proyect" />
 
 			<br />
 
@@ -71,14 +71,7 @@
 					<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
 						<div>
 							{{ 'general.repository' | translate }}
-							<img
-								style="display: inline"
-								src="assets/technologies/github.svg"
-								height="25px"
-								alt="GitHub"
-								[loading]="'lazy'"
-								width="25px"
-							/>
+							<img style="display: inline" src="assets/technologies/github.svg" height="25px" alt="GitHub" loading="lazy" width="25px" />
 						</div>
 					</a>
 				</span>
