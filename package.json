@@ -17,7 +17,7 @@
 		"build:ssr": "ng build --configuration production && ng run portafolio:server",
 		"prerender": "ng run portafolio:prerender",
 		"lint": "ng lint",
-		"prepare": "husky install",
+ 
 		"lint-format": "npm run format && ng lint --fix",
 		"pre-commit": "npm run lint-format && git add .",
 		"vercel-build": "npm run build:ssr"
