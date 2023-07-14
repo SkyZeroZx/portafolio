@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "public": true,
+    "name": "portafolio",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/api"
+        }
+    ],
+    "functions": {
+        "api/index.js": {
+            "includeFiles": "dist/portafolio//browser/**"
+        }
+    }
+}
