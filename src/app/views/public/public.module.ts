@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import {
 	AboutComponent,
@@ -21,6 +20,7 @@ import { AddAnimationDirective } from '@core/directives';
 import { SafeUrlPipe } from '@core/pipe';
 import { TechnologiesComponent, TimelineComponent, ModalComponent } from '@shared/components';
 import { NgxTypedWriterModule } from 'ngx-typed-writer';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
 	declarations: [
@@ -43,10 +43,10 @@ import { NgxTypedWriterModule } from 'ngx-typed-writer';
 		AddAnimationDirective,
 		NgxTypedWriterModule,
 		SafeUrlPipe,
+		FontAwesomeModule,
 		ModalComponent,
 		TranslateModule,
 		NgOptimizedImage,
-		FontAwesomeModule,
 		PublicRoutingModule
 	]
 })

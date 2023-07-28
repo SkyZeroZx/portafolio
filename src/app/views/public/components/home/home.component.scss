@@ -43,3 +43,18 @@ video {
 .outline-text-h1 {
 	-webkit-text-stroke: 1px #2d3244;
 }
+
+.whatsapp-icon {
+	height: 1.8rem !important;
+	width: 1.8rem !important;
+}
+
+.home-contact {
+	display: flex;
+	align-items: center;
+}
+
+.type-home-content {
+	height: 5rem;
+	@apply font-bold text-base mt-6 leading-6 sm:text-center sm:text-xl sm:leading-8;
+}

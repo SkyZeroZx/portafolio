@@ -42,7 +42,6 @@
 		"express": "^4.18.2",
 		"ngx-typed-writer": "^1.1.1",
 		"rxjs": "~7.8.1",
-		"t-writer.js": "^1.0.4",
 		"tslib": "^2.6.1",
 		"zone.js": "~0.13.1"
 	},

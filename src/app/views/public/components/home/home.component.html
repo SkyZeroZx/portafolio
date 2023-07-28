@@ -1,5 +1,5 @@
 <div class="home">
-	<app-language-selector class="home-content"></app-language-selector>
+	<app-language-selector class="home-content" (click)="setChangeLanguage()"></app-language-selector>
 
 	<div class="home-video">
 		<video #videoPlayer (canplaythrough)="videoPlayer.play()" [muted]="'muted'" poster="assets/images/quanta11.webp" loop plays-inline>
@@ -14,7 +14,7 @@
 					<div class="outline-text-h1 text-4xl font-bold tracking-tight sm:text-center sm:text-7xl color-title">
 						<ngx-typed-writer
 							[strings]="typpingList"
-							[temporalText]="typpingList[0]"
+							temporalText="Jaime Burgos"
 							[showCursor]="true"
 							[backDelay]="1000"
 							[typeSpeed]="55"
@@ -22,8 +22,17 @@
 						></ngx-typed-writer>
 					</div>
 
-					<p class="outline-text-p font-bold text-base mt-6 leading-6 sm:text-center sm:text-xl sm:leading-8 color-content">
-						{{ 'home.content' | translate }}
+					<p class="outline-text-p type-home-content color-content">
+						<ngx-typed-writer
+							*ngIf="!isChangeLanguage; else homeContentText"
+							#writerContent
+							[showCursor]="false"
+							[loop]="false"
+							[typeSpeed]="40"
+						></ngx-typed-writer>
+						<ng-template #homeContentText>
+							{{ 'home.content' | translate }}
+						</ng-template>
 					</p>
 					<br />
 					<br />
@@ -33,8 +42,17 @@
 						rel="noopener noreferrer"
 						class="inline-block rounded-lg bg-transparent px-4 py-1.5 text-base font-semibold sm:text-2xl leading-7 color-content shadow-sm ring-2 ring-white hover:bg-gradient-to-r from-sky-500 to-purple-500 hover:ring-[#B9FBFC]"
 					>
-						<fa-icon class="fa-lg" [icon]="faWhatsApp"></fa-icon>&nbsp;
-						{{ 'home.contact' | translate }}
+						<div class="home-contact">
+							<img
+								class="whatsapp-icon"
+								src="assets/icons/social/whatsapp.svg"
+								alt="whatsapp-icon"
+								loading="lazy"
+								width="2em"
+								height="2em"
+							/>&nbsp;
+							{{ 'home.contact' | translate }}
+						</div>
 					</a>
 
 					<div class="scrolling-down" id="scroll-down" (click)="emitLoad()">

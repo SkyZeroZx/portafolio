@@ -62,7 +62,7 @@ _Este comando se encuentra configurado en el archivo *package.json de la raiz de
 
 _Haciendo uso de la herramienta *https://pagespeed.web.dev/* , se evaluo el tiempo de carga y renderizado por primera vez de la web_
 
-_Obtuviendo un puntaje de **97** en rendimiento en mobile y **100** en desktop_
+_Obtuviendo un puntaje de **99** en rendimiento en [mobile](https://pagespeed.web.dev/analysis/https-skyzerozx-com/2j7j3xat9n?form_factor=mobile) y **100** en [desktop](https://pagespeed.web.dev/analysis/https-skyzerozx-com/2j7j3xat9n?form_factor=desktop) _
 
 ![Performance PageSpeed 1](/docs/performance/performance-mobile.png)
 

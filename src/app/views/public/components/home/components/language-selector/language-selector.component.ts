@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LANGUAGES, listLanguages } from '@core/constants';
 
 @Component({
 	selector: 'app-language-selector',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 	templateUrl: './language-selector.component.html',
 	styleUrls: ['./language-selector.component.scss']
 })
