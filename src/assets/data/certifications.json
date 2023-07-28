@@ -14,5 +14,13 @@
 		"linkValidation": "https://www.credly.com/badges/b98f1fca-4461-4fe3-be4a-3770f19b6e0d",
 		"period": "Mayo 2023",
 		"company": "Amazon Web Services"
+	},
+	{
+		"id": "certification-3",
+		"name": "AWS Certified Solutions Architect - Professional",
+		"image": "assets/images/certifications/aws-certified-solutions-architect-professional.png",
+		"linkValidation": "https://www.credly.com/badges/11316430-4f75-4332-9152-dbcf8e7bd96d/public_url",
+		"period": "Julio 2023",
+		"company": "Amazon Web Services"
 	}
 ]

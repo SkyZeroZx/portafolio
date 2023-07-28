@@ -3,8 +3,33 @@
 	opacity: 0;
 	&.open {
 		visibility: inherit;
+		animation-name: zoom-open;
+		animation-duration: 0.3s;
 		opacity: 1;
 	}
-
+	&.close {
+		visibility: inherit;
+		animation-name: zoom-close;
+		animation-duration: 0.3s;
+		opacity: 0;
+	}
 	transition: opacity 250ms ease-in;
+}
+
+@keyframes zoom-open {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes zoom-close {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
 }

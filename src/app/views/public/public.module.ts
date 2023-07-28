@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, DOCUMENT, NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -20,6 +20,7 @@ import { PublicRoutingModule } from './public.routing';
 import { AddAnimationDirective } from '@core/directives';
 import { SafeUrlPipe } from '@core/pipe';
 import { TechnologiesComponent, TimelineComponent, ModalComponent } from '@shared/components';
+import { NgxTypedWriterModule } from 'ngx-typed-writer';
 
 @NgModule({
 	declarations: [
@@ -40,13 +41,13 @@ import { TechnologiesComponent, TimelineComponent, ModalComponent } from '@share
 		TimelineComponent,
 		TechnologiesComponent,
 		AddAnimationDirective,
+		NgxTypedWriterModule,
 		SafeUrlPipe,
 		ModalComponent,
 		TranslateModule,
 		NgOptimizedImage,
 		FontAwesomeModule,
 		PublicRoutingModule
-	],
-	providers: [{ provide: DOCUMENT, useValue: document }]
+	]
 })
 export class PublicModule {}

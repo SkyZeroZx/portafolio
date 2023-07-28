@@ -29,10 +29,15 @@ export class PortfolioComponent implements OnInit {
 
 	async openModal(portfolio: PortfolioProject) {
 		const { ProjectComponent } = await import('./components/project/project.component');
-		const { instance } = this.project.createComponent(ProjectComponent);
+		const projectComponent = this.project.createComponent(ProjectComponent);
+		const { instance } = projectComponent;
 
 		instance.isLoadProject$.pipe(delay(ANIMATION_DELAY)).subscribe((isLoad) => {
 			isLoad && instance.openModal(portfolio);
+		});
+
+		instance.isCloseModal$.pipe(delay(ANIMATION_DELAY)).subscribe((isClose) => {
+			isClose && projectComponent.destroy();
 		});
 	}
 }

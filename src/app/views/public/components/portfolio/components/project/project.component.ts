@@ -13,6 +13,7 @@ export class ProjectComponent implements OnInit {
 	readonly modalComponent: ModalComponent;
 	portfolioSelected: PortfolioProject;
 	private readonly isLoadProject = new Subject<boolean>();
+	private readonly isCloseModal = new Subject<boolean>();
 
 	ngOnInit(): void {
 		this.isLoadProject.next(true);
@@ -21,6 +22,9 @@ export class ProjectComponent implements OnInit {
 
 	get isLoadProject$() {
 		return this.isLoadProject.asObservable();
+	}
+	get isCloseModal$() {
+		return this.isCloseModal.asObservable();
 	}
 
 	openModal(portfolio: PortfolioProject) {
@@ -32,5 +36,7 @@ export class ProjectComponent implements OnInit {
 
 	closeModal() {
 		this.modalComponent.close();
+		this.isCloseModal.next(true);
+		this.isCloseModal.complete();
 	}
 }

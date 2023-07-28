@@ -20,6 +20,10 @@
 		"src": "assets/technologies/cypress.png"
 	},
 	{
+		"name": "Nx",
+		"src": "assets/technologies/nx.svg"
+	},
+	{
 		"name": "Jasmine",
 		"src": "assets/technologies/jasmine.svg"
 	},

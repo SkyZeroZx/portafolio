@@ -11,11 +11,17 @@
 		<div class="mx-auto max-w-3xl pt-20 pb-16 sm:pt-48 sm:pb-40 text-center">
 			<div>
 				<div>
-					<div
-						#asTitle
-						id="asTitle"
-						class="outline-text-h1 text-4xl font-bold tracking-tight sm:text-center sm:text-7xl color-title animate__animated animate__fadeInUp animation-2"
-					></div>
+					<div class="outline-text-h1 text-4xl font-bold tracking-tight sm:text-center sm:text-7xl color-title">
+						<ngx-typed-writer
+							[strings]="typpingList"
+							[temporalText]="typpingList[0]"
+							[showCursor]="true"
+							[backDelay]="1000"
+							[typeSpeed]="55"
+							[backSpeed]="45"
+						></ngx-typed-writer>
+					</div>
+
 					<p class="outline-text-p font-bold text-base mt-6 leading-6 sm:text-center sm:text-xl sm:leading-8 color-content">
 						{{ 'home.content' | translate }}
 					</p>
