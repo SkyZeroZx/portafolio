@@ -6,6 +6,11 @@
 /out-tsc
 /bazel-out
 .angular
+.codex
+.agents
+.impeccable
+
+skills-lock.json
 
 #Sonar
 .scannerwork/
