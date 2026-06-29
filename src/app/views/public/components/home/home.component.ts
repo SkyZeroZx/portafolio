@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, computed, inject, output, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
@@ -11,35 +11,25 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-	private readonly destroyRef = inject(DestroyRef);
+export class HomeComponent {
 	private readonly translateService = inject(TranslateService);
+	private readonly translatedHomeContent = toSignal(this.translateService.stream('home.content'), { initialValue: '' });
 
-	isMobile = false;
-	isChangeLanguage = false;
-	typpingList: string[] = ['Jaime Burgos', 'Software Engineer', 'Developer'];
-	homeContent = signal<string[]>([]);
+	readonly isChangeLanguage = signal(false);
+	readonly typingList: string[] = ['Jaime Burgos', 'Software Engineer', 'Developer'];
+	readonly homeContent = computed(() => {
+		const content = this.translatedHomeContent();
 
-	@Output() isLoad = new EventEmitter<void>();
+		return content ? [String(content)] : [];
+	});
 
-	ngOnInit() {
-		this.setTranslateTextToWriter();
+	readonly contentRequested = output<void>();
+
+	requestContent(): void {
+		this.contentRequested.emit();
 	}
 
-	emitLoad(): void {
-		this.isLoad.emit();
-	}
-
-	setChangeLanguage() {
-		this.isChangeLanguage = true;
-	}
-
-	setTranslateTextToWriter() {
-		this.translateService
-			.get('home.content')
-			.pipe(takeUntilDestroyed(this.destroyRef))
-			.subscribe((data) => {
-				this.homeContent.set([String(data)]);
-			});
+	setChangeLanguage(): void {
+		this.isChangeLanguage.set(true);
 	}
 }

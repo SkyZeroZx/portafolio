@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, output } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { LANGUAGES, listLanguages } from '@core/constants';
 
@@ -10,20 +10,20 @@ import { LANGUAGES, listLanguages } from '@core/constants';
 	styleUrls: ['./language-selector.component.scss']
 })
 export class LanguageSelectorComponent {
-	private translate = inject(TranslateService);
+	private readonly translate = inject(TranslateService);
+
+	readonly languageChanged = output<void>();
+	readonly isEnglish = computed(() => this.translate.currentLang() === LANGUAGES.EN);
 
 	constructor() {
-		const translate = this.translate;
-
-		translate.addLangs([...listLanguages]);
-		this.setLanguage();
+		this.translate.addLangs([...listLanguages]);
+		this.translate.use(LANGUAGES.ES);
 	}
 
-	setLanguage() {
-		if (this.translate.getCurrentLang() === LANGUAGES.EN) {
-			this.translate.use(LANGUAGES.ES);
-		} else {
-			this.translate.use(LANGUAGES.EN);
-		}
+	toggleLanguage(): void {
+		const nextLanguage = this.isEnglish() ? LANGUAGES.ES : LANGUAGES.EN;
+
+		this.translate.use(nextLanguage);
+		this.languageChanged.emit();
 	}
 }

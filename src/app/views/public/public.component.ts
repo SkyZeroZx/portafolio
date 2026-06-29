@@ -1,98 +1,68 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Renderer2, ViewChild, ViewContainerRef, inject } from '@angular/core';
-import { delay } from 'rxjs';
-import { ANIMATION_DELAY, PAGE_SECTION } from '@core/constants';
+import { afterNextRender, Component, Renderer2, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PAGE_SECTION } from '@core/constants';
 import { preLoadImages, scrollTo } from '@core/utils';
+import { AboutComponent } from './components/about/about.component';
+import { CanDoComponent } from './components/can-do/can-do.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { StudiesComponent } from './components/studies/studies.component';
 
 @Component({
 	selector: 'app-public',
-	imports: [HomeComponent],
+	imports: [
+		AboutComponent,
+		CanDoComponent,
+		ContactComponent,
+		ExperienceComponent,
+		FooterComponent,
+		HomeComponent,
+		PortfolioComponent,
+		StudiesComponent
+	],
 	templateUrl: './public.component.html',
 	styleUrls: ['./public.component.scss']
 })
 export class PublicComponent {
-	private document = inject<Document>(DOCUMENT);
-	private renderer2 = inject(Renderer2);
+	private readonly document = inject<Document>(DOCUMENT);
+	private readonly renderer2 = inject(Renderer2);
+	private readonly route = inject(ActivatedRoute);
 
-	@ViewChild('component', { read: ViewContainerRef })
-	component: ViewContainerRef;
-	isScrolling = false;
-	goToCanDo = false;
+	readonly contentLoaded = signal(false);
 
-	async handleScroll() {
-		if (!this.isScrolling) {
-			this.isScrolling = true;
-			await Promise.all([this.setBackground(), this.loadAllComponents()]);
-		}
-		this.isScrolling = true;
-	}
-
-	private async setBackground() {
-		const bodyElement = this.document.getElementsByTagName('body')[0];
-		await preLoadImages(['assets/images/home1-bg.jpg']);
-		this.renderer2.removeClass(bodyElement, 'background-preview');
-		this.renderer2.addClass(bodyElement, 'background-body');
-	}
-
-	private async loadAllComponents() {
-		await this.loadCanDo();
-		await this.loadAbout();
-		await this.loadExperience();
-		await this.loadStudies();
-		await this.loadPortfolio();
-		await this.loadContact();
-		await this.loadFooter();
-	}
-
-	async scrollTo() {
-		this.goToCanDo = true;
-		scrollTo(PAGE_SECTION.CAN_DO);
-		await this.handleScroll();
-	}
-
-	private async loadCanDo() {
-		const { CanDoComponent } = await import('./components/can-do/can-do.component');
-		const {
-			instance: { isLoadCanDo$ }
-		} = this.component.createComponent(CanDoComponent);
-
-		const loadCanDo = isLoadCanDo$.pipe(delay(ANIMATION_DELAY));
-
-		loadCanDo.subscribe((isLoadCanDo) => {
-			if (isLoadCanDo && this.goToCanDo) {
-				scrollTo(PAGE_SECTION.CAN_DO);
+	constructor() {
+		afterNextRender(() => {
+			if (this.route.snapshot.queryParamMap.has('proyect')) {
+				void this.loadContent();
 			}
 		});
 	}
 
-	private async loadAbout() {
-		const { AboutComponent } = await import('./components/about/about.component');
-		this.component.createComponent(AboutComponent);
+	async loadContent(): Promise<void> {
+		if (this.contentLoaded()) {
+			return;
+		}
+		this.contentLoaded.set(true);
+		await this.setBackground();
 	}
 
-	private async loadExperience() {
-		const { ExperienceComponent } = await import('./components/experience/experience.component');
-		this.component.createComponent(ExperienceComponent);
+	async scrollTo() {
+		await this.loadContent();
+
+		requestAnimationFrame(() => {
+			scrollTo(PAGE_SECTION.CAN_DO);
+		});
 	}
 
-	private async loadStudies() {
-		const { StudiesComponent } = await import('./components/studies/studies.component');
-		this.component.createComponent(StudiesComponent);
-	}
+	private async setBackground(): Promise<void> {
+		await preLoadImages(['assets/images/home1-bg.jpg']).catch(() => undefined);
+		const bodyElement = this.document.body;
 
-	private async loadPortfolio() {
-		const { PortfolioComponent } = await import('./components/portfolio/portfolio.component');
-		this.component.createComponent(PortfolioComponent);
-	}
-
-	private async loadContact() {
-		const { ContactComponent } = await import('./components/contact/contact.component');
-		this.component.createComponent(ContactComponent);
-	}
-
-	private async loadFooter() {
-		const { FooterComponent } = await import('./components/footer/footer.component');
-		this.component.createComponent(FooterComponent);
+		this.renderer2.removeClass(bodyElement, 'background-preview');
+		this.renderer2.addClass(bodyElement, 'background-body');
 	}
 }

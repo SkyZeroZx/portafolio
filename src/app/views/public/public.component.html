@@ -1,5 +1,13 @@
-<div class="public-page" (scroll)="handleScroll()">
-	<app-home (isLoad)="scrollTo()" />
+<div class="public-page" (scroll)="loadContent()">
+	<app-home (contentRequested)="scrollTo()" />
 	<br /><br />
-	<ng-container #component />
+	@defer (when contentLoaded()) {
+		<app-can-do />
+		<app-about />
+		<app-experience />
+		<app-studies />
+		<app-portfolio />
+		<app-contact />
+		<app-footer />
+	}
 </div>

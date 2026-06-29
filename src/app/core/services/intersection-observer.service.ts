@@ -1,5 +1,5 @@
 import { Injectable, Renderer2, RendererFactory2, inject } from '@angular/core';
-import { ANIMATION_DELAY, DEFAULT_OPTIONS_OBSERVER } from '@core/constants';
+import { DEFAULT_OPTIONS_OBSERVER } from '@core/constants';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,6 +14,11 @@ export class IntersectionObserverService {
 	}
 
 	createAnimation(element: HTMLElement, options = DEFAULT_OPTIONS_OBSERVER) {
+		if (typeof IntersectionObserver === 'undefined') {
+			this.showElement(element);
+			return;
+		}
+
 		const callback = (entries: IntersectionObserverEntry[]) => {
 			entries.forEach(({ isIntersecting }) => {
 				this.addAnimation(isIntersecting, element, intersectionObserver);
@@ -26,11 +31,14 @@ export class IntersectionObserverService {
 
 	private addAnimation(isIntersecting: boolean, element: HTMLElement, intersectionObserver: IntersectionObserver) {
 		if (isIntersecting) {
-			setTimeout(() => {
-				this.renderer2.removeClass(element, 'visibility-hidden');
-				this.renderer2.setAttribute(element, 'class', 'slideInUp animated');
-				intersectionObserver.unobserve(element);
-			}, ANIMATION_DELAY);
+			this.showElement(element);
+			intersectionObserver.unobserve(element);
 		}
+	}
+
+	private showElement(element: HTMLElement): void {
+		this.renderer2.removeClass(element, 'visibility-hidden');
+		this.renderer2.addClass(element, 'slideInUp');
+		this.renderer2.addClass(element, 'animated');
 	}
 }

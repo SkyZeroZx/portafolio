@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Experience, Timeline } from '@core/interface';
-import experience from '@assets/data/experience.json';
+import experienceData from '@assets/data/experience.json';
 import { TimelineComponent } from '@shared/components';
 
 @Component({
@@ -11,17 +11,19 @@ import { TimelineComponent } from '@shared/components';
 	styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-	listExperience: Timeline[] = experience.map((experience: Experience) => {
-		return {
-			id: experience.id,
-			title: experience.jobTitle,
-			subTitle: experience.company,
-			period: experience.period,
-			descriptions: experience.activities
-		};
-	});
+	readonly experiences = signal<Timeline[]>(
+		experienceData.map((experience: Experience) => {
+			return {
+				id: experience.id,
+				title: experience.jobTitle,
+				subTitle: experience.company,
+				period: experience.period,
+				descriptions: experience.activities
+			};
+		})
+	);
 
-	animationOptions: IntersectionObserverInit = {
+	readonly animationOptions: IntersectionObserverInit = {
 		root: null,
 		rootMargin: '0px',
 		threshold: 0.2

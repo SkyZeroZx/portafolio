@@ -1,5 +1,5 @@
 <div class="home">
-	<app-language-selector class="home-content" (click)="setChangeLanguage()"></app-language-selector>
+	<app-language-selector class="home-content" (languageChanged)="setChangeLanguage()" />
 
 	<div class="home-video">
 		<video #videoPlayer (canplaythrough)="videoPlayer.play()" [muted]="'muted'" poster="assets/images/quanta11.webp" loop plays-inline>
@@ -12,18 +12,12 @@
 			<div>
 				<div>
 					<div class="outline-text-h1 text-4xl font-bold tracking-tight sm:text-center sm:text-7xl color-title">
-						<ngx-typed-writer
-							[strings]="typpingList"
-							[showCursor]="true"
-							[backDelay]="1000"
-							[typeSpeed]="55"
-							[backSpeed]="45"
-						></ngx-typed-writer>
+						<ngx-typed-writer [strings]="typingList" [showCursor]="true" [backDelay]="1000" [typeSpeed]="55" [backSpeed]="45" />
 					</div>
 
 					<p class="outline-text-p type-home-content color-content">
-						@if (!isChangeLanguage && homeContent().length) {
-							<ngx-typed-writer [strings]="homeContent()" [showCursor]="false" [loop]="false" [typeSpeed]="40"></ngx-typed-writer>
+						@if (!isChangeLanguage() && homeContent().length) {
+							<ngx-typed-writer [strings]="homeContent()" [showCursor]="false" [loop]="false" [typeSpeed]="40" />
 						} @else {
 							{{ 'home.content' | translate }}
 						}
@@ -54,7 +48,7 @@
 						class="scrolling-down cursor-pointer border-0 bg-transparent p-0"
 						id="scroll-down"
 						aria-label="go to about section"
-						(click)="emitLoad()"
+						(click)="requestContent()"
 					>
 						<div>
 							<div class="outline-text-h1 text-slate-200 hover:text-violet-500 gap-2 inline-flex">

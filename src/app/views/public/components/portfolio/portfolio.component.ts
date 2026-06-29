@@ -1,50 +1,39 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
-import { delay } from 'rxjs';
-import { ANIMATION_DELAY } from '@core/constants';
+import { Component, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AddAnimationDirective } from '@core/directives';
-import { ShowProyectService } from '@core/services';
 import { PortfolioProject } from '@core/interface';
-import portfolioProjects from '@assets/data/portfolio-proyects.json';
+import portfolioProjectsData from '@assets/data/portfolio-proyects.json';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ProjectComponent } from './components/project/project.component';
 
 @Component({
 	selector: 'app-portfolio',
-	imports: [AddAnimationDirective, TranslatePipe],
+	imports: [AddAnimationDirective, ProjectComponent, TranslatePipe],
 	templateUrl: './portfolio.component.html',
 	styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent implements OnInit {
-	private showProyectService = inject(ShowProyectService);
+export class PortfolioComponent {
+	private readonly route = inject(ActivatedRoute);
 
-	@ViewChild('project', { read: ViewContainerRef })
-	project: ViewContainerRef;
-
-	listPorfolio: PortfolioProject[] = portfolioProjects;
-	animationOptions: IntersectionObserverInit = {
+	readonly portfolioProjects = signal<PortfolioProject[]>(portfolioProjectsData);
+	readonly selectedProject = signal<PortfolioProject | null>(this.getProjectFromQueryParam());
+	readonly animationOptions: IntersectionObserverInit = {
 		root: null,
 		rootMargin: '0px',
 		threshold: 0.2
 	};
 
-	ngOnInit(): void {
-		this.showProyectService.getProyect();
+	openModal(portfolio: PortfolioProject): void {
+		this.selectedProject.set(portfolio);
 	}
 
-	async openModal(portfolio: PortfolioProject) {
-		const { ProjectComponent } = await import('./components/project/project.component');
-		const projectComponent = this.project.createComponent(ProjectComponent);
-		const { instance } = projectComponent;
+	closeModal(): void {
+		this.selectedProject.set(null);
+	}
 
-		instance.isLoadProject$.pipe(delay(ANIMATION_DELAY)).subscribe((isLoad) => {
-			if (isLoad) {
-				instance.openModal(portfolio);
-			}
-		});
+	private getProjectFromQueryParam(): PortfolioProject | null {
+		const projectId = this.route.snapshot.queryParamMap.get('proyect');
 
-		instance.isCloseModal$.pipe(delay(ANIMATION_DELAY)).subscribe((isClose) => {
-			if (isClose) {
-				projectComponent.destroy();
-			}
-		});
+		return this.portfolioProjects().find(({ id }) => id === projectId) ?? null;
 	}
 }

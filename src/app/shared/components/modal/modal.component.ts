@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
 	selector: 'app-modal',
@@ -8,13 +8,5 @@ import { Component } from '@angular/core';
 	styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
-	display = true;
-
-	open() {
-		this.display = true;
-	}
-
-	close() {
-		this.display = false;
-	}
+	readonly open = input(false);
 }

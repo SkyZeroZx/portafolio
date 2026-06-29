@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Certification, Technology } from '@core/interface';
-import technologies from '@assets/data/technologies.json';
-import certifications from '@assets/data/certifications.json';
+import technologiesData from '@assets/data/technologies.json';
+import certificationsData from '@assets/data/certifications.json';
 import { AddAnimationDirective } from '@core/directives';
 import { TechnologiesComponent } from '@shared/components';
 
@@ -14,6 +14,6 @@ import { TechnologiesComponent } from '@shared/components';
 	styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-	listTechnologies: Technology[] = technologies;
-	listCertifications: Certification[] = certifications;
+	readonly technologies = signal<Technology[]>(technologiesData);
+	readonly certifications = signal<Certification[]>(certificationsData);
 }

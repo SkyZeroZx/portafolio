@@ -8,20 +8,19 @@
 			</div>
 		</div>
 		<div class="zoom-custom mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-			@for (portfolio of listPorfolio; track portfolio) {
-				<div
-					class="border-double border-4 color-border-azure group p-7 rounded-md transition-all hover:shadow-xl duration-200 ease-in shadow-lg hover:border-blue-500 relative cursor-pointer"
+			@for (portfolio of portfolioProjects(); track portfolio.id) {
+				<button
+					type="button"
+					class="border-double border-4 color-border-azure group p-7 rounded-md transition-all hover:shadow-xl duration-200 ease-in shadow-lg hover:border-blue-500 relative cursor-pointer text-left bg-transparent"
 					[id]="portfolio.id"
 					(click)="openModal(portfolio)"
-					role="button"
-					tabindex="0"
 				>
 					<div class="rounded-lg h-64 overflow-hidden">
 						<img [alt]="portfolio.name | translate" class="object-center h-full w-full" [src]="portfolio.logo" [loading]="'lazy'" />
 					</div>
 					<h2 class="text-xl font-medium title-font mt-5">{{ portfolio.name | translate }}</h2>
 					<p class="text-base leading-relaxed mt-2">{{ portfolio.description | translate }}</p>
-					<a class="text-blue-500 inline-flex items-center mt-3 cursor-pointer view-more">
+					<span class="text-blue-500 inline-flex items-center mt-3 cursor-pointer view-more">
 						<span>{{ 'portfolio.view-more' | translate }}</span>
 						<svg
 							fill="none"
@@ -34,10 +33,14 @@
 						>
 							<path d="M5 12h14M12 5l7 7-7 7"></path>
 						</svg>
-					</a>
-				</div>
+					</span>
+				</button>
 			}
 		</div>
 	</div>
 </section>
-<ng-container #project />
+@defer (when selectedProject()) {
+	@if (selectedProject(); as project) {
+		<app-project [portfolio]="project" (closeProject)="closeModal()" />
+	}
+}

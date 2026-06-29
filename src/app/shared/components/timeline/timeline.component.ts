@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { AddAnimationDirective } from '@core/directives';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -12,8 +12,6 @@ import { Timeline } from '@core/interface';
 	styleUrls: ['./timeline.component.scss']
 })
 export class TimelineComponent {
-	@Input()
-	animationOptions: IntersectionObserverInit;
-	@Input({ required: true })
-	listTimeline: Timeline[];
+	readonly animationOptions = input<IntersectionObserverInit | undefined>(undefined);
+	readonly listTimeline = input.required<Timeline[]>();
 }

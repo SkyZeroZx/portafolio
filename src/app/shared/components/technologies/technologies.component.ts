@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { Technology } from '@core/interface';
 
@@ -10,8 +10,6 @@ import { Technology } from '@core/interface';
 	styleUrls: ['./technologies.component.scss']
 })
 export class TechnologiesComponent {
-	@Input({ required: true })
-	technologies: Technology[];
-	@Input()
-	class = '';
+	readonly technologies = input.required<Technology[]>();
+	readonly tooltipClass = input('');
 }

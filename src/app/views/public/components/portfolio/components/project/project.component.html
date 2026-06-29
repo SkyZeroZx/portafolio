@@ -1,14 +1,14 @@
-<app-modal #modalComponent>
+<app-modal [open]="true">
 	<ng-container>
 		<div class="w-full flex flex-col items-end p-4 m-4">
-			<button type="button" class="btn-close close pull-right text-gray-100" aria-label="Close" (click)="closeModal()">
+			<button type="button" class="btn-close close pull-right text-gray-100" aria-label="Close" (click)="close()">
 				<span aria-hidden="true" class="close-button">&times;</span>
 			</button>
 		</div>
 		<div class="w-full">
 			<div class="flex flex-wrap">
-				<ng-template [ngTemplateOutlet]="projectDescription"></ng-template>
-				<ng-template [ngTemplateOutlet]="projectRepository"></ng-template>
+				<ng-template [ngTemplateOutlet]="projectDescription" />
+				<ng-template [ngTemplateOutlet]="projectRepository" />
 			</div>
 		</div>
 	</ng-container>
@@ -17,7 +17,7 @@
 <ng-template #projectDescription>
 	<div class="p-6 md:w-1/2 flex flex-col items-start">
 		<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
-			{{ portfolioSelected?.name | translate }}
+			{{ portfolio().name | translate }}
 		</span>
 
 		<div class="border-double border-4 rounded-lg color-border-azure pt-6 mb-4 w-full">
@@ -25,9 +25,9 @@
 			<br />
 			<iframe
 				class="w-full youtube-video"
-				[src]="portfolioSelected?.preview | safeUrl: 'resourceUrl'"
+				[src]="portfolio().preview | safeUrl: 'resourceUrl'"
 				loading="lazy"
-				[title]="portfolioSelected?.name"
+				[title]="portfolio().name"
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
@@ -38,7 +38,7 @@
 				{{ 'general.description' | translate }}</span
 			>
 			<br />
-			<p class="leading-relaxed mb-8 text-gray-100">{{ portfolioSelected?.description | translate }}</p>
+			<p class="leading-relaxed mb-8 text-gray-100">{{ portfolio().description | translate }}</p>
 		</div>
 	</div>
 </ng-template>
@@ -48,17 +48,17 @@
 		<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
 			{{ 'general.technologies-tools' | translate }}</span
 		>
-		@for (repository of portfolioSelected?.repositories; track repository) {
+		@for (repository of portfolio().repositories; track repository.link) {
 			<div class="border-double border-4 p-6 rounded-lg color-border-azure ml-2 pt-6 mb-4">
 				<div class="group flex relative w-full">
 					<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-						<a [href]="repository?.link" target="_blank" rel="noopener noreferrer">
-							{{ repository?.type }}
+						<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
+							{{ repository.type }}
 						</a>
 					</span>
 				</div>
 				<br />
-				<app-technologies [technologies]="repository?.technologies" class="tooltip-proyect" />
+				<app-technologies [technologies]="repository.technologies" tooltipClass="tooltip-proyect" />
 				<br />
 				<div class="group flex justify-center w-full mt-2">
 					<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">

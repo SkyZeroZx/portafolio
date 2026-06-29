@@ -1,7 +1,7 @@
 <div class="flex flex-wrap">
-	@for (technology of technologies; track technology) {
+	@for (technology of technologies(); track technology.name) {
 		<div class="group flex relative rounded-full hover:bg-gradient-to-r from-slate-800 to-neutral-800">
-			<span [class]="class + ' ' + 'span-tooltip'">{{ technology.name }}</span>
+			<span [class]="tooltipClass() + ' ' + 'span-tooltip'">{{ technology.name }}</span>
 			<img
 				[width]="45"
 				class="m-4"

@@ -1,6 +1,6 @@
 <ol class="ml-6 relative border-l-4 color-border-blue">
-	@for (timeline of listTimeline; track timeline) {
-		<li appAddAnimation class="mb-10 visibility-hidden" [id]="timeline.id" [animationOptions]="animationOptions">
+	@for (timeline of listTimeline(); track timeline.id) {
+		<li appAddAnimation class="mb-10 visibility-hidden" [id]="timeline.id" [animationOptions]="animationOptions()">
 			<span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 color-ring-blue">
 				<img class="w-4 h-4" ngSrc="assets/svg/calendar.svg" height="50" width="50" alt="" />
 			</span>
@@ -15,7 +15,7 @@
 			</time>
 			@for (description of timeline.descriptions; track description) {
 				<div>
-					<p class="mb-4 text-base font-normal text-gray-200"><span class="fixed-span">▪</span> {{ description | translate }}</p>
+					<p class="mb-4 text-base font-normal text-gray-200"><span class="fixed-span">&bull;</span> {{ description | translate }}</p>
 				</div>
 			}
 			@if (timeline.descriptions) {

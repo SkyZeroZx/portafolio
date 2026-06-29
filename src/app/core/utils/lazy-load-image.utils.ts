@@ -21,10 +21,7 @@ async function load(src: string): Promise<string> {
 		};
 
 		image.onerror = () => {
-			reject(() => {
-				console.error('Image loading failed', src);
-				throw new Error(`Failed to load image: ${src}`);
-			});
+			reject(new Error(`Failed to load image: ${src}`));
 		};
 
 		image.src = src;

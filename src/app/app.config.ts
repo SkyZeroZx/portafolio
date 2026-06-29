@@ -1,7 +1,7 @@
 import { APP_ID, ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideRouter, withEnabledBlockingInitialNavigation } from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
 import { provideTranslateLoader, provideTranslateService } from '@ngx-translate/core';
 import { LANGUAGES } from '@core/constants';
@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
 	providers: [
 		provideBrowserGlobalErrorListeners(),
 		provideZoneChangeDetection({ eventCoalescing: true }),
-		provideRouter(routes, withEnabledBlockingInitialNavigation()),
+		provideRouter(routes),
 		provideHttpClient(withFetch()),
 		provideClientHydration(),
 		provideServiceWorker('ngsw-worker.js', swRegistrationOptions),
