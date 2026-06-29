@@ -1,21 +1,24 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Renderer2, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, Renderer2, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { delay } from 'rxjs';
 import { ANIMATION_DELAY, PAGE_SECTION } from '@core/constants';
 import { preLoadImages, scrollTo } from '@core/utils';
+import { HomeComponent } from './components/home/home.component';
 
 @Component({
 	selector: 'app-public',
+	imports: [HomeComponent],
 	templateUrl: './public.component.html',
 	styleUrls: ['./public.component.scss']
 })
 export class PublicComponent {
+	private document = inject<Document>(DOCUMENT);
+	private renderer2 = inject(Renderer2);
+
 	@ViewChild('component', { read: ViewContainerRef })
 	component: ViewContainerRef;
 	isScrolling = false;
 	goToCanDo = false;
-
-	constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2) {}
 
 	async handleScroll() {
 		if (!this.isScrolling) {
@@ -57,7 +60,9 @@ export class PublicComponent {
 		const loadCanDo = isLoadCanDo$.pipe(delay(ANIMATION_DELAY));
 
 		loadCanDo.subscribe((isLoadCanDo) => {
-			isLoadCanDo && this.goToCanDo && scrollTo(PAGE_SECTION.CAN_DO);
+			if (isLoadCanDo && this.goToCanDo) {
+				scrollTo(PAGE_SECTION.CAN_DO);
+			}
 		});
 	}
 

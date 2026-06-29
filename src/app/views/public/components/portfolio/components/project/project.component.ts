@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { PortfolioProject } from '@core/interface';
 import { Subject } from 'rxjs';
-import { ModalComponent } from '@shared/components';
+import { ModalComponent, TechnologiesComponent } from '@shared/components';
+import { SafeUrlPipe } from '@core/pipe';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-project',
+	imports: [ModalComponent, NgTemplateOutlet, SafeUrlPipe, TechnologiesComponent, TranslatePipe],
 	templateUrl: './project.component.html',
 	styleUrls: ['./project.component.scss']
 })

@@ -1,16 +1,21 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { delay } from 'rxjs';
 import { ANIMATION_DELAY } from '@core/constants';
+import { AddAnimationDirective } from '@core/directives';
 import { ShowProyectService } from '@core/services';
 import { PortfolioProject } from '@core/interface';
 import portfolioProjects from '@assets/data/portfolio-proyects.json';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-portfolio',
+	imports: [AddAnimationDirective, TranslatePipe],
 	templateUrl: './portfolio.component.html',
 	styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
+	private showProyectService = inject(ShowProyectService);
+
 	@ViewChild('project', { read: ViewContainerRef })
 	project: ViewContainerRef;
 
@@ -20,8 +25,6 @@ export class PortfolioComponent implements OnInit {
 		rootMargin: '0px',
 		threshold: 0.2
 	};
-
-	constructor(private showProyectService: ShowProyectService) {}
 
 	ngOnInit(): void {
 		this.showProyectService.getProyect();
@@ -33,11 +36,15 @@ export class PortfolioComponent implements OnInit {
 		const { instance } = projectComponent;
 
 		instance.isLoadProject$.pipe(delay(ANIMATION_DELAY)).subscribe((isLoad) => {
-			isLoad && instance.openModal(portfolio);
+			if (isLoad) {
+				instance.openModal(portfolio);
+			}
 		});
 
 		instance.isCloseModal$.pipe(delay(ANIMATION_DELAY)).subscribe((isClose) => {
-			isClose && projectComponent.destroy();
+			if (isClose) {
+				projectComponent.destroy();
+			}
 		});
 	}
 }

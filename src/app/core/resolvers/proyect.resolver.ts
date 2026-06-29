@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { delay, take } from 'rxjs';
 
@@ -6,7 +6,7 @@ import { delay, take } from 'rxjs';
 	providedIn: 'root'
 })
 export class ProyectResolver {
-	constructor(private route: ActivatedRoute) {}
+	private route = inject(ActivatedRoute);
 
 	getProyect() {
 		this.route.queryParams.pipe(take(2), delay(10)).subscribe(async (res) => {

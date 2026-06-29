@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Experience, Timeline } from '@core/interface';
 import experience from '@assets/data/experience.json';
+import { TimelineComponent } from '@shared/components';
 
 @Component({
 	selector: 'app-experience',
+	imports: [TimelineComponent, TranslatePipe],
 	templateUrl: './experience.component.html',
 	styleUrls: ['./experience.component.scss']
 })

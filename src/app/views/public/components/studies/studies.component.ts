@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Study, Timeline } from '@core/interface';
 import studies from '@assets/data/studies.json';
+import { TimelineComponent } from '@shared/components';
 
 @Component({
 	selector: 'app-studies',
+	imports: [TimelineComponent, TranslatePipe],
 	templateUrl: './studies.component.html',
 	styleUrls: ['./studies.component.scss']
 })

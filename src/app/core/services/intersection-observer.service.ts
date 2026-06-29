@@ -1,4 +1,4 @@
-import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Injectable, Renderer2, RendererFactory2, inject } from '@angular/core';
 import { ANIMATION_DELAY, DEFAULT_OPTIONS_OBSERVER } from '@core/constants';
 
 @Injectable({
@@ -7,7 +7,9 @@ import { ANIMATION_DELAY, DEFAULT_OPTIONS_OBSERVER } from '@core/constants';
 export class IntersectionObserverService {
 	private readonly renderer2: Renderer2;
 
-	constructor(rendererFactory: RendererFactory2) {
+	constructor() {
+		const rendererFactory = inject(RendererFactory2);
+
 		this.renderer2 = rendererFactory.createRenderer(null, null);
 	}
 

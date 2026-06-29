@@ -1,28 +1,26 @@
 <ol class="ml-6 relative border-l-4 color-border-blue">
-	<li
-		appAddAnimation
-		class="mb-10 visibility-hidden"
-		[id]="timeline.id"
-		*ngFor="let timeline of listTimeline"
-		[animationOptions]="animationOptions"
-	>
-		<span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 color-ring-blue">
-			<img class="w-4 h-4" ngSrc="assets/svg/calendar.svg" height="50" width="50" />
-		</span>
-		<h3 class="flex items-center mb-1 text-lg font-semibold text-white fixed-container">
-			{{ timeline.title | translate }}
-			<span class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3 color-square">
-				{{ timeline.subTitle | translate }}
+	@for (timeline of listTimeline; track timeline) {
+		<li appAddAnimation class="mb-10 visibility-hidden" [id]="timeline.id" [animationOptions]="animationOptions">
+			<span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-8 color-ring-blue">
+				<img class="w-4 h-4" ngSrc="assets/svg/calendar.svg" height="50" width="50" alt="" />
 			</span>
-		</h3>
-		<time class="block mb-2 text-sm font-normal leading-none text-gray-400 fixed-container">
-			{{ timeline.period | translate }}
-		</time>
-
-		<div *ngFor="let description of timeline.descriptions">
-			<p class="mb-4 text-base font-normal text-gray-200"><span class="fixed-span">▪</span> {{ description | translate }}</p>
-		</div>
-
-		<br *ngIf="timeline.descriptions" />
-	</li>
+			<h3 class="flex items-center mb-1 text-lg font-semibold text-white fixed-container">
+				{{ timeline.title | translate }}
+				<span class="text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3 color-square">
+					{{ timeline.subTitle | translate }}
+				</span>
+			</h3>
+			<time class="block mb-2 text-sm font-normal leading-none text-gray-400 fixed-container">
+				{{ timeline.period | translate }}
+			</time>
+			@for (description of timeline.descriptions; track description) {
+				<div>
+					<p class="mb-4 text-base font-normal text-gray-200"><span class="fixed-span">▪</span> {{ description | translate }}</p>
+				</div>
+			}
+			@if (timeline.descriptions) {
+				<br />
+			}
+		</li>
+	}
 </ol>

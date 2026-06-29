@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { NgFor, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { Technology } from '@core/interface';
 
 @Component({
 	selector: 'app-technologies',
 	standalone: true,
-	imports: [NgFor, NgOptimizedImage],
+	imports: [NgOptimizedImage],
 	templateUrl: './technologies.component.html',
 	styleUrls: ['./technologies.component.scss']
 })

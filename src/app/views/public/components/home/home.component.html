@@ -14,7 +14,6 @@
 					<div class="outline-text-h1 text-4xl font-bold tracking-tight sm:text-center sm:text-7xl color-title">
 						<ngx-typed-writer
 							[strings]="typpingList"
-							temporalText="Jaime Burgos"
 							[showCursor]="true"
 							[backDelay]="1000"
 							[typeSpeed]="55"
@@ -23,16 +22,11 @@
 					</div>
 
 					<p class="outline-text-p type-home-content color-content">
-						<ngx-typed-writer
-							*ngIf="!isChangeLanguage; else homeContentText"
-							#writerContent
-							[showCursor]="false"
-							[loop]="false"
-							[typeSpeed]="40"
-						></ngx-typed-writer>
-						<ng-template #homeContentText>
+						@if (!isChangeLanguage && homeContent().length) {
+							<ngx-typed-writer [strings]="homeContent()" [showCursor]="false" [loop]="false" [typeSpeed]="40"></ngx-typed-writer>
+						} @else {
 							{{ 'home.content' | translate }}
-						</ng-template>
+						}
 					</p>
 					<br />
 					<br />
@@ -55,8 +49,14 @@
 						</div>
 					</a>
 
-					<div class="scrolling-down" id="scroll-down" (click)="emitLoad()">
-						<div aria-label="go to about section" class="cursor-pointer">
+					<button
+						type="button"
+						class="scrolling-down cursor-pointer border-0 bg-transparent p-0"
+						id="scroll-down"
+						aria-label="go to about section"
+						(click)="emitLoad()"
+					>
+						<div>
 							<div class="outline-text-h1 text-slate-200 hover:text-violet-500 gap-2 inline-flex">
 								<svg width="1em" height="1em" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-auto">
 									<path
@@ -89,7 +89,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</button>
 				</div>
 			</div>
 		</div>

@@ -1,29 +1,24 @@
-import { Observable } from 'rxjs';
-import { TranslateLoader } from '@ngx-translate/core';
-import { makeStateKey, StateKey, TransferState } from '@angular/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { inject, makeStateKey, StateKey, TransferState } from '@angular/core';
+import { TranslateLoader, TranslationObject } from '@ngx-translate/core';
+import { Observable, of } from 'rxjs';
 
 export class TranslateBrowserLoader implements TranslateLoader {
-	constructor(private http: HttpClient, private transferState: TransferState) {}
+	private readonly http = inject(HttpClient);
+	private readonly transferState = inject(TransferState);
 
-	getTranslation(lang: string): Observable<unknown> {
-		const key: StateKey<number> = makeStateKey<number>('transfer-translate-' + lang);
+	getTranslation(lang: string): Observable<TranslationObject> {
+		const key: StateKey<TranslationObject> = makeStateKey<TranslationObject>('transfer-translate-' + lang);
 		const data = this.transferState.get(key, null);
 
-		// First we are looking for the translations in transfer-state,
-		// if none found, http load as fallback
 		if (data) {
-			return new Observable((observer) => {
-				observer.next(data);
-				observer.complete();
-			});
+			return of(data);
 		}
 
-		return new TranslateHttpLoader(this.http).getTranslation(lang);
+		return this.http.get<TranslationObject>(`assets/i18n/${lang}.json`);
 	}
 }
 
-export function TranslateBrowserLoaderFactory(httpClient: HttpClient, transferState: TransferState) {
-	return new TranslateBrowserLoader(httpClient, transferState);
+export function TranslateBrowserLoaderFactory() {
+	return new TranslateBrowserLoader();
 }

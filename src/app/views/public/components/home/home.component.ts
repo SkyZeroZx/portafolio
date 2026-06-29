@@ -1,24 +1,26 @@
-import { TranslateService } from '@ngx-translate/core';
-import { Component, Output, EventEmitter, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, EventEmitter, inject, OnInit, Output, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
 @Component({
 	selector: 'app-home',
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	imports: [LanguageSelectorComponent, NgxTypedWriterComponent, TranslatePipe],
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+	private readonly destroyRef = inject(DestroyRef);
+	private readonly translateService = inject(TranslateService);
+
 	isMobile = false;
 	isChangeLanguage = false;
 	typpingList: string[] = ['Jaime Burgos', 'Software Engineer', 'Developer'];
-
-	@ViewChild('writerContent')
-	writerContent: NgxTypedWriterComponent;
+	homeContent = signal<string[]>([]);
 
 	@Output() isLoad = new EventEmitter<void>();
-
-	constructor(private readonly translateService: TranslateService) {}
 
 	ngOnInit() {
 		this.setTranslateTextToWriter();
@@ -33,9 +35,11 @@ export class HomeComponent implements OnInit {
 	}
 
 	setTranslateTextToWriter() {
-		this.translateService.get('home.content').subscribe((data: string) => {
-			this.writerContent.strings = [data];
-			this.writerContent.ngOnInit();
-		});
+		this.translateService
+			.get('home.content')
+			.pipe(takeUntilDestroyed(this.destroyRef))
+			.subscribe((data) => {
+				this.homeContent.set([String(data)]);
+			});
 	}
 }

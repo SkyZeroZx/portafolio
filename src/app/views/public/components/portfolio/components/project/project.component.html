@@ -25,7 +25,7 @@
 			<br />
 			<iframe
 				class="w-full youtube-video"
-				[src]="portfolioSelected?.preview | safeUrl : 'resourceUrl'"
+				[src]="portfolioSelected?.preview | safeUrl: 'resourceUrl'"
 				loading="lazy"
 				[title]="portfolioSelected?.name"
 				frameborder="0"
@@ -48,35 +48,30 @@
 		<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
 			{{ 'general.technologies-tools' | translate }}</span
 		>
-		<div
-			class="border-double border-4 p-6 rounded-lg color-border-azure ml-2 pt-6 mb-4"
-			*ngFor="let repository of portfolioSelected?.repositories"
-		>
-			<div class="group flex relative w-full">
-				<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-					<a [href]="repository?.link" target="_blank" rel="noopener noreferrer">
-						{{ repository?.type }}
-					</a>
-				</span>
+		@for (repository of portfolioSelected?.repositories; track repository) {
+			<div class="border-double border-4 p-6 rounded-lg color-border-azure ml-2 pt-6 mb-4">
+				<div class="group flex relative w-full">
+					<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
+						<a [href]="repository?.link" target="_blank" rel="noopener noreferrer">
+							{{ repository?.type }}
+						</a>
+					</span>
+				</div>
+				<br />
+				<app-technologies [technologies]="repository?.technologies" class="tooltip-proyect" />
+				<br />
+				<div class="group flex justify-center w-full mt-2">
+					<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
+						<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
+							<div>
+								{{ 'general.repository' | translate }}
+								<img style="display: inline" src="assets/technologies/github.svg" height="25px" alt="GitHub" loading="lazy" width="25px" />
+							</div>
+						</a>
+					</span>
+				</div>
+				<br />
 			</div>
-
-			<br />
-
-			<app-technologies [technologies]="repository?.technologies" class="tooltip-proyect" />
-
-			<br />
-
-			<div class="group flex justify-center w-full mt-2">
-				<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-					<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
-						<div>
-							{{ 'general.repository' | translate }}
-							<img style="display: inline" src="assets/technologies/github.svg" height="25px" alt="GitHub" loading="lazy" width="25px" />
-						</div>
-					</a>
-				</span>
-			</div>
-			<br />
-		</div>
+		}
 	</div>
 </ng-template>

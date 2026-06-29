@@ -1,6 +1,10 @@
 {
 	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
 	"version": 1,
+	"cli": {
+		"packageManager": "npm",
+		"schematicCollections": ["@angular-eslint/schematics"]
+	},
 	"newProjectRoot": "projects",
 	"projects": {
 		"portafolio": {
@@ -15,130 +19,74 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser",
+					"builder": "@angular/build:application",
 					"options": {
-						"outputPath": "dist/portafolio/browser",
+						"outputPath": "dist/portafolio",
 						"index": "src/index.html",
-						"main": "src/main.ts",
+						"browser": "src/main.ts",
 						"polyfills": ["zone.js"],
 						"tsConfig": "tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest", "src/robots.txt"],
-						"styles": ["src/styles.scss"],
+						"styles": ["src/assets/fonts/fonts.css", "src/styles.scss"],
 						"scripts": [],
-						"serviceWorker": true,
-						"ngswConfigPath": "ngsw-config.json"
+						"serviceWorker": "ngsw-config.json",
+						"server": "src/main.server.ts",
+						"outputMode": "server",
+						"security": {
+							"allowedHosts": []
+						},
+						"ssr": {
+							"entry": "src/server.ts"
+						}
 					},
 					"configurations": {
 						"production": {
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "500kb",
-									"maximumError": "3mb"
+									"maximumWarning": "500kB",
+									"maximumError": "3MB"
 								},
 								{
 									"type": "anyComponentStyle",
-									"maximumWarning": "2kb",
-									"maximumError": "4kb"
+									"maximumWarning": "4kB",
+									"maximumError": "8kB"
 								}
 							],
 							"outputHashing": "all"
 						},
 						"development": {
-							"buildOptimizer": false,
 							"optimization": false,
-							"vendorChunk": true,
 							"extractLicenses": false,
-							"sourceMap": true,
-							"namedChunks": true
+							"sourceMap": true
 						}
 					},
 					"defaultConfiguration": "production"
 				},
 				"serve": {
-					"builder": "@angular-devkit/build-angular:dev-server",
+					"builder": "@angular/build:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "portafolio:build:production"
+							"buildTarget": "portafolio:build:production"
 						},
 						"development": {
-							"browserTarget": "portafolio:build:development"
+							"buildTarget": "portafolio:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
-					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"builder": "@angular/build:extract-i18n",
 					"options": {
-						"browserTarget": "portafolio:build"
+						"buildTarget": "portafolio:build"
 					}
 				},
 				"test": {
-					"builder": "@angular-devkit/build-angular:karma",
-					"options": {
-						"polyfills": ["zone.js", "zone.js/testing"],
-						"tsConfig": "tsconfig.spec.json",
-						"inlineStyleLanguage": "scss",
-						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
-						"styles": ["src/styles.scss"],
-						"scripts": []
-					}
+					"builder": "@angular/build:unit-test"
 				},
 				"deploy": {
 					"builder": "angular-cli-ghpages:deploy"
-				},
-				"server": {
-					"builder": "@angular-devkit/build-angular:server",
-					"options": {
-						"outputPath": "dist/portafolio/server",
-						"main": "server.ts",
-						"tsConfig": "tsconfig.server.json",
-						"inlineStyleLanguage": "scss"
-					},
-					"configurations": {
-						"production": {
-							"outputHashing": "media"
-						},
-						"development": {
-							"optimization": false,
-							"sourceMap": true,
-							"extractLicenses": false,
-							"vendorChunk": true
-						}
-					},
-					"defaultConfiguration": "production"
-				},
-				"serve-ssr": {
-					"builder": "@nguniversal/builders:ssr-dev-server",
-					"configurations": {
-						"development": {
-							"browserTarget": "portafolio:build:development",
-							"serverTarget": "portafolio:server:development"
-						},
-						"production": {
-							"browserTarget": "portafolio:build:production",
-							"serverTarget": "portafolio:server:production"
-						}
-					},
-					"defaultConfiguration": "development"
-				},
-				"prerender": {
-					"builder": "@nguniversal/builders:prerender",
-					"options": {
-						"routes": ["/"]
-					},
-					"configurations": {
-						"production": {
-							"browserTarget": "portafolio:build:production",
-							"serverTarget": "portafolio:server:production"
-						},
-						"development": {
-							"browserTarget": "portafolio:build:development",
-							"serverTarget": "portafolio:server:development"
-						}
-					},
-					"defaultConfiguration": "production"
 				},
 				"lint": {
 					"builder": "@angular-eslint/builder:lint",
@@ -148,8 +96,5 @@
 				}
 			}
 		}
-	},
-	"cli": {
-		"schematicCollections": ["@angular-eslint/schematics"]
 	}
 }

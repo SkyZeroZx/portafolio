@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, inject } from '@angular/core';
 import { IntersectionObserverService } from '../services';
 
 @Directive({
@@ -6,10 +6,11 @@ import { IntersectionObserverService } from '../services';
 	standalone: true
 })
 export class AddAnimationDirective implements OnInit {
+	private elementRef = inject(ElementRef);
+	private intersectionObserverService = inject(IntersectionObserverService);
+
 	@Input()
 	animationOptions: IntersectionObserverInit;
-
-	constructor(private elementRef: ElementRef, private intersectionObserverService: IntersectionObserverService) {}
 
 	ngOnInit(): void {
 		const element = this.elementRef.nativeElement as HTMLElement;

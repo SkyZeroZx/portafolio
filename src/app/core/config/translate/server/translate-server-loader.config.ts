@@ -1,31 +1,24 @@
+import { inject, makeStateKey, StateKey, TransferState } from '@angular/core';
+import { TranslateLoader, TranslationObject } from '@ngx-translate/core';
+import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
-import { Observable } from 'rxjs';
-import { readFileSync } from 'fs';
 import { cwd } from 'process';
-import { TranslateLoader } from '@ngx-translate/core';
-import { makeStateKey, StateKey, TransferState } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export class TranslateServerLoader implements TranslateLoader {
 	private readonly prefix: string = 'i18n';
 	private readonly suffix: string = '.json';
+	private readonly transferState = inject(TransferState);
 
-	constructor(private transferState: TransferState) {}
-
-	getTranslation(lang: string): Observable<unknown> {
+	getTranslation(lang: string): Observable<TranslationObject> {
 		return new Observable((observer) => {
-			const assets_folder = join(
-				cwd(),
-				'dist',
-				'portafolio', // proyect name in dist folder
-				'browser',
-				'assets',
-				this.prefix
-			);
+			const distAssetsFolder = join(cwd(), 'dist', 'portafolio', 'browser', 'assets', this.prefix);
+			const sourceAssetsFolder = join(cwd(), 'src', 'assets', this.prefix);
+			const assetsFolder = existsSync(distAssetsFolder) ? distAssetsFolder : sourceAssetsFolder;
 
-			const jsonData = JSON.parse(readFileSync(`${assets_folder}/${lang}${this.suffix}`, 'utf8'));
+			const jsonData = JSON.parse(readFileSync(`${assetsFolder}/${lang}${this.suffix}`, 'utf8')) as TranslationObject;
 
-			// Here we save the translations in the transfer-state
-			const key: StateKey<number> = makeStateKey<number>('transfer-translate-' + lang);
+			const key: StateKey<TranslationObject> = makeStateKey<TranslationObject>('transfer-translate-' + lang);
 			this.transferState.set(key, jsonData);
 
 			observer.next(jsonData);
@@ -34,6 +27,6 @@ export class TranslateServerLoader implements TranslateLoader {
 	}
 }
 
-export function translateServerLoaderFactory(transferState: TransferState) {
-	return new TranslateServerLoader(transferState);
+export function translateServerLoaderFactory() {
+	return new TranslateServerLoader();
 }

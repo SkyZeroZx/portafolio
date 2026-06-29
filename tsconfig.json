@@ -2,7 +2,6 @@
 {
 	"compileOnSave": false,
 	"compilerOptions": {
-		"baseUrl": "./",
 		"outDir": "./dist/out-tsc",
 		"forceConsistentCasingInFileNames": true,
 		"strict": false,
@@ -12,21 +11,20 @@
 		"noPropertyAccessFromIndexSignature": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
+		"skipLibCheck": true,
+		"isolatedModules": true,
 		"sourceMap": true,
 		"declaration": false,
-		"downlevelIteration": true,
 		"experimentalDecorators": true,
-		"moduleResolution": "node",
 		"importHelpers": true,
 		"target": "ES2022",
-		"module": "ES2022",
-		"useDefineForClassFields": false,
+		"module": "preserve",
 		"lib": ["ES2022", "dom"],
 		"paths": {
-			"@core/*": ["src/app/core/*"],
-			"@shared/*": ["src/app/shared/*"],
-			"@assets/*": ["src/assets/*"],
-			"@styles/*": ["src/app/styles/*"]
+			"@core/*": ["./src/app/core/*"],
+			"@shared/*": ["./src/app/shared/*"],
+			"@assets/*": ["./src/assets/*"],
+			"@styles/*": ["./src/app/styles/*"]
 		}
 	},
 	"angularCompilerOptions": {

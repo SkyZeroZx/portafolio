@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
 
@@ -7,7 +7,8 @@ import { take } from 'rxjs';
 	providedIn: 'root'
 })
 export class ShowProyectService {
-	constructor(private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) {}
+	private route = inject(ActivatedRoute);
+	private document = inject<Document>(DOCUMENT);
 
 	getProyect() {
 		this.route.queryParams.pipe(take(2)).subscribe((res) => {
