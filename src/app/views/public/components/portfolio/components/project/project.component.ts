@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, input, output } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { PortfolioProject } from '@core/interface';
 import { SafeUrlPipe } from '@core/pipe';
 import { ModalComponent, TechnologiesComponent } from '@shared/components';
@@ -13,9 +13,9 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class ProjectComponent {
 	readonly portfolio = input.required<PortfolioProject>();
-	readonly closeProject = output<void>();
+	readonly closeModal = input.required<() => void>();
 
 	close(): void {
-		this.closeProject.emit();
+		this.closeModal()();
 	}
 }

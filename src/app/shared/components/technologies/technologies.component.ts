@@ -4,7 +4,6 @@ import { Technology } from '@core/interface';
 
 @Component({
 	selector: 'app-technologies',
-	standalone: true,
 	imports: [NgOptimizedImage],
 	templateUrl: './technologies.component.html',
 	styleUrls: ['./technologies.component.scss']

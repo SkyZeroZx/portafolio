@@ -1,34 +1,50 @@
-import { Component, inject, signal } from '@angular/core';
+import { afterNextRender, Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AddAnimationDirective } from '@core/directives';
 import { PortfolioProject } from '@core/interface';
+import { ModalService } from '@core/services';
 import portfolioProjectsData from '@assets/data/portfolio-proyects.json';
 import { TranslatePipe } from '@ngx-translate/core';
-import { ProjectComponent } from './components/project/project.component';
+import { ProjectComponent } from './components';
 
 @Component({
 	selector: 'app-portfolio',
-	imports: [AddAnimationDirective, ProjectComponent, TranslatePipe],
+	imports: [AddAnimationDirective, TranslatePipe],
 	templateUrl: './portfolio.component.html',
 	styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent {
+	private readonly modalService = inject(ModalService);
 	private readonly route = inject(ActivatedRoute);
 
 	readonly portfolioProjects = signal<PortfolioProject[]>(portfolioProjectsData);
-	readonly selectedProject = signal<PortfolioProject | null>(this.getProjectFromQueryParam());
 	readonly animationOptions: IntersectionObserverInit = {
 		root: null,
 		rootMargin: '0px',
 		threshold: 0.2
 	};
 
-	openModal(portfolio: PortfolioProject): void {
-		this.selectedProject.set(portfolio);
+	constructor() {
+		afterNextRender(() => {
+			const project = this.getProjectFromQueryParam();
+
+			if (project) {
+				void this.openModal(project);
+			}
+		});
+	}
+
+	async openModal(portfolio: PortfolioProject): Promise<void> {
+		await this.modalService.open(ProjectComponent, {
+			inputs: {
+				portfolio,
+				closeModal: () => this.closeModal()
+			}
+		});
 	}
 
 	closeModal(): void {
-		this.selectedProject.set(null);
+		this.modalService.close();
 	}
 
 	private getProjectFromQueryParam(): PortfolioProject | null {

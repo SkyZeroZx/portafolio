@@ -2,8 +2,7 @@ import { Directive, ElementRef, OnInit, inject, input } from '@angular/core';
 import { IntersectionObserverService } from '../services';
 
 @Directive({
-	selector: '[appAddAnimation]',
-	standalone: true
+	selector: '[appAddAnimation]'
 })
 export class AddAnimationDirective implements OnInit {
 	private elementRef = inject(ElementRef);

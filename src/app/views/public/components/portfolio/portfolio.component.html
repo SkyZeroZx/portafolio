@@ -39,8 +39,3 @@
 		</div>
 	</div>
 </section>
-@defer (when selectedProject()) {
-	@if (selectedProject(); as project) {
-		<app-project [portfolio]="project" (closeProject)="closeModal()" />
-	}
-}

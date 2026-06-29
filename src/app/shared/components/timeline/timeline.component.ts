@@ -6,7 +6,6 @@ import { Timeline } from '@core/interface';
 
 @Component({
 	selector: 'app-timeline',
-	standalone: true,
 	imports: [AddAnimationDirective, NgOptimizedImage, TranslatePipe],
 	templateUrl: './timeline.component.html',
 	styleUrls: ['./timeline.component.scss']
