@@ -7,28 +7,89 @@
 
 body {
 	font-family: 'Poppins', sans-serif;
-	@apply text-gray-100;
+	color: var(--color-ink);
+	background: var(--color-bg);
 	overflow-x: hidden;
 	overflow-y: hidden;
+	text-rendering: optimizeLegibility;
 }
 
 :root {
 	--header-height: 64px;
-	--prim: hsla(230, 90%, 10%, 0.7);
-	--sec: hsla(260, 95%, 10%, 0.7);
+	--color-bg: #0b1023;
+	--color-bg-deep: #070b18;
+	--color-surface: rgba(13, 22, 48, 0.58);
+	--color-surface-strong: rgba(18, 31, 67, 0.78);
+	--color-border: rgba(78, 132, 243, 0.28);
+	--color-ink: #f8fbff;
+	--color-content: #d9e7f7;
+	--color-muted: #aab7ca;
+	--color-accent: #6bbfe7;
+	--color-accent-strong: #4e84f3;
+	--color-accent-warm: #c99a5c;
+	--shadow-panel: 0 8px 18px rgba(3, 7, 18, 0.18);
+	--prim: hsla(230, 90%, 10%, 0.46);
+	--sec: hsla(260, 95%, 10%, 0.4);
 }
 
-.box {
-	@apply mx-auto;
-	@media only screen and (min-width: 960px) {
-		max-width: 900px;
-	}
-	@media only screen and (min-width: 1440px) {
-		max-width: 1400px;
-		/* styles for browsers larger than 1440px; */
-	}
-	@media only screen and (min-width: 2000px) {
-		max-width: 1600px;
-		/* for sumo sized (mac) screens */
+html {
+	scroll-behavior: smooth;
+}
+
+a,
+button {
+	transition:
+		color 180ms ease,
+		background-color 180ms ease,
+		border-color 180ms ease,
+		transform 180ms ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+	outline: 2px solid var(--color-accent-warm);
+	outline-offset: 4px;
+}
+
+.section-shell {
+	width: min(1120px, calc(100% - 2rem));
+	margin-inline: auto;
+	padding-block: clamp(4.5rem, 8vw, 7rem);
+}
+
+.section-heading {
+	max-width: 780px;
+	margin: 0 auto clamp(2rem, 5vw, 3.75rem);
+	color: var(--color-ink);
+	font-size: clamp(2rem, 4vw, 3.25rem);
+	font-weight: 700;
+	line-height: 1.08;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.surface-panel {
+	height: 100%;
+	border: 1px solid var(--color-border);
+	border-radius: 14px;
+	background: linear-gradient(180deg, rgba(22, 37, 78, 0.36), rgba(10, 16, 38, 0.56)), var(--color-surface);
+	box-shadow: var(--shadow-panel);
+}
+
+.surface-panel p {
+	color: var(--color-content);
+	line-height: 1.75;
+	text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
 	}
 }

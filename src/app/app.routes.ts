@@ -9,7 +9,7 @@ export const routes: Routes = [
 			{
 				path: '',
 				loadComponent: () => import('./views/public/public.component').then((m) => m.PublicComponent),
-				title: 'Jaime Burgos Tejada'
+				title: 'Jaime Burgos Tejada | Senior Angular & Fullstack Developer'
 			}
 		]
 	},

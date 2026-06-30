@@ -27,26 +27,5 @@
 		"name": "studies.list.3.name",
 		"period": "studies.list.3.period",
 		"description": []
-	},
-	{
-		"id": "study-5",
-		"institution": "studies.list.4.institution",
-		"name": "studies.list.4.name",
-		"period": "studies.list.4.period",
-		"description": []
-	},
-	{
-		"id": "study-6",
-		"institution": "studies.list.5.institution",
-		"name": "studies.list.5.name",
-		"period": "studies.list.5.period",
-		"description": []
-	},
-	{
-		"id": "study-7",
-		"institution": "studies.list.6.institution",
-		"name": "studies.list.6.name",
-		"period": "studies.list.6.period",
-		"description": []
 	}
 ]

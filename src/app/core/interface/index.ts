@@ -1,3 +1,5 @@
+export * from './angular-cve.interface';
+export * from './angular-pull-request.interface';
 export * from './certification.interface';
 export * from './experience.interface';
 export * from './portfolio.interface';

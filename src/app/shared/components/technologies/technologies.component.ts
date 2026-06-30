@@ -10,5 +10,4 @@ import { Technology } from '@core/interface';
 })
 export class TechnologiesComponent {
 	readonly technologies = input.required<Technology[]>();
-	readonly tooltipClass = input('');
 }

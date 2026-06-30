@@ -1,32 +1,37 @@
-<section appAddAnimation id="about" class="body-font overflow-hidden visibility-hidden">
-	<div class="container px-5 py-24 mx-auto">
-		<div class="flex flex-wrap -m-4">
-			<div class="p-4 md:w-1/2 flex flex-col items-start">
-				<div class="border-double border-4 p-6 rounded-lg color-border-azure h-full">
-					<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest"
-						>{{ 'about.title' | translate }}
-					</span>
-					<h2 class="sm:text-3xl text-2xl title-font font-medium mt-4 mb-4">Software Developer</h2>
-					<p class="leading-relaxed mb-8">{{ 'about.content' | translate }}</p>
-					<h2 class="sm:text-3xl text-2xl title-font font-medium mt-4 mb-4">{{ 'about.certifications' | translate }}</h2>
-					<div class="flex justify-center items-center">
-						@for (certification of certifications(); track certification.id) {
-							<a rel="noopener noreferrer" target="_blank" [id]="certification.id" [href]="certification.linkValidation">
-								<img [width]="180" [height]="180" [alt]="certification.name" [ngSrc]="certification.image" />
-							</a>
-						}
-					</div>
-				</div>
+<section appAddAnimation id="about" class="about">
+	<div class="section-shell about__shell">
+		<article class="surface-panel about__profile">
+			<div>
+				<h1>{{ 'about.title' | translate }}</h1>
+				<h2>Senior Fullstack Developer</h2>
+				<p>{{ 'about.content' | translate }}</p>
 			</div>
-			<div class="p-4 md:w-1/2 flex flex-col items-start">
-				<div class="border-double border-4 p-3 rounded-lg color-border-azure h-full">
-					<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-						{{ 'general.technologies-tools' | translate }}
-					</span>
 
-					<app-technologies [technologies]="technologies()" tooltipClass="tooltip-technology" />
+			<div class="about__certifications">
+				<h3>{{ 'about.certifications' | translate }}</h3>
+				<div class="about__certification-list">
+					@for (certification of certifications(); track certification.id) {
+						<a
+							rel="noopener noreferrer"
+							target="_blank"
+							[id]="certification.id"
+							[href]="certification.linkValidation"
+							class="about__certification"
+						>
+							@if (certification.image; as certificationImage) {
+								<img [width]="120" [height]="120" [alt]="certification.name" [ngSrc]="certificationImage" />
+							} @else {
+								<span>{{ certification.name }}</span>
+							}
+						</a>
+					}
 				</div>
 			</div>
-		</div>
+		</article>
+
+		<article class="surface-panel about__stack">
+			<h2>{{ 'about.stack-title' | translate }}</h2>
+			<app-technologies [technologies]="technologies()" />
+		</article>
 	</div>
 </section>

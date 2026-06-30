@@ -1,0 +1,74 @@
+:host {
+	--chip-bg: rgba(10, 16, 38, 0.42);
+	--chip-border: rgba(185, 251, 252, 0.22);
+	--chip-color: var(--color-content);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 100%;
+	min-width: 0;
+	border: 1px solid var(--chip-border);
+	border-radius: 999px;
+	background: var(--chip-bg);
+	color: var(--chip-color);
+	font-weight: 700;
+	line-height: 1.1;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+:host(.chip--sm) {
+	min-height: 1.8rem;
+	padding: 0.28rem 0.5rem;
+	font-size: 0.78rem;
+}
+
+:host(.chip--md) {
+	min-height: 2.25rem;
+	padding: 0.45rem 0.7rem;
+	font-size: 0.85rem;
+}
+
+:host(.chip--accent) {
+	--chip-bg: rgba(14, 165, 233, 0.12);
+	--chip-border: rgba(185, 251, 252, 0.34);
+	--chip-color: #dbeafe;
+}
+
+:host(.chip--info),
+:host(.chip--github) {
+	--chip-bg: rgba(61, 202, 253, 0.1);
+	--chip-border: rgba(61, 202, 253, 0.24);
+	--chip-color: var(--color-content);
+}
+
+:host(.chip--success) {
+	--chip-bg: rgba(34, 197, 94, 0.12);
+	--chip-border: rgba(74, 222, 128, 0.34);
+	--chip-color: #bbf7d0;
+}
+
+:host(.chip--warning) {
+	--chip-bg: rgba(245, 158, 11, 0.12);
+	--chip-border: rgba(251, 191, 36, 0.34);
+	--chip-color: #fde68a;
+}
+
+:host(.chip--danger) {
+	--chip-bg: rgba(244, 63, 94, 0.12);
+	--chip-border: rgba(251, 113, 133, 0.36);
+	--chip-color: #fecdd3;
+}
+
+:host(.chip--truncate) {
+	overflow: hidden;
+}
+
+.chip {
+	&__content {
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

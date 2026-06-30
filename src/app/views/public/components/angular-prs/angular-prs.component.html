@@ -1,0 +1,67 @@
+<section appAddAnimation id="angular-prs" class="contributions">
+	<div class="section-shell contributions__shell">
+		<header class="contributions__header">
+			<div>
+				<h1>{{ 'angular-prs.title' | translate }}</h1>
+				<p>{{ 'angular-prs.intro' | translate }}</p>
+			</div>
+
+			<a
+				class="contributions__source"
+				href="https://github.com/angular/angular/pulls?q=author%3ASkyZeroZx+is%3Apr+label%3A%22action%3A+merge%22"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{{ 'angular-prs.source' | translate }}
+			</a>
+		</header>
+
+		@if (hasError()) {
+			<div class="contributions__state contributions__state--error">
+				<span>{{ 'angular-prs.error' | translate }}</span>
+				<button type="button" class="contributions__retry" (click)="reload()">{{ 'general.retry' | translate }}</button>
+			</div>
+		} @else {
+			@if (isLoading()) {
+				<app-list-skeleton variant="card" [rows]="pageSize" [ariaLabel]="'angular-prs.loading-page' | translate" />
+			} @else {
+				<div class="contributions__list">
+					@for (pullRequest of pullRequests(); track pullRequest.number) {
+						<a class="surface-panel contributions__card contributions__card--pr" [href]="pullRequest.url" target="_blank" rel="noopener noreferrer">
+							<div class="contributions__meta">
+								<app-chip tone="accent">#{{ pullRequest.number }}</app-chip>
+								<app-chip tone="neutral">{{ pullRequest.completedAt }}</app-chip>
+							</div>
+
+							<h2 class="contributions__title">{{ pullRequest.title }}</h2>
+
+							<div class="contributions__labels" aria-label="Pull request labels">
+								@for (label of pullRequest.labels; track label.name) {
+									<app-chip
+										tone="github"
+										[truncate]="true"
+										[style.background-color]="label.backgroundColor"
+										[style.border-color]="label.borderColor"
+										[style.color]="label.textColor"
+									>
+										{{ label.name }}
+									</app-chip>
+								}
+							</div>
+						</a>
+					}
+				</div>
+			}
+
+			@if (!isLoading() || totalCount() > 0) {
+				<app-paginator
+					[ariaLabel]="'angular-prs.pagination' | translate"
+					[page]="page()"
+					[pageSize]="pageSize"
+					[total]="totalCount()"
+					(pageChange)="setPage($event)"
+				/>
+			}
+		}
+	</div>
+</section>

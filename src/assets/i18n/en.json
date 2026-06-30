@@ -4,51 +4,48 @@
 		"technologies-tools": "Technologies and Tools",
 		"testing-automation": "Testing & Automation",
 		"repository": "Repository",
-		"description": "Description"
+		"description": "Description",
+		"retry": "Retry"
 	},
 	"home": {
-		"content": "I am a developer of Web, PWA, mobile applications, applying Unit Test and E2E Testing to applications under agile methodologies",
-		"contact": "Contact Me"
-	},
-	"can-do": {
-		"title": "What I can do?",
-		"web-apps": "Creation of friendly and scalable web applications",
-		"pwa": "Creation of web applications installable on mobile devices",
-		"automation": "Automation of execution of Unit tests and E2E in FrontEnd as in BackEnd",
-		"ci-cd": "Continuous Integration and Continuous Deployment of applications delivering better quality and improvement in development times"
+		"role": "Senior Angular Developer",
+		"content": "I build maintainable, fast, and secure Angular products.",
+		"contact": "Contact",
+		"github": "View GitHub",
+		"linkedin": "LinkedIn",
+		"scroll": "Scroll down"
 	},
 	"about": {
-		"title": "About me",
-		"content": "Passionate about technology, self-taught, committed and responsible. Interest in obtaining new knowledge for continuous improvement both professionally and personally Developments under an agile methodologies approach using good programming practices such as Clean Code, SOLID Principles",
+		"title": "Profile",
+		"content": "I work mainly with Angular, NestJS, and cloud architecture. My focus is migrations, performance, testing, security, and maintainable software delivery.",
 		"technology-subtitle": "Technologies and tools",
-		"certifications": "Certifications"
+		"stack-title": "Core stack",
+		"certifications": "Cloud certifications"
 	},
 	"experience": {
-		"title": "Experience",
+		"title": "Professional Career",
 		"list": [
 			{
 				"company": "Novatronic",
 				"period": "October 2021 - Present",
 				"jobTitle": "Software Engineer I",
 				"activities": [
-					"Creating Unit Tests for Java software",
-					"Compliance with unit test metrics in SonarQube with Java",
-					"External device automation using Cypress for Angular FrontEnd",
-					"PWA Prototype creation in Angular for OnBoarding application",
-					"Successful affiliation Meta Developers for Facebook/WhatsApp API consumption",
-					"WhatsApp ChatBot pilot with Meta Developers API integration",
-					"WebHook creation to interact with WhatsApp Business events",
-					"Rest NestJS API creation for simulation of transactions and registration through WhatsApp"
+					"Implemented unit tests and quality metrics for Java products with SonarQube.",
+					"Automated E2E flows and external device validation over Angular frontends.",
+					"Prototyped Angular PWAs for onboarding processes.",
+					"Integrated Meta Developers APIs for Facebook and WhatsApp Business consumption.",
+					"Built chatbot pilots and webhooks for WhatsApp Business events.",
+					"Created REST APIs with NestJS for transaction simulation and operational records."
 				]
 			},
 			{
 				"company": "Freelance",
 				"period": "July 2022 - Present",
-				"jobTitle": "Developer FrontEnd Angular",
+				"jobTitle": "Frontend Angular Developer",
 				"activities": [
-					"Creation of a tracking portal and registration of transport company receipts/invoices",
-					"Completion and maintenance Portal Management of School Notes, correction of minor bugs",
-					"Bug fixes in the medical sample management portal integrated with Auth0"
+					"Built a portal for tracking and registering receipts in a transport company.",
+					"Maintained an academic management portal for school grades.",
+					"Fixed issues in a medical sample management platform integrated with Auth0."
 				]
 			},
 			{
@@ -56,12 +53,35 @@
 				"period": "January 2021 - October 2021",
 				"jobTitle": "Intern Software Engineer",
 				"activities": [
-					"Refactoring and Update FrontEnd Angular 8 to 12",
-					"Creating Unit Tests with Jasmine/Karma for code coverage in SonarQube",
-					"E2E Test Automation Pilot in Angular FrontEnd with Cypress"
+					"Refactored and migrated frontend applications from Angular 8 to Angular 12.",
+					"Implemented unit tests with Jasmine/Karma for SonarQube coverage.",
+					"Piloted E2E automation with Cypress over Angular applications."
+				]
+			},
+			{
+				"company": "Open Source",
+				"period": "2025 - Present",
+				"jobTitle": "Angular Contributor & Security Researcher",
+				"activities": [
+					"Accepted contributions in angular/angular and maintained libraries such as ngx-typed-writer.",
+					"Performed security research credited in GitHub Advisories for Angular packages.",
+					"Explored SSR, PWA/TWA, Speculation Rules, performance, and modern ecosystem compatibility."
+				]
+			},
+			{
+				"company": "Devsu",
+				"period": "November 2023 - Present",
+				"jobTitle": "Software Engineer",
+				"activities": [
+					"Migrated a React SPA to an Angular WebView microfrontend.",
+					"Developed and maintained Angular interfaces for digital products.",
+					"Maintained Java services, API integrations, and TypeScript flows."
 				]
 			}
-		]
+		],
+		"subtitle": "Recent experience, Angular contributions, and selected education.",
+		"work-title": "Experience and contributions",
+		"education-title": "Education"
 	},
 	"studies": {
 		"title": "Studies",
@@ -71,17 +91,7 @@
 				"institution": "Universidad Nacional del Callao",
 				"name": "Systems Engineer",
 				"period": "July 2016 - August 2021",
-				"description": "Graduated in first places in the honor roll of the university"
-			},
-			{
-				"institution": "Sistemas UNI",
-				"name": "Administration in Oracle DB",
-				"period": "January 2019 - March 2019"
-			},
-			{
-				"institution": "Sistemas UNI",
-				"name": "Excel Basic - Advanced",
-				"period": "October 2019 - December 2019"
+				"description": "Graduated with strong academic performance and honor roll recognition."
 			},
 			{
 				"institution": "Sistemas UNI",
@@ -89,46 +99,66 @@
 				"period": "September 2020 - October 2020"
 			},
 			{
-				"institution": "PUCP",
-				"name": "MS Project Based on PMBOK",
-				"period": "September 2020 - October 2020"
-			},
-			{
 				"institution": "Sistemas UNI",
-				"name": "Business Intelligence MS SQL Server 2016",
+				"name": "Business Intelligence with SQL Server",
 				"period": "June 2021 - November 2021"
 			},
 			{
 				"institution": "Sistemas UNI",
-				"name": "Project management",
-				"period": "May 2022 - August 2022"
+				"name": "Oracle Database Administration",
+				"period": "January 2019 - March 2019"
 			}
 		]
 	},
 	"contact": {
-		"title": "Contact Me",
+		"title": "Let's talk",
 		"content": {
-			"whatsapp": "Do you have any idea? Tell me by WhatsApp",
-			"email": "Do you have any idea?, Tell me by email",
-			"linkedin": "You can also find my Linkedin profile"
+			"whatsapp": "Message me on WhatsApp to schedule a technical conversation.",
+			"email": "Send me project or role context by email.",
+			"linkedin": "Review my professional profile and recent activity on LinkedIn."
 		}
 	},
 	"portfolio": {
-		"title": "Portfolio",
+		"title": "Selected projects",
 		"view-more": "View more",
 		"proyects": [
 			{
 				"name": "Sky Scrapper",
-				"description": "Price comparison of manga products from major stores in Peru using web scraping with Puppeteer, with historical price charts for each product, as well as the ability to generate our own wishlist with push notification alerts for discounts"
+				"description": "Manga price comparison across Peruvian stores. Uses Puppeteer scraping, price history, wishlists, and push discount alerts."
 			},
 			{
 				"name": "Sky Bot",
-				"description": "Interactive chatbot for management and registration of procedures through Facebook Messenger, integrated with Dialogflow for natural language understanding, with a web portal (PWA) integrated with Auth0"
+				"description": "Procedure-management chatbot with Facebook Messenger, Dialogflow, a PWA portal, Auth0, and an observable NestJS backend."
 			},
 			{
 				"name": "Sky Krono",
-				"description": "Application for interactive attendance control management using a task calendar and push notifications in a PWA, with graphical attendance reports. It implements a WebAuthentication login standard for fingerprint or integrated device validation "
+				"description": "PWA for attendance control, calendar workflows, push notifications, reporting dashboards, and WebAuthn authentication."
 			}
 		]
+	},
+	"paginator": {
+		"previous": "Previous",
+		"next": "Next",
+		"page": "Page {{ page }} of {{ pages }}",
+		"page-prefix": "Page",
+		"page-separator": "of",
+		"pages": "Pages",
+		"go-to-page": "Go to page"
+	},
+	"angular-security": {
+		"title": "Angular Security Work",
+		"intro": "Credited research in GitHub Advisories: real issues in Angular packages published as CVE/GHSA records.",
+		"source": "View credited advisories",
+		"pagination": "Angular CVEs pagination",
+		"loading": "Loading CVEs from GitHub API...",
+		"error": "Could not load advisories from GitHub."
+	},
+	"angular-prs": {
+		"title": "Angular Contributions",
+		"intro": "Pull requests reviewed by the Angular team: fixes, docs, backports, and framework maintenance work.",
+		"source": "View PRs on GitHub",
+		"pagination": "Angular PRs pagination",
+		"loading-page": "Loading PR page",
+		"error": "Could not load PRs from GitHub."
 	}
 }

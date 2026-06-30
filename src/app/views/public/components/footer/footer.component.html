@@ -1,31 +1,21 @@
-<footer appAddAnimation class="body-font visibility-hidden" style="height: 50px">
-	<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-		<p class="text-base text-blue-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-			© {{ date | date: 'yyyy' }} Jaime Burgos Tejada —
-			<a
-				href="https://github.com/SkyZeroZx"
-				class="text-blue-600 ml-1"
-				rel="noopener noreferrer"
-				aria-label="Read more in github"
-				target="_blank"
-				>@SkyZeroZx</a
-			>
+<footer appAddAnimation class="footer">
+	<div class="footer__shell">
+		<p>
+			© {{ date | date: 'yyyy' }} Jaime Burgos Tejada -
+			<a href="https://github.com/SkyZeroZx" rel="noopener noreferrer" aria-label="Read more in GitHub" target="_blank">@SkyZeroZx</a>
 		</p>
-		<span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-			<div class="ml-3">
-				<a href="https://github.com/SkyZeroZx" rel="noopener noreferrer" target="_blank" aria-label="Read more in the repository github">
-					<fa-icon class="fa-lg" size="2x" style="color: #3d6bf3 !important" [icon]="faGithub" />
-				</a>
-			</div>
+		<nav aria-label="Social profiles">
+			<a href="https://github.com/SkyZeroZx" rel="noopener noreferrer" target="_blank" aria-label="GitHub profile">
+				<fa-icon [icon]="faGithub" />
+			</a>
 			<a
-				class="ml-3 text-blue-500"
-				aria-label="view linkedin"
+				aria-label="LinkedIn profile"
 				href="https://www.linkedin.com/in/jaime-burgos-tejada-a45697203/"
 				rel="noopener noreferrer"
 				target="_blank"
 			>
-				<fa-icon class="fa-lg" size="2x" style="color: #3d6bf3 !important" [icon]="faLinkedinIn" />
+				<fa-icon [icon]="faLinkedinIn" />
 			</a>
-		</span>
+		</nav>
 	</div>
 </footer>

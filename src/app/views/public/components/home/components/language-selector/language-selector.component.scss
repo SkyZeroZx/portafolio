@@ -1,109 +1,132 @@
-//Switch Language--->
-
-h4 {
-	color: #999;
+:host {
+	position: absolute;
+	top: clamp(1rem, 3vw, 1.75rem);
+	right: clamp(1rem, 3vw, 1.75rem);
+	z-index: 4;
+	display: block;
 }
 
-.tgl {
-	display: none;
+.language-selector {
+	padding: 0.25rem;
 
-	// add default box-sizing for this scope
-	&,
-	&:after,
-	&:before,
-	& *,
-	& *:after,
-	& *:before,
-	& + .tgl-btn {
-		box-sizing: border-box;
-		&::selection {
-			background: none;
-		}
+	&__inner {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		gap: 0.4rem;
 	}
 
-	+ .tgl-btn {
-		outline: 0;
-		display: block;
-		width: 4em;
-		height: 2em;
-		position: relative;
-		cursor: pointer;
-		user-select: none;
-		&:after,
-		&:before {
+	&__label {
+		color: #f8fbff;
+		font-size: 0.82rem;
+		font-weight: 700;
+		line-height: 1;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+	}
+
+	&__input {
+		display: none;
+
+		&,
+		&::after,
+		&::before,
+		& *,
+		& *::after,
+		& *::before,
+		& + .language-selector__toggle {
+			box-sizing: border-box;
+
+			&::selection {
+				background: none;
+			}
+		}
+
+		& + .language-selector__toggle {
 			position: relative;
 			display: block;
-			content: '';
-			width: 50%;
-			height: 100%;
-		}
-
-		&:after {
-			left: 0;
-		}
-
-		&:before {
-			display: none;
-		}
-	}
-
-	&:checked + .tgl-btn:after {
-		left: 50%;
-	}
-}
-
-.tgl-skewed {
-	+ .tgl-btn {
-		overflow: hidden;
-		transform: skew(-10deg);
-		backface-visibility: hidden;
-		transition: all 0.2s ease;
-		font-family: sans-serif;
-		background: linear-gradient(rgb(14, 165, 233), rgb(168, 85, 247));
-		&:after,
-		&:before {
-			transform: skew(10deg);
-			display: inline-block;
+			width: 4em;
+			height: 2em;
+			overflow: hidden;
+			outline: 0;
+			transform: skew(-10deg);
+			backface-visibility: hidden;
+			background: linear-gradient(rgb(14, 165, 233), rgb(168, 85, 247));
+			box-shadow:
+				0 8px 20px rgba(3, 7, 18, 0.22),
+				0 0 0 1px rgba(255, 255, 255, 0.12);
+			cursor: pointer;
+			user-select: none;
 			transition: all 0.2s ease;
-			width: 100%;
-			text-align: center;
-			position: absolute;
-			line-height: 2em;
-			font-weight: bold;
-			color: #fff;
-			text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-		}
 
-		&:after {
-			left: 100%;
-			content: attr(data-tg-on);
-		}
+			&::after,
+			&::before {
+				position: absolute;
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				transform: skew(10deg);
+				color: #fff;
+				font-family: sans-serif;
+				font-weight: 700;
+				line-height: 2em;
+				text-align: center;
+				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+				transition: all 0.2s ease;
+			}
 
-		&:before {
-			left: 0;
-			content: attr(data-tg-off);
-		}
+			&::after {
+				left: 100%;
+				content: attr(data-tg-on);
+			}
 
-		&:active {
-			background: #888;
-			&:before {
+			&::before {
+				left: 0;
+				content: attr(data-tg-off);
+			}
+
+			&:active::before {
 				left: -10%;
 			}
 		}
+
+		&:checked + .language-selector__toggle {
+			background: linear-gradient(rgb(168, 85, 247), rgb(14, 165, 233));
+
+			&::before {
+				left: -100%;
+			}
+
+			&::after {
+				left: 0;
+			}
+
+			&:active::after {
+				left: 10%;
+			}
+		}
+	}
+}
+
+@media (max-width: 520px) {
+	:host {
+		top: 0.85rem;
+		right: 0.85rem;
 	}
 
-	&:checked + .tgl-btn {
-		background: linear-gradient(rgb(168, 85, 247), rgb(14, 165, 233));
-		&:before {
-			left: -100%;
+	.language-selector {
+		&__label {
+			font-size: 0.72rem;
 		}
 
-		&:after {
-			left: 0;
-		}
+		&__input + .language-selector__toggle {
+			width: 3.35em;
+			height: 1.65em;
 
-		&:active:after {
-			left: 10%;
+			&::after,
+			&::before {
+				font-size: 0.88rem;
+				line-height: 1.9em;
+			}
 		}
 	}
 }

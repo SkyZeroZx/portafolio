@@ -1,5 +1,6 @@
 export * from './about/about.component';
-export * from './can-do/can-do.component';
+export * from './angular-prs/angular-prs.component';
+export * from './angular-security/angular-security.component';
 export * from './contact/contact.component';
 export * from './experience/experience.component';
 export * from './footer/footer.component';
@@ -9,4 +10,3 @@ export * from './home/home.component';
 export * from './portfolio/components';
 export * from './portfolio/components/project/project.component';
 export * from './portfolio/portfolio.component';
-export * from './studies/studies.component';

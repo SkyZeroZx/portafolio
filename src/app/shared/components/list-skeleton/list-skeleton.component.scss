@@ -1,0 +1,83 @@
+:host {
+	display: block;
+}
+
+.list-skeleton {
+	display: grid;
+	gap: 0.55rem;
+
+	&--card {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.85rem;
+	}
+
+	&__item {
+		display: grid;
+		gap: 0.72rem;
+		min-height: 5rem;
+		overflow: hidden;
+		border: 1px solid rgba(78, 132, 243, 0.16);
+		border-radius: 12px;
+		padding: 0.9rem 1rem;
+		background: rgba(10, 16, 38, 0.38);
+	}
+
+	&--card &__item {
+		min-height: 15rem;
+		padding: clamp(1rem, 2vw, 1.35rem);
+	}
+
+	&__line {
+		display: block;
+		width: 100%;
+		height: 0.72rem;
+		border-radius: 999px;
+		background: linear-gradient(90deg, rgba(78, 132, 243, 0.08), rgba(107, 191, 231, 0.2), rgba(78, 132, 243, 0.08));
+		background-size: 220% 100%;
+		animation: skeleton-sweep 1.35s ease-in-out infinite;
+
+		&--eyebrow {
+			width: min(9rem, 42%);
+			height: 0.65rem;
+		}
+
+		&--title {
+			width: min(34rem, 72%);
+			height: 0.95rem;
+		}
+
+		&--body {
+			width: min(28rem, 58%);
+		}
+
+		&--short {
+			width: min(18rem, 42%);
+		}
+	}
+}
+
+@keyframes skeleton-sweep {
+	0% {
+		background-position: 120% 0;
+	}
+
+	100% {
+		background-position: -120% 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.list-skeleton {
+		&__line {
+			animation: none;
+		}
+	}
+}
+
+@media (max-width: 820px) {
+	.list-skeleton {
+		&--card {
+			grid-template-columns: 1fr;
+		}
+	}
+}

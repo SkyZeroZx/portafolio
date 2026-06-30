@@ -1,10 +1,20 @@
-<section id="experience" class="overflow-hidden">
-	<div class="container px-5 py-14 mx-auto">
-		<div class="flex flex-wrap w-full mb-12 flex-col items-center text-center">
-			<h1 class="outline-text-h1 sm:text-5xl text-4xl font-semibold title-font mb-2 text-slate-200">
-				{{ 'experience.title' | translate }}
-			</h1>
+<section id="experience" class="career">
+	<div class="section-shell career__shell">
+		<header class="career__header">
+			<h1>{{ 'experience.title' | translate }}</h1>
+			<p>{{ 'experience.subtitle' | translate }}</p>
+		</header>
+
+		<div class="career__layout">
+			<article class="career__panel career__panel--main">
+				<h2>{{ 'experience.work-title' | translate }}</h2>
+				<app-timeline [listTimeline]="experiences()" [animationOptions]="animationOptions" [markerIcon]="faBriefcase" />
+			</article>
+
+			<aside class="career__panel career__panel--side">
+				<h2>{{ 'experience.education-title' | translate }}</h2>
+				<app-timeline [listTimeline]="studies()" [compact]="true" [markerIcon]="faGraduationCap" />
+			</aside>
 		</div>
-		<app-timeline [listTimeline]="experiences()" [animationOptions]="animationOptions" />
 	</div>
 </section>

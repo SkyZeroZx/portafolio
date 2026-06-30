@@ -1,0 +1,10 @@
+<div class="list-skeleton" [class.list-skeleton--card]="variant() === 'card'" [attr.aria-label]="ariaLabel()" aria-busy="true">
+	@for (placeholder of placeholders(); track placeholder) {
+		<article class="list-skeleton__item" aria-hidden="true">
+			<span class="list-skeleton__line list-skeleton__line--eyebrow"></span>
+			<span class="list-skeleton__line list-skeleton__line--title"></span>
+			<span class="list-skeleton__line list-skeleton__line--body"></span>
+			<span class="list-skeleton__line list-skeleton__line--body list-skeleton__line--short"></span>
+		</article>
+	}
+</div>

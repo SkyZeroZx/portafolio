@@ -1,26 +1,20 @@
-<section appAddAnimation id="portfolio" class="body-font visibility-hidden" [animationOptions]="animationOptions">
-	<div class="container px-5 py-24 mx-auto">
-		<div class="flex flex-col">
-			<div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-				<h1 class="outline-text-h1 sm:text-5xl text-4xl font-semibold title-font mb-2">
-					{{ 'portfolio.title' | translate }}
-				</h1>
-			</div>
-		</div>
-		<div class="zoom-custom mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+<section appAddAnimation id="portfolio" class="portfolio" [animationOptions]="animationOptions">
+	<div class="section-shell">
+		<h1 class="section-heading">
+			{{ 'portfolio.title' | translate }}
+		</h1>
+
+		<div class="portfolio__grid">
 			@for (portfolio of portfolioProjects(); track portfolio.id) {
-				<button
-					type="button"
-					class="border-double border-4 color-border-azure group p-7 rounded-md transition-all hover:shadow-xl duration-200 ease-in shadow-lg hover:border-blue-500 relative cursor-pointer text-left bg-transparent"
-					[id]="portfolio.id"
-					(click)="openModal(portfolio)"
-				>
-					<div class="rounded-lg h-64 overflow-hidden">
-						<img [alt]="portfolio.name | translate" class="object-center h-full w-full" [src]="portfolio.logo" [loading]="'lazy'" />
-					</div>
-					<h2 class="text-xl font-medium title-font mt-5">{{ portfolio.name | translate }}</h2>
-					<p class="text-base leading-relaxed mt-2">{{ portfolio.description | translate }}</p>
-					<span class="text-blue-500 inline-flex items-center mt-3 cursor-pointer view-more">
+				<button type="button" class="surface-panel portfolio__card" [id]="portfolio.id" (click)="openModal(portfolio)">
+					<span class="portfolio__media">
+						<img [alt]="portfolio.name | translate" [src]="portfolio.logo" [loading]="'lazy'" />
+					</span>
+					<span class="portfolio__body">
+						<span class="portfolio__title">{{ portfolio.name | translate }}</span>
+						<span class="portfolio__description">{{ portfolio.description | translate }}</span>
+					</span>
+					<span class="portfolio__view-more">
 						<span>{{ 'portfolio.view-more' | translate }}</span>
 						<svg
 							fill="none"
@@ -28,7 +22,6 @@
 							stroke-linecap="round"
 							stroke-linejoin="round"
 							stroke-width="2"
-							class="w-4 h-4 ml-2"
 							viewBox="0 0 24 24"
 						>
 							<path d="M5 12h14M12 5l7 7-7 7"></path>

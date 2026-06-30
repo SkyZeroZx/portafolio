@@ -1,4 +1,3 @@
-import { NgTemplateOutlet } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { PortfolioProject } from '@core/interface';
 import { SafeUrlPipe } from '@core/pipe';
@@ -7,7 +6,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-project',
-	imports: [ModalComponent, NgTemplateOutlet, SafeUrlPipe, TechnologiesComponent, TranslatePipe],
+	imports: [ModalComponent, SafeUrlPipe, TechnologiesComponent, TranslatePipe],
 	templateUrl: './project.component.html',
 	styleUrls: ['./project.component.scss']
 })

@@ -1,6 +1,4 @@
-import { APP_ID, ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
-import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideClientHydration } from '@angular/platform-browser';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
 import { provideTranslateLoader, provideTranslateService } from '@ngx-translate/core';
@@ -12,16 +10,12 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
 	providers: [
 		provideBrowserGlobalErrorListeners(),
-		provideZonelessChangeDetection(),
 		provideRouter(routes),
-		provideHttpClient(withFetch()),
-		provideClientHydration(),
 		provideServiceWorker('ngsw-worker.js', swRegistrationOptions),
 		provideTranslateService({
 			lang: LANGUAGES.EN,
 			fallbackLang: LANGUAGES.EN,
 			loader: provideTranslateLoader(() => new TranslateBrowserLoader())
-		}),
-		{ provide: APP_ID, useValue: 'server-app' }
+		})
 	]
 };

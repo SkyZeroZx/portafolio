@@ -4,25 +4,25 @@ import { ActivatedRoute } from '@angular/router';
 import { PAGE_SECTION } from '@core/constants';
 import { preLoadImages, scrollTo } from '@core/utils';
 import { AboutComponent } from './components/about/about.component';
-import { CanDoComponent } from './components/can-do/can-do.component';
+import { AngularPrsComponent } from './components/angular-prs/angular-prs.component';
+import { AngularSecurityComponent } from './components/angular-security/angular-security.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { StudiesComponent } from './components/studies/studies.component';
 
 @Component({
 	selector: 'app-public',
 	imports: [
 		AboutComponent,
-		CanDoComponent,
+		AngularPrsComponent,
+		AngularSecurityComponent,
 		ContactComponent,
 		ExperienceComponent,
 		FooterComponent,
 		HomeComponent,
-		PortfolioComponent,
-		StudiesComponent
+		PortfolioComponent
 	],
 	templateUrl: './public.component.html',
 	styleUrls: ['./public.component.scss']
@@ -36,7 +36,9 @@ export class PublicComponent {
 
 	constructor() {
 		afterNextRender(() => {
-			if (this.route.snapshot.queryParamMap.has('proyect')) {
+			void this.loadContent();
+
+			if (this.route.snapshot.queryParamMap.has('project') || this.route.snapshot.queryParamMap.has('proyect')) {
 				void this.loadContent();
 			}
 		});
@@ -54,7 +56,7 @@ export class PublicComponent {
 		await this.loadContent();
 
 		requestAnimationFrame(() => {
-			scrollTo(PAGE_SECTION.CAN_DO);
+			scrollTo(PAGE_SECTION.EXPERIENCE);
 		});
 	}
 

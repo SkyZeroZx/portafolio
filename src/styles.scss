@@ -1,14 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 @use './app/styles/partials/base';
-@use './app/styles/partials/buttons';
-@use './app/styles/partials/icons';
-@use './app/styles/partials/colors';
 @use './app/styles/partials/scrollbar';
 @use './app/styles/partials/animations';
-@use './app/styles/partials/tooltip';
 @use './app/styles/partials/background';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

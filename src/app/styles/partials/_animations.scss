@@ -1,35 +1,37 @@
 .slideInUp {
 	-webkit-animation-name: slideInUp;
 	animation-name: slideInUp;
-	animation-duration: 1s;
+	animation-duration: 520ms;
+	animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @-webkit-keyframes slideInUp {
 	from {
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 1.4rem, 0);
+		transform: translate3d(0, 1.4rem, 0);
+		opacity: 0.88;
 		visibility: visible;
 	}
 
 	to {
 		-webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 }
 
 @keyframes slideInUp {
 	from {
-		-webkit-transform: translate3d(0, 100%, 0);
-		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 1.4rem, 0);
+		transform: translate3d(0, 1.4rem, 0);
+		opacity: 0.88;
 		visibility: visible;
 	}
 
 	to {
 		-webkit-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 }
 
-.visibility-hidden {
-	visibility: hidden;
-}

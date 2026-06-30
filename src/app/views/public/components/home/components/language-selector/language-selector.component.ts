@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, Component, computed, inject, output } from '@angular/core';
+import { Component, computed, inject, output } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { LANGUAGES, listLanguages } from '@core/constants';
 
 @Component({
 	selector: 'app-language-selector',
-	changeDetection: ChangeDetectionStrategy.OnPush,
 	imports: [TranslatePipe],
 	templateUrl: './language-selector.component.html',
 	styleUrls: ['./language-selector.component.scss']

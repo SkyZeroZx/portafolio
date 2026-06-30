@@ -4,51 +4,48 @@
 		"technologies-tools": "Tecnologías y herramientas",
 		"testing-automation": "Testing & Automatización",
 		"repository": "Repositorio",
-		"description": "Descripción"
+		"description": "Descripción",
+		"retry": "Reintentar"
 	},
 	"home": {
-		"content": "Soy un desarrollador de aplicaciones Web, PWA , móviles , aplicando Unit Test y E2E Testing a las aplicaciones bajo metodologias ágiles",
-		"contact": "Contactame"
-	},
-	"can-do": {
-		"title": "¿Qué puedo hacer?",
-		"web-apps": "Creación de aplicaciones web amigables y escalables",
-		"pwa": "Creación de aplicaciones web instalables en dispositivos moviles",
-		"automation": "Automatización de ejecución de pruebas Unitarias y E2E en FrontEnd como en BackEnd",
-		"ci-cd": "Integración Continua con Despliegue Continuo de las aplicaciones entregando una mejor calidad y mejora de los tiempos de desarrollo"
+		"role": "Senior Angular Developer",
+		"content": "Construyo productos Angular mantenibles, rápidos y seguros.",
+		"contact": "Contactar",
+		"github": "Ver GitHub",
+		"linkedin": "LinkedIn",
+		"scroll": "Scroll down"
 	},
 	"about": {
-		"title": "Acerca De Mí",
-		"content": "Apasionado por la tecnología, autodidacta, comprometido y responsable. Interes en obtener nuevos conocimientos para la mejora continua tanto profesional como personal Desarrollos bajo enfoque de metodologias ágiles usando buenas practicas de programación como Clean Code , Principios SOLID",
+		"title": "Perfil",
+		"content": "Trabajo principalmente con Angular, NestJS y cloud architecture. Me enfoco en migraciones, performance, testing, seguridad y entrega de software mantenible.",
 		"technology-subtitle": "Tecnologías y herramientas",
-		"certifications": "Certificaciones"
+		"stack-title": "Stack principal",
+		"certifications": "Certificaciones cloud"
 	},
 	"experience": {
-		"title": "Experiencia",
+		"title": "Trayectoria profesional",
 		"list": [
 			{
 				"company": "Novatronic",
 				"period": "Octubre 2021 - Actualidad",
 				"jobTitle": "Ingeniero de Software I",
 				"activities": [
-					"Creación de Pruebas Unitarias para productos Java",
-					"Cumplimiento de métricas de pruebas unitarias en SonarQube con Java",
-					"Automatización de dispositivo externos mediante Cypress para FrontEnd Angular",
-					"Creación Prototipo PWA en Angular para aplicación OnBoarding",
-					"Afiliación exitosa Meta Developers para consumo de API Facebook/WhatsApp",
-					"Piloto ChatBot WhatsApp con integración API Meta Developers",
-					"Elaboración WebHook para interactuar con eventos de WhatsApp Business",
-					"Creación API Rest NestJS para simulación de transacciones y registro mediante WhatsApp"
+					"Implementación de pruebas unitarias y métricas de calidad en productos Java con SonarQube.",
+					"Automatización de flujos E2E y validación de dispositivos externos sobre frontends Angular.",
+					"Prototipado de PWAs en Angular para procesos de onboarding.",
+					"Integración con Meta Developers para consumo de APIs de Facebook y WhatsApp Business.",
+					"Desarrollo de pilotos de chatbot y webhooks para eventos de WhatsApp Business.",
+					"Construcción de APIs REST con NestJS para simulación de transacciones y registros operativos."
 				]
 			},
 			{
 				"company": "Independiente",
 				"period": "Julio 2022 - Actualidad",
-				"jobTitle": "Developer FrontEnd Angular",
+				"jobTitle": "Frontend Angular Developer",
 				"activities": [
-					"Creación de portal de seguimiento y registro de boletas/facturas de empresa de transportes",
-					"Finalización y mantenimiento Portal Gestión de Notas Escolares , corrección de bugs menores",
-					"Corrección de bugs en portal de gestión de muestra medicas integrado con Auth0"
+					"Desarrollo de un portal para seguimiento y registro de comprobantes en una empresa de transportes.",
+					"Mantenimiento de un portal de gestión académica para notas escolares.",
+					"Corrección de incidencias en una plataforma de gestión de muestras médicas integrada con Auth0."
 				]
 			},
 			{
@@ -56,12 +53,35 @@
 				"period": "Enero 2021 - Octubre 2021",
 				"jobTitle": "Practicante Ingeniero de Software",
 				"activities": [
-					"Refactorización y Actualización FrontEnd Angular 8 a 12",
-					"Creación de Pruebas Unitarias con Jasmine/Karma para cobertura de código en SonarQube",
-					"Piloto Automatización Pruebas E2E en FrontEnd Angular con Cypress"
+					"Refactorización y migración de aplicaciones Angular 8 a Angular 12.",
+					"Implementación de pruebas unitarias con Jasmine/Karma para cobertura en SonarQube.",
+					"Piloto de automatización E2E con Cypress sobre aplicaciones Angular."
+				]
+			},
+			{
+				"company": "Open Source",
+				"period": "2025 - Actualidad",
+				"jobTitle": "Angular Contributor & Security Researcher",
+				"activities": [
+					"Contribuciones aceptadas en angular/angular y mantenimiento de librerías como ngx-typed-writer.",
+					"Investigación de seguridad acreditada en GitHub Advisories para paquetes Angular.",
+					"Trabajo exploratorio con SSR, PWA/TWA, Speculation Rules, performance y compatibilidad moderna del ecosistema."
+				]
+			},
+			{
+				"company": "Devsu",
+				"period": "Noviembre 2023 - Actualidad",
+				"jobTitle": "Ingeniero de Software",
+				"activities": [
+					"Migración de una SPA en React a microfrontend WebView con Angular.",
+					"Desarrollo y mantenimiento de interfaces Angular para productos digitales.",
+					"Mantenimiento de servicios Java, integración de APIs y flujos TypeScript."
 				]
 			}
-		]
+		],
+		"subtitle": "Experiencia reciente, contribuciones a Angular y formación relevante.",
+		"work-title": "Experiencia y contribuciones",
+		"education-title": "Educación"
 	},
 	"studies": {
 		"title": "Estudios",
@@ -69,19 +89,9 @@
 			{
 				"grade": "Bachiller",
 				"institution": "Universidad Nacional del Callao",
-				"name": "Ingenieria de Sistemas",
+				"name": "Ingeniería de Sistemas",
 				"period": "Julio 2016 - Agosto 2021",
-				"description": "Egresado en primeros primeros puestos en cuadro de honor de la universidad"
-			},
-			{
-				"institution": "Sistemas UNI",
-				"name": "Administración en Oracle DB",
-				"period": "Enero 2019 - Marzo 2019"
-			},
-			{
-				"institution": "Sistemas UNI",
-				"name": "Excel Basico - Avanzado",
-				"period": "Octubre 2019 - Diciembre 2019"
+				"description": "Egresado con alto rendimiento académico y participación en el cuadro de honor."
 			},
 			{
 				"institution": "Sistemas UNI",
@@ -89,46 +99,66 @@
 				"period": "Septiembre 2020 - Octubre 2020"
 			},
 			{
-				"institution": "PUCP",
-				"name": "MS Project Basado en el PMBOK",
-				"period": "Septiembre 2020 - Octubre 2020"
-			},
-			{
 				"institution": "Sistemas UNI",
-				"name": "Business Intelligence MS SQL Server 2016",
+				"name": "Business Intelligence con SQL Server",
 				"period": "Junio 2021 - Noviembre 2021"
 			},
 			{
 				"institution": "Sistemas UNI",
-				"name": "Gestion de Proyectos",
-				"period": "Mayo 2022 - Agosto 2022"
+				"name": "Administración de Oracle Database",
+				"period": "Enero 2019 - Marzo 2019"
 			}
 		]
 	},
 	"contact": {
-		"title": "Contactame",
+		"title": "Conversemos",
 		"content": {
-			"whatsapp": "¿ Tienes alguna idea ?, cuentamela por WhatsApp",
-			"email": "¿ Tienes alguna idea ?, cuentamela por correo",
-			"linkedin": "Tambien puedes encontrar mi perfil de Linkedin"
+			"whatsapp": "Escríbeme por WhatsApp para coordinar una conversación técnica.",
+			"email": "Envíame un correo con el contexto del proyecto o posición.",
+			"linkedin": "Revisa mi perfil profesional y actividad reciente en LinkedIn."
 		}
 	},
 	"portfolio": {
-		"title": "Portafolio",
+		"title": "Proyectos seleccionados",
 		"view-more": "Ver más",
 		"proyects": [
 			{
 				"name": "Sky Scrapper",
-				"description": "Comparador de precios de Mangas de las principales tiendas en Perú haciendo uso de Scrapping web con Puppeteer , teniendo graficos de los precios historicos de cada producto ,asi como generar nuestra propia lista deseos con alertas de notificaciones push de descuentos"
+				"description": "Comparador de precios para mangas en tiendas de Perú. Usa scraping con Puppeteer, historial de precios, lista de deseos y alertas push de descuentos."
 			},
 			{
 				"name": "Sky Bot",
-				"description": "Chatbot interactivo para gestión y registro de tramites interactivo con Facebook Messenger integrado Dialogflow para compresión del lenguaje natural humano, con portal web (PWA) integrado con Auth0"
+				"description": "Chatbot para gestión de trámites con Facebook Messenger, Dialogflow, portal PWA, Auth0 y backend NestJS con observabilidad."
 			},
 			{
 				"name": "Sky Krono",
-				"description": "Aplicación para la gestión de control de asistencias interactivo con uso de calendario de tareas y notificaciones push en una PWA con reportes gráficos de asistencias, implementando un login con el estándar WebAuthentication para uso de huella dactilar o mediante dispositivos integrados para validación. "
+				"description": "Aplicación PWA para control de asistencia, calendario, notificaciones push, reportes gráficos y autenticación WebAuthn."
 			}
 		]
+	},
+	"paginator": {
+		"previous": "Anterior",
+		"next": "Siguiente",
+		"page": "Pagina {{ page }} de {{ pages }}",
+		"page-prefix": "Pagina",
+		"page-separator": "de",
+		"pages": "Paginas",
+		"go-to-page": "Ir a pagina"
+	},
+	"angular-security": {
+		"title": "Seguridad en Angular",
+		"intro": "Investigacion acreditada en GitHub Advisories: hallazgos reales en paquetes de Angular publicados como CVE/GHSA.",
+		"source": "Ver advisories acreditados",
+		"pagination": "Paginacion de CVEs de Angular",
+		"loading": "Cargando CVEs desde GitHub API...",
+		"error": "No se pudo cargar advisories desde GitHub."
+	},
+	"angular-prs": {
+		"title": "Contribuciones a Angular",
+		"intro": "Pull requests revisados por el equipo de Angular: fixes, documentación, backports y mantenimiento del framework.",
+		"source": "Ver PRs en GitHub",
+		"pagination": "Paginacion de PRs de Angular",
+		"loading-page": "Cargando pagina de PRs",
+		"error": "No se pudo cargar PRs desde GitHub."
 	}
 }

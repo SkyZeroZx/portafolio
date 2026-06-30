@@ -37,8 +37,6 @@ export class IntersectionObserverService {
 	}
 
 	private showElement(element: HTMLElement): void {
-		this.renderer2.removeClass(element, 'visibility-hidden');
 		this.renderer2.addClass(element, 'slideInUp');
-		this.renderer2.addClass(element, 'animated');
 	}
 }

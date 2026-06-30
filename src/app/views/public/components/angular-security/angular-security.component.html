@@ -1,0 +1,57 @@
+<section appAddAnimation id="angular-security" class="contributions">
+	<div class="section-shell contributions__shell">
+		<header class="contributions__header">
+			<div>
+				<h1>{{ 'angular-security.title' | translate }}</h1>
+				<p>{{ 'angular-security.intro' | translate }}</p>
+			</div>
+
+			<a class="contributions__source" href="https://github.com/advisories?query=credit%3ASkyZeroZx" target="_blank" rel="noopener noreferrer">
+				{{ 'angular-security.source' | translate }}
+			</a>
+		</header>
+
+		@if (isLoading()) {
+			<app-list-skeleton variant="card" [rows]="pageSize" [ariaLabel]="'angular-security.loading' | translate" />
+		} @else if (hasError()) {
+			<div class="contributions__state contributions__state--error">
+				<span>{{ 'angular-security.error' | translate }}</span>
+				<button type="button" class="contributions__retry" (click)="reload()">{{ 'general.retry' | translate }}</button>
+			</div>
+		} @else {
+			<div class="contributions__list">
+				@for (advisory of pagedAdvisories(); track advisory.ghsa) {
+					<a class="surface-panel contributions__card contributions__card--advisory" [href]="advisory.url" target="_blank" rel="noopener noreferrer">
+						<div class="contributions__meta">
+							<app-chip [tone]="severityTone(advisory.severity)">{{ advisory.severity }}</app-chip>
+							<app-chip>{{ advisory.publishedAt }}</app-chip>
+							<app-chip [truncate]="true">{{ advisory.packageName }}</app-chip>
+						</div>
+
+						<h2 class="contributions__title">{{ advisory.cve }}</h2>
+						<p class="contributions__summary">{{ advisory.summary }}</p>
+
+						<ul class="contributions__labels" aria-label="CWE references">
+							<li class="contributions__label-item">
+								<app-chip tone="github" [truncate]="true">{{ advisory.ghsa }}</app-chip>
+							</li>
+							@for (cwe of advisory.cwes; track cwe) {
+								<li class="contributions__label-item">
+									<app-chip tone="github">{{ cwe }}</app-chip>
+								</li>
+							}
+						</ul>
+					</a>
+				}
+			</div>
+
+			<app-paginator
+				[ariaLabel]="'angular-security.pagination' | translate"
+				[page]="page()"
+				[pageSize]="pageSize"
+				[total]="advisories().length"
+				(pageChange)="setPage($event)"
+			/>
+		}
+	</div>
+</section>

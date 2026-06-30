@@ -1,11 +1,10 @@
 <div class="public-page" (scroll)="loadContent()">
 	<app-home (contentRequested)="scrollTo()" />
-	<br /><br />
 	@defer (when contentLoaded()) {
-		<app-can-do />
 		<app-about />
 		<app-experience />
-		<app-studies />
+		<app-angular-security />
+		<app-angular-prs />
 		<app-portfolio />
 		<app-contact />
 		<app-footer />

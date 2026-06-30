@@ -48,7 +48,7 @@ export class PortfolioComponent {
 	}
 
 	private getProjectFromQueryParam(): PortfolioProject | null {
-		const projectId = this.route.snapshot.queryParamMap.get('proyect');
+		const projectId = this.route.snapshot.queryParamMap.get('project') ?? this.route.snapshot.queryParamMap.get('proyect');
 
 		return this.portfolioProjects().find(({ id }) => id === projectId) ?? null;
 	}

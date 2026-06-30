@@ -1,77 +1,45 @@
 <app-modal [open]="true">
-	<ng-container>
-		<div class="w-full flex flex-col items-end p-4 m-4">
-			<button type="button" class="btn-close close pull-right text-gray-100" aria-label="Close" (click)="close()">
-				<span aria-hidden="true" class="close-button">&times;</span>
+	<div class="project-modal" role="dialog" aria-modal="true">
+		<header class="project-modal__header">
+			<div>
+				<p>{{ 'portfolio.title' | translate }}</p>
+				<h2>{{ portfolio().name | translate }}</h2>
+			</div>
+			<button type="button" class="project-modal__close" aria-label="Close project modal" (click)="close()">
+				<span aria-hidden="true">&times;</span>
 			</button>
-		</div>
-		<div class="w-full">
-			<div class="flex flex-wrap">
-				<ng-template [ngTemplateOutlet]="projectDescription" />
-				<ng-template [ngTemplateOutlet]="projectRepository" />
-			</div>
-		</div>
-	</ng-container>
-</app-modal>
+		</header>
 
-<ng-template #projectDescription>
-	<div class="p-6 md:w-1/2 flex flex-col items-start">
-		<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
-			{{ portfolio().name | translate }}
-		</span>
+		<div class="project-modal__grid">
+			<section class="project-modal__panel">
+				<h3>Demo</h3>
+				<iframe
+					[src]="portfolio().preview | safeUrl: 'resourceUrl'"
+					loading="lazy"
+					[title]="portfolio().name | translate"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen
+				></iframe>
 
-		<div class="border-double border-4 rounded-lg color-border-azure pt-6 mb-4 w-full">
-			<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2 ml-2">Demo</span>
-			<br />
-			<iframe
-				class="w-full youtube-video"
-				[src]="portfolio().preview | safeUrl: 'resourceUrl'"
-				loading="lazy"
-				[title]="portfolio().name"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			></iframe>
-		</div>
-		<div class="border-double border-4 p-6 rounded-lg color-border-azure pt-6 w-full">
-			<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-				{{ 'general.description' | translate }}</span
-			>
-			<br />
-			<p class="leading-relaxed mb-8 text-gray-100">{{ portfolio().description | translate }}</p>
-		</div>
-	</div>
-</ng-template>
+				<h3>{{ 'general.description' | translate }}</h3>
+				<p>{{ portfolio().description | translate }}</p>
+			</section>
 
-<ng-template #projectRepository>
-	<div class="p-6 md:w-1/2 flex flex-col items-start">
-		<span class="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-4">
-			{{ 'general.technologies-tools' | translate }}</span
-		>
-		@for (repository of portfolio().repositories; track repository.link) {
-			<div class="border-double border-4 p-6 rounded-lg color-border-azure ml-2 pt-6 mb-4">
-				<div class="group flex relative w-full">
-					<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-						<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
-							{{ repository.type }}
-						</a>
-					</span>
-				</div>
-				<br />
-				<app-technologies [technologies]="repository.technologies" tooltipClass="tooltip-proyect" />
-				<br />
-				<div class="group flex justify-center w-full mt-2">
-					<span class="py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest mb-2">
-						<a [href]="repository.link" target="_blank" rel="noopener noreferrer">
-							<div>
+			<section class="project-modal__panel project-modal__repository-list">
+				<h3>{{ 'general.technologies-tools' | translate }}</h3>
+				@for (repository of portfolio().repositories; track repository.link) {
+					<article class="project-modal__repository">
+						<div class="project-modal__repository-header">
+							<a [href]="repository.link" target="_blank" rel="noopener noreferrer">{{ repository.type }}</a>
+							<a class="project-modal__repository-link" [href]="repository.link" target="_blank" rel="noopener noreferrer">
 								{{ 'general.repository' | translate }}
-								<img style="display: inline" src="assets/technologies/github.svg" height="25px" alt="GitHub" loading="lazy" width="25px" />
-							</div>
-						</a>
-					</span>
-				</div>
-				<br />
-			</div>
-		}
+							</a>
+						</div>
+						<app-technologies [technologies]="repository.technologies" />
+					</article>
+				}
+			</section>
+		</div>
 	</div>
-</ng-template>
+</app-modal>

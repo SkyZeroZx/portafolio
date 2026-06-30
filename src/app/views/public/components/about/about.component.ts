@@ -14,6 +14,24 @@ import { TechnologiesComponent } from '@shared/components';
 	styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-	readonly technologies = signal<Technology[]>(technologiesData);
+	readonly technologies = signal<Technology[]>(
+		technologiesData.filter(({ name }) =>
+			[
+				'Typescript',
+				'Angular',
+				'NestJS',
+				'Nx',
+				'NodeJS',
+				'Docker',
+				'AWS',
+				'Google Cloud',
+				'PostgreSQL',
+				'MongoDB',
+				'Redis',
+				'Cypress',
+				'Jest'
+			].includes(name)
+		)
+	);
 	readonly certifications = signal<Certification[]>(certificationsData);
 }

@@ -22,5 +22,45 @@
 		"linkValidation": "https://www.credly.com/badges/11316430-4f75-4332-9152-dbcf8e7bd96d/public_url",
 		"period": "Julio 2023",
 		"company": "Amazon Web Services"
+	},
+	{
+		"id": "certification-4",
+		"name": "Azure Solutions Architect Expert",
+		"image": "assets/images/certifications/az-305.webp",
+		"linkValidation": "https://learn.microsoft.com/en-us/users/jaimeburgostejada-3833/credentials/771395ad737efe90",
+		"period": "Microsoft credential",
+		"company": "Microsoft"
+	},
+	{
+		"id": "certification-5",
+		"name": "Azure Administrator",
+		"image": "assets/images/certifications/az-104.png",
+		"linkValidation": "https://learn.microsoft.com/es-es/users/jaimeburgostejada-3833/credentials/57aea8d67292683f",
+		"period": "Microsoft credential",
+		"company": "Microsoft"
+	},
+	{
+		"id": "certification-6",
+		"name": "Azure Fundamentals",
+		"image": "assets/images/certifications/az-900.svg",
+		"linkValidation": "https://learn.microsoft.com/es-es/users/jaimeburgostejada-3833/credentials/bac9bb1718ee4e4a",
+		"period": "Microsoft credential",
+		"company": "Microsoft"
+	},
+	{
+		"id": "certification-7",
+		"name": "Google Professional Cloud Architect",
+		"image": "assets/images/certifications/professional-cloud-architect-certification.png",
+		"linkValidation": "https://www.credly.com/badges/cce2475d-3d10-40a6-adc6-47a0f22861b1/public_url",
+		"period": "Credly credential",
+		"company": "Google Cloud"
+	},
+	{
+		"id": "certification-8",
+		"name": "Google Associate Cloud Engineer",
+		"image": "assets/images/certifications/associate-cloud-engineer-certification.png",
+		"linkValidation": "https://www.credly.com/badges/48ea25eb-9108-4e6c-8448-64243173e9a9/public_url",
+		"period": "Credly credential",
+		"company": "Google Cloud"
 	}
 ]

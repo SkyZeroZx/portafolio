@@ -1,14 +1,13 @@
-<div class="flex flex-wrap">
+<div class="technologies">
 	@for (technology of technologies(); track technology.name) {
-		<div class="group flex relative rounded-full hover:bg-gradient-to-r from-slate-800 to-neutral-800">
-			<span [class]="tooltipClass() + ' ' + 'span-tooltip'">{{ technology.name }}</span>
+		<div class="technologies__item" [title]="technology.name" [attr.aria-label]="technology.name">
 			<img
-				[width]="45"
-				class="m-4"
-				[height]="45"
+				[width]="40"
+				[height]="40"
 				[alt]="technology.name"
 				[ngSrc]="technology.src"
-				[class]="technology.isDark ? 'icon-dark-theme' : ''"
+				class="technologies__image"
+				[class.technologies__image--dark]="technology.isDark"
 			/>
 		</div>
 	}

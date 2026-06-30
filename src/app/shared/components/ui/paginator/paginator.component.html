@@ -1,0 +1,32 @@
+<nav class="paginator" [attr.aria-label]="ariaLabel()">
+	<button type="button" class="paginator__button paginator__button--edge" [disabled]="isFirst()" (click)="setPage(page() - 1)">
+		<span aria-hidden="true">&lt;</span>
+		<span class="paginator__button-text">{{ 'paginator.previous' | translate }}</span>
+	</button>
+
+	<div class="paginator__pages" role="group" [attr.aria-label]="'paginator.pages' | translate">
+		@for (item of pageItems(); track item) {
+			@if (isPageNumber(item)) {
+				<button
+					type="button"
+					class="paginator__number"
+					[class.paginator__number--active]="item === page()"
+					[attr.aria-current]="item === page() ? 'page' : null"
+					[attr.aria-label]="('paginator.go-to-page' | translate) + ' ' + item"
+					(click)="setPage(item)"
+				>
+					{{ item }}
+				</button>
+			} @else {
+				<span class="paginator__ellipsis" aria-hidden="true">...</span>
+			}
+		}
+	</div>
+
+	<span class="paginator__status">{{ 'paginator.page-prefix' | translate }} {{ page() }} {{ 'paginator.page-separator' | translate }} {{ pageCount() }}</span>
+
+	<button type="button" class="paginator__button paginator__button--edge" [disabled]="isLast()" (click)="setPage(page() + 1)">
+		<span class="paginator__button-text">{{ 'paginator.next' | translate }}</span>
+		<span aria-hidden="true">&gt;</span>
+	</button>
+</nav>

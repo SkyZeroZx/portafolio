@@ -1,0 +1,43 @@
+.footer {
+	&__shell {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		width: min(1120px, calc(100% - 2rem));
+		margin-inline: auto;
+		padding-block: 2rem;
+		color: var(--color-muted);
+	}
+
+	p {
+		font-size: 0.95rem;
+	}
+
+	a {
+		color: var(--color-accent);
+		font-weight: 700;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--color-accent-warm);
+		}
+	}
+
+	nav {
+		display: inline-flex;
+		gap: 1rem;
+
+		a {
+			display: inline-grid;
+			place-items: center;
+			width: 2.4rem;
+			height: 2.4rem;
+			border: 1px solid oklch(0.58 0.12 225 / 0.28);
+			border-radius: 999px;
+			background: oklch(0.27 0.026 255 / 0.58);
+			font-size: 1.15rem;
+		}
+	}
+}

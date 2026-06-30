@@ -1,8 +1,8 @@
 export enum PAGE_SECTION {
-	CAN_DO = 'can-do',
 	ABOUT = 'about',
+	ANGULAR_SECURITY = 'angular-security',
+	ANGULAR_PRS = 'angular-prs',
 	CONTACT = 'contact',
 	EXPERIENCE = 'experience',
-	STUDIES = 'studies',
 	PORTFOLIO = 'portfolio'
 }

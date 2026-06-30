@@ -16,13 +16,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	@apply bg-gray-400;
+	background: #9ca3af;
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	@apply bg-gray-500;
+	background: #6b7280;
 }
 
 /* width */
@@ -40,11 +40,11 @@
 
 /* Handle */
 ::scrollbar-thumb {
-	@apply bg-gray-400;
+	background: #9ca3af;
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::scrollbar-thumb:hover {
-	@apply bg-gray-500;
+	background: #6b7280;
 }
