@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { afterNextRender, Component, Renderer2, inject, signal } from '@angular/core';
+import { afterNextRender, Component, Renderer2, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PAGE_SECTION } from '@core/constants';
 import { preLoadImages, scrollTo } from '@core/utils';
@@ -32,7 +32,7 @@ export class PublicComponent {
 	private readonly renderer2 = inject(Renderer2);
 	private readonly route = inject(ActivatedRoute);
 
-	readonly contentLoaded = signal(false);
+	private contentLoaded = false;
 
 	constructor() {
 		afterNextRender(() => {
@@ -45,10 +45,10 @@ export class PublicComponent {
 	}
 
 	async loadContent(): Promise<void> {
-		if (this.contentLoaded()) {
+		if (this.contentLoaded) {
 			return;
 		}
-		this.contentLoaded.set(true);
+		this.contentLoaded = true;
 		await this.setBackground();
 	}
 
@@ -61,7 +61,7 @@ export class PublicComponent {
 	}
 
 	private async setBackground(): Promise<void> {
-		await preLoadImages(['assets/images/home1-bg.jpg']).catch(() => undefined);
+		await preLoadImages(['assets/images/home1-bg.jpg']).catch(() => {});
 		const bodyElement = this.document.body;
 
 		this.renderer2.removeClass(bodyElement, 'background-preview');
