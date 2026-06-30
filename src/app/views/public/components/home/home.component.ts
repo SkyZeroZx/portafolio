@@ -1,6 +1,6 @@
 import { Component, output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
@@ -12,6 +12,7 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
 })
 export class HomeComponent {
 	readonly faGithub = faGithub;
+	readonly faWhatsapp = faWhatsapp;
 
 	readonly contentRequested = output<void>();
 
