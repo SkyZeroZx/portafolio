@@ -1,116 +1,62 @@
-<h1 align="center">Portafolio</h1>
-  <p align="center">
- Portafolio Web de presentación creado como una PWA con SSR para presentar los conocimientos y experiencia adquiridos
-  </p>
+# Jaime Burgos Portfolio
 
-_Puede visualizar el proyecto desplegado en la web https://skyzerozx.com_
+Minimal Angular portfolio for `skyzerozx.com`.
 
-## :ledger: Index
+## Stack
 
-- [Pre-Requisitos](#pre-requisitos-)
-- [Instalación](#instalación-)
-- [PWA](#ejecutando-como-pwa-)
-- [Analisis de Codigo](#analisis-de-codigo-)
-- [PageSpeed](#page-speed)
-- [Construido](#construido-con-)
+- Angular 22
+- Angular SSR / prerender
+- PWA support
+- ngx-translate
+- Font Awesome icons
+- Cloudflare Workers Static Assets
+- Wrangler
 
-## Comenzando 🚀
+## Development
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-### Instalación 🔧
-
-_Para ejecutar un entorno de desarrollo_
-
-_Previamente ejecutar el comando en la terminal para descargar "node_modules" para el funcionamiento del proyecto_
-
-```
+```bash
 npm install
+npm start
 ```
 
-_Para ejecutar un servidor de pruebas local usar el comando donde **"PUERTO"** sera el puerto donde deseamos ejecutar el proyecto , por default **ng serve** ejecuta el puerto 4200_
+Local URL:
 
-```
-ng serve --port [PUERTO]
-```
-
-_Para ejecutar el servidor de pruebas local con SSR ejecutar el siguiente comando:_
-
-```
-npm run dev:ssr
+```text
+http://localhost:4200
 ```
 
-_Dirigirse a la ruta http://localhost:4200_
+## Scripts
 
-## Ejecutando como PWA 👨🏻‍💻
-
-_Para ejecutar como PWA(Progressive Web App) , previamente debe tenerse instalado la libreria http-serve_
-
-```
-npm install --global http-server
-```
-
-_Una vez instalada proceder a ejecutar el siguiente comando , que nos permite ejecutar en entorno local nuestra PWA_
-
-```
-npm run start-pwa
+```bash
+npm run build
+npm run lint
+npm run deploy:cloudflare:dry-run
+npm run deploy:cloudflare
 ```
 
-_Este comando se encuentra configurado en el archivo *package.json de la raiz del proyecto por default ejecuta el puerto 8080*_
+## Deployment
 
-## PageSpeed
+Production deploy uses Wrangler and Cloudflare Workers.
 
-_Haciendo uso de la herramienta *https://pagespeed.web.dev/* , se evaluo el tiempo de carga y renderizado por primera vez de la web_
-
-_Obtuviendo un puntaje de **99** en rendimiento en [mobile](https://pagespeed.web.dev/analysis/https-skyzerozx-com/2j7j3xat9n?form_factor=mobile) y **100** en [desktop](https://pagespeed.web.dev/analysis/https-skyzerozx-com/2j7j3xat9n?form_factor=desktop)_
-
-![Performance PageSpeed 1](/docs/performance/performance-mobile.png)
-
-![Performance PageSpeed 2](/docs/performance/performance-desktop.png)
-
-# Analisis de Codigo 🔩
-
-_**Pre requisitos**_
-
-_En la raiz del proyecto se tiene el archivo *sonar-project.properties* el cual tiene las propiedades necesarias para ejecutarlo sobre un SonarQube_
-
-_Configurar los apartados : *sonar.host.url* , *sonar.login* *sonar.password* con los datos de su instancia correspondiente o usar SonarCloud con su token correspondiente_
-
-```
-Sonaqube >= 9.X
+```bash
+npm run deploy:cloudflare
 ```
 
-![SonarQube Properties](/docs/sonar/sonar-properties.png)
+Configured domain:
 
-_Las pruebas fueron realizas sobre *SonarQube 9.8* para ejecutar el analisis de codigo ejecutar el comando para la instancia local:_
-
-```
-npm run sonar
+```text
+https://skyzerozx.com
 ```
 
-_Reporte de Cobertura en SonarQube_
+Worker route:
 
-![SonarQube 1](/docs/sonar/sonarqube-1.png)
+```text
+skyzerozx.com/*
+```
 
-## Construido con 🛠️
+## Author
 
-_Las herramientas utilizadas son:_
+Jaime Burgos Tejada
 
-- [Angular](https://angular.io/docs) - El Framework para Desarrollo Web
-- [Angular Universal](https://angular.io/guide/universal) - Para Server Side Rending
-- [NPM](https://www.npmjs.com/) - Manejador de dependencias
-- [TailwindCSS](https://tailwindui.com/) -Framework de CSS de código abierto​ para el diseño de páginas web
-- [Visual Studio Code](https://code.visualstudio.com/) - Editor de Codigo
-- [SonarQube](https://www.sonarqube.org/) - Evaluacion de codigo on premise
-- [Prettier](https://prettier.io/) - Formateador de Codigo
-- [TabNine](https://www.tabnine.com/) - Autocompletador de Codigo
-
-## Versionado 📌
-
-Usamos [GIT](https://git-scm.com/) para el versionado.
-
-## Autor✒️
-
-- **Jaime Burgos Tejada** - _Developer_
-- [SkyZeroZx](https://github.com/SkyZeroZx)
-- Email : jaimeburgostejada@gmail.com
+- GitHub: https://github.com/SkyZeroZx
+- LinkedIn: https://www.linkedin.com/in/jaime-burgos-tejada/
