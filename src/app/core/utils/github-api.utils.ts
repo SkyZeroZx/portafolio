@@ -19,12 +19,12 @@ export const emptyPullRequestSearch: AngularPullRequestSearch = {
 	pullRequests: []
 };
 
-export function createAngularAdvisoryRequest(packageName: string) {
+export function createAngularAdvisoryRequest(packageNames: readonly string[]) {
 	return {
 		url: `${GITHUB_REST_URL}/advisories`,
 		params: {
 			ecosystem: 'npm',
-			affects: packageName,
+			affects: packageNames.join(','),
 			per_page: 100
 		},
 		timeout: 2_000

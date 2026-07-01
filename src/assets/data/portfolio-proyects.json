@@ -12,7 +12,7 @@
 				"technologies": [
 					{
 						"name": "PWA",
-						"src": "assets/technologies/pwa.png"
+						"src": "assets/technologies/pwa.webp"
 					},
 					{
 						"name": "Angular",
@@ -101,7 +101,7 @@
 					},
 					{
 						"name": "Dialogflow",
-						"src": "assets/technologies/dialogflow.png"
+						"src": "assets/technologies/dialogflow.webp"
 					},
 					{
 						"name": "Meta",
@@ -197,7 +197,7 @@
 					},
 					{
 						"name": "PWA",
-						"src": "assets/technologies/pwa.png"
+						"src": "assets/technologies/pwa.webp"
 					},
 					{
 						"name": "Bootstrap",
@@ -209,7 +209,7 @@
 					},
 					{
 						"name": "Cypress",
-						"src": "assets/technologies/cypress.png"
+						"src": "assets/technologies/cypress.webp"
 					},
 					{
 						"name": "Jasmine",
@@ -217,7 +217,7 @@
 					},
 					{
 						"name": "Karma",
-						"src": "assets/technologies/karma.png"
+						"src": "assets/technologies/karma.webp"
 					},
 					{
 						"name": "SonarQube",
@@ -314,7 +314,7 @@
 					},
 					{
 						"name": "PWA",
-						"src": "assets/technologies/pwa.png"
+						"src": "assets/technologies/pwa.webp"
 					},
 					{
 						"name": "Bootstrap",
@@ -326,7 +326,7 @@
 					},
 					{
 						"name": "Cypress",
-						"src": "assets/technologies/cypress.png"
+						"src": "assets/technologies/cypress.webp"
 					},
 					{
 						"name": "Jasmine",
@@ -334,7 +334,7 @@
 					},
 					{
 						"name": "Karma",
-						"src": "assets/technologies/karma.png"
+						"src": "assets/technologies/karma.webp"
 					},
 					{
 						"name": "SonarQube",

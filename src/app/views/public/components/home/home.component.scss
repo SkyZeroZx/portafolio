@@ -73,6 +73,16 @@
 		}
 	}
 
+	&__role-reader {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+		clip-path: inset(50%);
+	}
+
 	&__copy {
 		max-width: 720px;
 		margin-top: clamp(0.85rem, 2.2vw, 1.35rem);

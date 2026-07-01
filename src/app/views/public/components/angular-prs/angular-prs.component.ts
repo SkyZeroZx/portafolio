@@ -2,7 +2,7 @@ import { httpResource } from '@angular/common/http';
 import { Component, computed, linkedSignal, signal } from '@angular/core';
 import { AddAnimationDirective } from '@core/directives';
 import { AngularPullRequestSearch } from '@core/interface';
-import { createAngularPullRequestsRequest, emptyPullRequestSearch, parseAngularPullRequests } from '@core/utils';
+import { createAngularPullRequestsRequest, emptyPullRequestSearch, parseAngularPullRequests } from '@core/utils/github-api.utils';
 import { ChipComponent, ListSkeletonComponent, PaginatorComponent } from '@shared/components';
 import { TranslatePipe } from '@ngx-translate/core';
 

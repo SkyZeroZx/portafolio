@@ -21,8 +21,7 @@
 		"deploy:cloudflare:dry-run": "npm run build && wrangler deploy --dry-run",
 		"prepare": "husky install",
 		"lint-format": "npm run format && ng lint --fix",
-		"pre-commit": "npm run lint-format && git add .",
-		"vercel-build": "npm run build:ssr"
+		"pre-commit": "npm run lint-format && git add ."
 	},
 	"private": true,
 	"dependencies": {
@@ -58,7 +57,6 @@
 		"@types/node": "^24.13.2",
 		"@typescript-eslint/eslint-plugin": "8.62.1",
 		"@typescript-eslint/parser": "8.62.1",
-		"angular-cli-ghpages": "^3.1.0",
 		"angular-eslint": "^22.0.0",
 		"autoprefixer": "^10.5.2",
 		"eslint": "^9.39.4",

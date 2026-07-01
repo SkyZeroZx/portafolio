@@ -3,14 +3,14 @@
 		"id": "certification-1",
 		"name": "AWS Certified Cloud Practitioner",
 		"period": "Marzo 2023",
-		"image": "assets/images/certifications/aws-certified-cloud-practitioner.png",
+		"image": "assets/images/certifications/aws-certified-cloud-practitioner.webp",
 		"linkValidation": "https://www.credly.com/badges/f6971597-3133-4012-9728-70e0c43b8d4a/public_url",
 		"company": "Amazon Web Services"
 	},
 	{
 		"id": "certification-2",
 		"name": "AWS Certified Solutions Architect - Associate",
-		"image": "assets/images/certifications/aws-certified-solutions-architect-associate.png",
+		"image": "assets/images/certifications/aws-certified-solutions-architect-associate.webp",
 		"linkValidation": "https://www.credly.com/badges/b98f1fca-4461-4fe3-be4a-3770f19b6e0d",
 		"period": "Mayo 2023",
 		"company": "Amazon Web Services"
@@ -18,7 +18,7 @@
 	{
 		"id": "certification-3",
 		"name": "AWS Certified Solutions Architect - Professional",
-		"image": "assets/images/certifications/aws-certified-solutions-architect-professional.png",
+		"image": "assets/images/certifications/aws-certified-solutions-architect-professional.webp",
 		"linkValidation": "https://www.credly.com/badges/11316430-4f75-4332-9152-dbcf8e7bd96d/public_url",
 		"period": "Julio 2023",
 		"company": "Amazon Web Services"
@@ -26,7 +26,7 @@
 	{
 		"id": "certification-4",
 		"name": "Azure Solutions Architect Expert",
-		"image": "assets/images/certifications/az-305.webp",
+		"image": "assets/images/certifications/az-305-optimized.webp",
 		"linkValidation": "https://learn.microsoft.com/en-us/users/jaimeburgostejada-3833/credentials/771395ad737efe90",
 		"period": "Microsoft credential",
 		"company": "Microsoft"
@@ -34,7 +34,7 @@
 	{
 		"id": "certification-5",
 		"name": "Azure Administrator",
-		"image": "assets/images/certifications/az-104.png",
+		"image": "assets/images/certifications/az-104.webp",
 		"linkValidation": "https://learn.microsoft.com/es-es/users/jaimeburgostejada-3833/credentials/57aea8d67292683f",
 		"period": "Microsoft credential",
 		"company": "Microsoft"
@@ -50,7 +50,7 @@
 	{
 		"id": "certification-7",
 		"name": "Google Professional Cloud Architect",
-		"image": "assets/images/certifications/professional-cloud-architect-certification.png",
+		"image": "assets/images/certifications/professional-cloud-architect-certification.webp",
 		"linkValidation": "https://www.credly.com/badges/cce2475d-3d10-40a6-adc6-47a0f22861b1/public_url",
 		"period": "Credly credential",
 		"company": "Google Cloud"
@@ -58,7 +58,7 @@
 	{
 		"id": "certification-8",
 		"name": "Google Associate Cloud Engineer",
-		"image": "assets/images/certifications/associate-cloud-engineer-certification.png",
+		"image": "assets/images/certifications/associate-cloud-engineer-certification.webp",
 		"linkValidation": "https://www.credly.com/badges/48ea25eb-9108-4e6c-8448-64243173e9a9/public_url",
 		"period": "Credly credential",
 		"company": "Google Cloud"

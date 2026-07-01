@@ -1,8 +1,28 @@
 <div class="public-page">
 	<app-home (contentRequested)="scrollTo()" />
 	<app-about />
-	<app-angular-security />
-	<app-angular-prs />
+	@defer (on viewport) {
+		<app-angular-security />
+	} @placeholder {
+		<section id="angular-security" class="public-page__deferred-section" aria-hidden="true">
+			<div class="section-shell public-page__deferred-shell">
+				<span class="public-page__deferred-line public-page__deferred-line--title"></span>
+				<span class="public-page__deferred-line"></span>
+				<span class="public-page__deferred-card"></span>
+			</div>
+		</section>
+	}
+	@defer (on viewport) {
+		<app-angular-prs />
+	} @placeholder {
+		<section id="angular-prs" class="public-page__deferred-section" aria-hidden="true">
+			<div class="section-shell public-page__deferred-shell">
+				<span class="public-page__deferred-line public-page__deferred-line--title"></span>
+				<span class="public-page__deferred-line"></span>
+				<span class="public-page__deferred-card public-page__deferred-card--short"></span>
+			</div>
+		</section>
+	}
 	<app-experience />
 	<app-portfolio />
 	<app-contact />

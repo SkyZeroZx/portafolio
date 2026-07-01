@@ -1,11 +1,11 @@
-<app-modal [open]="true">
-	<div class="project-modal" role="dialog" aria-modal="true">
+<app-modal [open]="true" (closed)="close()">
+	<div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
 		<header class="project-modal__header">
 			<div>
 				<p>{{ 'portfolio.title' | translate }}</p>
-				<h2>{{ portfolio().name | translate }}</h2>
+				<h2 id="project-modal-title">{{ portfolio().name | translate }}</h2>
 			</div>
-			<button type="button" class="project-modal__close" aria-label="Close project modal" (click)="close()">
+			<button #closeButton type="button" class="project-modal__close" aria-label="Close project modal" (click)="close()">
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</header>

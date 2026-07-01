@@ -2,7 +2,7 @@
 	<app-language-selector class="home__language" />
 
 	<div class="home__video" aria-hidden="true">
-		<video autoplay [muted]="true" loop playsinline preload="auto" poster="assets/images/quanta11.webp">
+		<video  fetchpriority="high" autoplay [muted]="true" loop playsinline preload="auto" poster="assets/images/quanta11.webp">
 			<source src="assets/images/quanta-bg.mp4" type="video/mp4" />
 		</video>
 	</div>
@@ -12,10 +12,11 @@
 	<section class="home__content" aria-labelledby="home-title">
 		<h1 id="home-title" class="home__title">{{ 'home.title' | translate }}</h1>
 
-		<p class="home__role" [attr.aria-label]="roleWords()[0]">
+		<p class="home__role">
 			@if (prefersReducedMotion()) {
 				<span>{{ roleWords()[0] }}</span>
 			} @else {
+				<span class="home__role-reader">{{ roleWords().join(', ') }}</span>
 				<ngx-typed-writer
 					aria-hidden="true"
 					[strings]="roleWords()"
