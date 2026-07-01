@@ -66,9 +66,8 @@
 				"period": "2025 - Present",
 				"jobTitle": "Angular Contributor & Security Researcher",
 				"activities": [
-					"Accepted contributions in angular/angular and maintained libraries such as ngx-typed-writer.",
-					"Performed security research credited in GitHub Advisories for Angular packages.",
-					"Explored SSR, PWA/TWA, Speculation Rules, performance, and modern ecosystem compatibility."
+					"Accepted Angular Framework contributions across features, fixes, refactors, and documentation.",
+					"Performed security research credited in GitHub Advisories for Angular packages."
 				]
 			},
 			{
