@@ -1,0 +1,17 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "skyzerozx",
+	"compatibility_date": "2026-07-01",
+	"workers_dev": false,
+	"preview_urls": false,
+	"assets": {
+		"directory": "./dist/portafolio/browser",
+		"not_found_handling": "single-page-application"
+	},
+	"routes": [
+		{
+			"pattern": "skyzerozx.com/*",
+			"zone_name": "skyzerozx.com"
+		}
+	]
+}

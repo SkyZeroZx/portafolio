@@ -17,6 +17,8 @@
 		"build:ssr": "ng build --configuration production",
 		"prerender": "ng build --configuration production",
 		"lint": "ng lint",
+		"deploy:cloudflare": "npm run build && wrangler deploy",
+		"deploy:cloudflare:dry-run": "npm run build && wrangler deploy --dry-run",
 		"prepare": "husky install",
 		"lint-format": "npm run format && ng lint --fix",
 		"pre-commit": "npm run lint-format && git add .",
@@ -68,7 +70,8 @@
 		"pretty-quick": "^4.2.2",
 		"typescript": "~6.0.3",
 		"typescript-eslint": "^8.62.1",
-		"vitest": "^4.1.9"
+		"vitest": "^4.1.9",
+		"wrangler": "^4.106.0"
 	},
 	"overrides": {
 		"@angular/build": {
