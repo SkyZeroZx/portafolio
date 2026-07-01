@@ -18,7 +18,7 @@
 
 		p {
 			color: #b9fbfc;
-			font-size: 0.9rem;
+			font-size: 1rem;
 			font-weight: 700;
 		}
 
@@ -91,7 +91,8 @@
 		padding: 0.45rem 0.7rem;
 		background: rgba(14, 165, 233, 0.12);
 		color: #dbeafe;
-		font-size: 0.85rem;
+		font-size: 0.95rem;
+		font-weight: 700;
 
 		&:hover {
 			border-color: rgba(185, 251, 252, 0.86);
@@ -102,7 +103,7 @@
 
 	h3 {
 		color: #b9fbfc;
-		font-size: 1rem;
+		font-size: 1.08rem;
 		font-weight: 700;
 	}
 
@@ -117,6 +118,7 @@
 
 	p {
 		color: var(--color-content);
+		font-size: 1rem;
 		line-height: 1.75;
 		text-wrap: pretty;
 	}

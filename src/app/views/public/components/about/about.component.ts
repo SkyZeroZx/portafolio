@@ -20,6 +20,7 @@ export class AboutComponent {
 				'Typescript',
 				'Angular',
 				'NestJS',
+				'Spring Boot',
 				'Nx',
 				'NodeJS',
 				'Docker',

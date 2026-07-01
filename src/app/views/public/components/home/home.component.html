@@ -10,10 +10,25 @@
 	<div class="home__overlay" aria-hidden="true"></div>
 
 	<section class="home__content" aria-labelledby="home-title">
-		<h1 id="home-title" class="home__title">Jaime Burgos</h1>
+		<h1 id="home-title" class="home__title">{{ 'home.title' | translate }}</h1>
 
-		<p class="home__role">
-			{{ 'home.role' | translate }}
+		<p class="home__role" [attr.aria-label]="roleWords()[0]">
+			@if (prefersReducedMotion()) {
+				<span>{{ roleWords()[0] }}</span>
+			} @else {
+				<ngx-typed-writer
+					aria-hidden="true"
+					[strings]="roleWords()"
+					[typeSpeed]="42"
+					[backSpeed]="24"
+					[startDelay]="180"
+					[backDelay]="1550"
+					[smartBackspace]="true"
+					[showCursor]="true"
+					[cursorChar]="'_'"
+					[loop]="true"
+				/>
+			}
 		</p>
 
 		<p class="home__copy">
@@ -25,7 +40,7 @@
 				href="https://wa.me/51961008127?text=Hola%20quiero%20contactarme%20"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="home__button home__button--primary"
+				class="home__button"
 			>
 				<fa-icon [icon]="faWhatsapp" />
 				{{ 'home.contact' | translate }}

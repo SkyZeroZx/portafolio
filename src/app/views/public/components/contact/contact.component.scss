@@ -22,13 +22,13 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: 2.75rem;
-		height: 2.75rem;
+		width: 3rem;
+		height: 3rem;
 		border: 1px solid rgba(78, 132, 243, 0.32);
 		border-radius: 12px;
 		background: rgba(78, 132, 243, 0.14);
 		color: var(--color-accent);
-		font-size: 1.1rem;
+		font-size: 1.35rem;
 		cursor: pointer;
 
 		&:hover {
@@ -39,12 +39,13 @@
 
 	&__title {
 		color: var(--color-ink);
-		font-size: 1.1rem;
+		font-size: 1.18rem;
 		font-weight: 700;
 	}
 
 	&__copy {
 		color: var(--color-content);
+		font-size: 1rem;
 		line-height: 1.7;
 		text-wrap: pretty;
 	}

@@ -18,7 +18,7 @@
 
 	&__label {
 		color: #f8fbff;
-		font-size: 0.82rem;
+		font-size: 0.9rem;
 		font-weight: 700;
 		line-height: 1;
 		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
@@ -115,17 +115,17 @@
 
 	.language-selector {
 		&__label {
-			font-size: 0.72rem;
+			font-size: 0.82rem;
 		}
 
 		&__input + .language-selector__toggle {
-			width: 3.35em;
-			height: 1.65em;
+			width: 3.6em;
+			height: 1.8em;
 
 			&::after,
 			&::before {
-				font-size: 0.88rem;
-				line-height: 1.9em;
+				font-size: 0.95rem;
+				line-height: 1.88em;
 			}
 		}
 	}

@@ -14,7 +14,7 @@ export class TranslateServerLoader implements TranslateLoader {
 		return new Observable((observer) => {
 			const distAssetsFolder = join(cwd(), 'dist', 'portafolio', 'browser', 'assets', this.prefix);
 			const sourceAssetsFolder = join(cwd(), 'src', 'assets', this.prefix);
-			const assetsFolder = existsSync(distAssetsFolder) ? distAssetsFolder : sourceAssetsFolder;
+			const assetsFolder = existsSync(sourceAssetsFolder) ? sourceAssetsFolder : distAssetsFolder;
 
 			const jsonData = JSON.parse(readFileSync(`${assetsFolder}/${lang}${this.suffix}`, 'utf8')) as TranslationObject;
 

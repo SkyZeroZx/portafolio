@@ -18,6 +18,7 @@
 			max-width: 62ch;
 			margin-top: 0.85rem;
 			color: var(--color-content);
+			font-size: 1.02rem;
 			line-height: 1.7;
 		}
 	}
@@ -37,6 +38,7 @@
 		padding: 0.65rem 0.9rem;
 		background: rgba(10, 16, 38, 0.42);
 		color: var(--color-ink);
+		font-size: 1rem;
 		font-weight: 700;
 		text-decoration: none;
 
@@ -136,6 +138,7 @@
 
 	&__summary {
 		color: var(--color-content);
+		font-size: 1rem;
 		line-height: 1.65;
 	}
 }

@@ -12,7 +12,7 @@
 	}
 
 	p {
-		font-size: 0.95rem;
+		font-size: 1rem;
 	}
 
 	a {
@@ -32,12 +32,12 @@
 		a {
 			display: inline-grid;
 			place-items: center;
-			width: 2.4rem;
-			height: 2.4rem;
+			width: 2.65rem;
+			height: 2.65rem;
 			border: 1px solid oklch(0.58 0.12 225 / 0.28);
 			border-radius: 999px;
 			background: oklch(0.27 0.026 255 / 0.58);
-			font-size: 1.15rem;
+			font-size: 1.35rem;
 		}
 	}
 }

@@ -49,6 +49,10 @@
 		"src": "assets/technologies/nestjs.svg"
 	},
 	{
+		"name": "Spring Boot",
+		"src": "assets/technologies/spring.svg"
+	},
+	{
 		"name": "NodeJS",
 		"src": "assets/technologies/nodejs.svg"
 	},

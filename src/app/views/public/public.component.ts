@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { afterNextRender, Component, Renderer2, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PAGE_SECTION } from '@core/constants';
-import { preLoadImages, scrollTo } from '@core/utils';
+import { preLoadImages, scrollTo as scrollToElement } from '@core/utils';
 import { AboutComponent } from './components/about/about.component';
 import { AngularPrsComponent } from './components/angular-prs/angular-prs.component';
 import { AngularSecurityComponent } from './components/angular-security/angular-security.component';
@@ -38,26 +38,24 @@ export class PublicComponent {
 		afterNextRender(() => {
 			void this.loadContent();
 
-			if (this.route.snapshot.queryParamMap.has('project') || this.route.snapshot.queryParamMap.has('proyect')) {
+			if (this.route.snapshot.queryParamMap.has('project')) {
 				void this.loadContent();
 			}
 		});
 	}
 
-	async loadContent(): Promise<void> {
+	loadContent(): void {
 		if (this.contentLoaded) {
 			return;
 		}
+
 		this.contentLoaded = true;
-		await this.setBackground();
+		void this.setBackground();
 	}
 
-	async scrollTo() {
-		await this.loadContent();
-
-		requestAnimationFrame(() => {
-			scrollTo(PAGE_SECTION.EXPERIENCE);
-		});
+	scrollTo(): void {
+		this.loadContent();
+		requestAnimationFrame(() => scrollToElement(PAGE_SECTION.ABOUT));
 	}
 
 	private async setBackground(): Promise<void> {

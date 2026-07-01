@@ -14,7 +14,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		min-height: 2.55rem;
+		min-height: 2.7rem;
 		border: 1px solid rgba(78, 132, 243, 0.26);
 		border-radius: 999px;
 		background: rgba(10, 16, 38, 0.42);
@@ -35,7 +35,7 @@
 	}
 
 	&__number {
-		width: 2.55rem;
+		width: 2.7rem;
 		padding: 0;
 
 		&--active {
@@ -64,7 +64,7 @@
 		align-items: center;
 		justify-content: center;
 		width: 1.6rem;
-		min-height: 2.55rem;
+		min-height: 2.7rem;
 		color: var(--color-muted);
 		font-weight: 800;
 	}
@@ -73,7 +73,7 @@
 		grid-column: 1 / -1;
 		grid-row: 2;
 		color: var(--color-muted);
-		font-size: 0.82rem;
+		font-size: 0.9rem;
 		font-weight: 700;
 		text-align: center;
 	}

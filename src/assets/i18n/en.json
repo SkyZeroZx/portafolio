@@ -8,8 +8,10 @@
 		"retry": "Retry"
 	},
 	"home": {
-		"role": "Senior Angular Developer",
-		"content": "I build maintainable, fast, and secure Angular products.",
+		"title": "Jaime Burgos",
+		"role": "Software Engineer",
+		"roleWords": ["Software Engineer", "Angular Contributor"],
+		"content": "I build maintainable, secure products designed to evolve.",
 		"contact": "Contact",
 		"github": "View GitHub",
 		"linkedin": "LinkedIn",
@@ -17,7 +19,8 @@
 	},
 	"about": {
 		"title": "Profile",
-		"content": "I work mainly with Angular, NestJS, and cloud architecture. My focus is migrations, performance, testing, security, and maintainable software delivery.",
+		"role": "Fullstack Engineer",
+		"content": "Angular and Spring Boot for maintainable products. I work on migrations, performance, testing, and security.",
 		"technology-subtitle": "Technologies and tools",
 		"stack-title": "Core stack",
 		"certifications": "Cloud certifications"
