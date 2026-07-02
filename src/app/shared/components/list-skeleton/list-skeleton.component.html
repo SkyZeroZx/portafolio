@@ -1,4 +1,12 @@
-<div class="list-skeleton" [class.list-skeleton--card]="variant() === 'card'" [attr.aria-label]="ariaLabel()" aria-busy="true">
+<div
+	class="list-skeleton"
+	[class.list-skeleton--card]="variant() === 'card'"
+	[class.list-skeleton--section]="variant() === 'section'"
+	aria-busy="true"
+	aria-live="polite"
+	role="status"
+>
+	<span class="list-skeleton__status">{{ ariaLabel() }}</span>
 	@for (placeholder of placeholders(); track placeholder) {
 		<article class="list-skeleton__item" aria-hidden="true">
 			<span class="list-skeleton__line list-skeleton__line--eyebrow"></span>

@@ -30,7 +30,6 @@
 						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest", "src/robots.txt"],
 						"styles": ["src/assets/fonts/fonts.css", "src/styles.scss"],
 						"scripts": [],
-						"serviceWorker": "ngsw-config.json",
 						"server": "src/main.server.ts",
 						"outputMode": "server",
 						"security": {

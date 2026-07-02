@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 
-type ListSkeletonVariant = 'row' | 'card';
+type ListSkeletonVariant = 'row' | 'card' | 'section';
 
 @Component({
 	selector: 'app-list-skeleton',

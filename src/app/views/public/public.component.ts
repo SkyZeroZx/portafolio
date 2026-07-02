@@ -2,8 +2,10 @@ import { DOCUMENT } from '@angular/common';
 import { DestroyRef, afterNextRender, Component, Renderer2, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PAGE_SECTION } from '@core/constants';
+import { scheduleCallbackWithRafRace } from '@core/utils/animation-frame.utils';
 import { preLoadImages } from '@core/utils/lazy-load-image.utils';
 import { scrollTo as scrollToElement } from '@core/utils/scroll-to-elementId.utils';
+import { ListSkeletonComponent } from '@shared/components';
 import { AboutComponent } from './components/about/about.component';
 import { AngularPrsComponent } from './components/angular-prs/angular-prs.component';
 import { AngularSecurityComponent } from './components/angular-security/angular-security.component';
@@ -23,6 +25,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 		ExperienceComponent,
 		FooterComponent,
 		HomeComponent,
+		ListSkeletonComponent,
 		PortfolioComponent
 	],
 	templateUrl: './public.component.html',
@@ -35,6 +38,7 @@ export class PublicComponent {
 	private readonly route = inject(ActivatedRoute);
 
 	private contentLoaded = false;
+	private cleanupScrollFrame?: () => void;
 
 	constructor() {
 		afterNextRender(() => {
@@ -45,6 +49,8 @@ export class PublicComponent {
 
 			this.registerDeferredBackgroundLoad();
 		});
+
+		this.destroyRef.onDestroy(() => this.cleanupScrollFrame?.());
 	}
 
 	loadContent(): void {
@@ -58,7 +64,11 @@ export class PublicComponent {
 
 	scrollTo(): void {
 		this.loadContent();
-		requestAnimationFrame(() => scrollToElement(PAGE_SECTION.ABOUT));
+		this.cleanupScrollFrame?.();
+		this.cleanupScrollFrame = scheduleCallbackWithRafRace(() => {
+			this.cleanupScrollFrame = undefined;
+			scrollToElement(PAGE_SECTION.ABOUT);
+		});
 	}
 
 	private async setBackground(): Promise<void> {

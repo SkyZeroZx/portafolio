@@ -1,14 +1,20 @@
 :host {
 	display: block;
+	cursor: progress;
 }
 
 .list-skeleton {
 	display: grid;
 	gap: 0.55rem;
+	cursor: progress;
 
 	&--card {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.85rem;
+	}
+
+	&--section {
+		gap: 1rem;
 	}
 
 	&__item {
@@ -20,10 +26,17 @@
 		border-radius: 12px;
 		padding: 0.9rem 1rem;
 		background: rgba(10, 16, 38, 0.38);
+		cursor: progress;
 	}
 
 	&--card &__item {
 		min-height: 15rem;
+		padding: clamp(1rem, 2vw, 1.35rem);
+	}
+
+	&--section &__item {
+		min-height: clamp(12rem, 28svh, 16rem);
+		border-radius: 16px;
 		padding: clamp(1rem, 2vw, 1.35rem);
 	}
 
@@ -35,6 +48,7 @@
 		background: linear-gradient(90deg, rgba(78, 132, 243, 0.08), rgba(107, 191, 231, 0.2), rgba(78, 132, 243, 0.08));
 		background-size: 220% 100%;
 		animation: skeleton-sweep 1.35s ease-in-out infinite;
+		cursor: progress;
 
 		&--eyebrow {
 			width: min(9rem, 42%);
@@ -52,6 +66,29 @@
 
 		&--short {
 			width: min(18rem, 42%);
+		}
+	}
+
+	&__status {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+}
+
+.list-skeleton--section {
+	.list-skeleton__line {
+		&--eyebrow {
+			width: min(22rem, 70%);
+			height: 2.1rem;
+		}
+
+		&--title {
+			width: min(34rem, 86%);
 		}
 	}
 }

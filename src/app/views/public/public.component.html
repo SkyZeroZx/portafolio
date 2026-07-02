@@ -4,22 +4,18 @@
 	@defer (on viewport) {
 		<app-angular-security />
 	} @placeholder {
-		<section id="angular-security" class="public-page__deferred-section" aria-hidden="true">
+		<section id="angular-security" class="public-page__deferred-section">
 			<div class="section-shell public-page__deferred-shell">
-				<span class="public-page__deferred-line public-page__deferred-line--title"></span>
-				<span class="public-page__deferred-line"></span>
-				<span class="public-page__deferred-card"></span>
+				<app-list-skeleton variant="section" [rows]="1" ariaLabel="Loading Angular security" />
 			</div>
 		</section>
 	}
 	@defer (on viewport) {
 		<app-angular-prs />
 	} @placeholder {
-		<section id="angular-prs" class="public-page__deferred-section" aria-hidden="true">
+		<section id="angular-prs" class="public-page__deferred-section">
 			<div class="section-shell public-page__deferred-shell">
-				<span class="public-page__deferred-line public-page__deferred-line--title"></span>
-				<span class="public-page__deferred-line"></span>
-				<span class="public-page__deferred-card public-page__deferred-card--short"></span>
+				<app-list-skeleton variant="section" [rows]="1" ariaLabel="Loading Angular pull requests" />
 			</div>
 		</section>
 	}
