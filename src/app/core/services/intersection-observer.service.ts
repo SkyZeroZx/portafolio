@@ -1,9 +1,7 @@
-import { Injectable, Renderer2, RendererFactory2, inject } from '@angular/core';
+import { Renderer2, RendererFactory2, Service, inject } from '@angular/core';
 import { DEFAULT_OPTIONS_OBSERVER } from '@core/constants';
 
-@Injectable({
-	providedIn: 'root'
-})
+@Service()
 export class IntersectionObserverService {
 	private readonly renderer2: Renderer2;
 

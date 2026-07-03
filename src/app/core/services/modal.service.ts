@@ -1,23 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import {
-	ApplicationRef,
-	ComponentRef,
-	EmbeddedViewRef,
-	EnvironmentInjector,
-	Injectable,
-	Type,
-	createComponent,
-	inject
-} from '@angular/core';
+import { ApplicationRef, ComponentRef, EmbeddedViewRef, EnvironmentInjector, Service, Type, createComponent, inject } from '@angular/core';
 
 interface ModalOptions {
 	host?: HTMLElement;
 	inputs?: Record<string, unknown>;
 }
 
-@Injectable({
-	providedIn: 'root'
-})
+@Service()
 export class ModalService {
 	private componentRef?: ComponentRef<unknown>;
 	private readonly applicationRef = inject(ApplicationRef);
