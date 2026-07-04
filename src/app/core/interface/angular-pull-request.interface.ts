@@ -6,11 +6,14 @@ export interface AngularPullRequestLabel {
 	borderColor: string;
 }
 
+export type AngularPullRequestKind = 'feature' | 'refactor' | 'bugfix' | 'docs' | 'test' | 'other';
+
 export interface AngularPullRequest {
 	number: number;
 	title: string;
 	url: string;
 	completedAt: string;
+	kind: AngularPullRequestKind;
 	labels: AngularPullRequestLabel[];
 }
 

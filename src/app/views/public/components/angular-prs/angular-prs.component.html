@@ -27,8 +27,19 @@
 			} @else {
 				<div class="contributions__list">
 					@for (pullRequest of pullRequests(); track pullRequest.number) {
-						<a class="surface-panel contributions__card contributions__card--pr" [href]="pullRequest.url" target="_blank" rel="noopener noreferrer">
+						<a
+							class="surface-panel contributions__card contributions__card--pr"
+							[href]="pullRequest.url"
+							[attr.title]="pullRequest.title"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<div class="contributions__meta">
+								@if (pullRequest.kind !== 'other') {
+									<app-chip [tone]="pullRequest.kind | pullRequestKindTone">
+										{{ 'angular-prs.kind.' + pullRequest.kind | translate }}
+									</app-chip>
+								}
 								<app-chip tone="accent">#{{ pullRequest.number }}</app-chip>
 								<app-chip tone="neutral">{{ pullRequest.completedAt }}</app-chip>
 							</div>

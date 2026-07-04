@@ -162,6 +162,13 @@
 		"source": "Ver PRs en GitHub",
 		"pagination": "Paginacion de PRs de Angular",
 		"loading-page": "Cargando pagina de PRs",
-		"error": "No se pudo cargar PRs desde GitHub."
+		"error": "No se pudo cargar PRs desde GitHub.",
+		"kind": {
+			"feature": "Feature",
+			"refactor": "Refactor",
+			"bugfix": "Bugfix",
+			"docs": "Docs",
+			"test": "Test"
+		}
 	}
 }
